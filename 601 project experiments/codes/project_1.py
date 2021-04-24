@@ -89,7 +89,7 @@ class my_model():
         )
 
         log_reg_pipe = Pipeline(steps=[('preprocessor', preprocessor),
-                                       ('classifier', LinearSVC())])
+                                       ('classifier', SGDClassifier())])
         self.clf = log_reg_pipe
 
         self.clf.fit(X, y)

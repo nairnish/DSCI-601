@@ -43,6 +43,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from gensim.parsing.preprocessing import remove_stopwords
+import xgboost
+from xgboost import XGBClassifier
 
 
 class my_model():
@@ -89,8 +91,11 @@ class my_model():
         )
 
         log_reg_pipe = Pipeline(steps=[('preprocessor', preprocessor),
-                                       ('classifier', LinearSVC())])
+                                       ('classifier', XGBClassifier())])
         self.clf = log_reg_pipe
+        # X1 = np.array(X)
+        # y1 = np.array(y).T
+        # y2 = y1.T
 
         self.clf.fit(X, y)
 
