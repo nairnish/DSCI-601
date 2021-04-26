@@ -1,7 +1,7 @@
 import time
 import sys
 import pandas as pd
-from project_3 import my_model
+from project_LR import my_model
 from sklearn.compose import ColumnTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import StratifiedKFold, train_test_split
@@ -50,10 +50,10 @@ def test(train_data, validation_data, test_data, unlabelled_test_data):
 if __name__ == "__main__":
     start = time.time()
     # Load data
-    train_data = pd.read_csv("../dslcc4/DSL-TRAIN.txt", sep='\t', header=None, names=['text', 'label'])
-    validation_data = pd.read_csv("../dslcc4/DSL-DEV.txt", sep='\t', header=None, names=['text', 'label'])
-    test_data = pd.read_csv("../dslcc4/DSL-TEST-GOLD.txt", sep='\t', header=None, names=['text', 'label'])
-    unlabelled_test_data = pd.read_csv("../dslcc4/DSL-TEST-UNLABELLED.txt", sep='\t', header=None, names=['text'])
+    train_data = pd.read_csv("../DSLCC4 datasets/DSL-TRAIN.txt", sep='\t', header=None, names=['text', 'label'])
+    validation_data = pd.read_csv("../DSLCC4 datasets/DSL-DEV.txt", sep='\t', header=None, names=['text', 'label'])
+    test_data = pd.read_csv("../DSLCC4 datasets/DSL-TEST-GOLD.txt", sep='\t', header=None, names=['text', 'label'])
+    unlabelled_test_data = pd.read_csv("../DSLCC4 datasets/DSL-TEST-UNLABELLED.txt", sep='\t', header=None, names=['text'])
     # Replace missing values with empty strings
     train_data = train_data.fillna("")
     validation_data = validation_data.fillna("")

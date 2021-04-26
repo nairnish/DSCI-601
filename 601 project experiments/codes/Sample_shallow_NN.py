@@ -50,10 +50,10 @@ def train_model(classifier, feature_vector_train, label, feature_vector_valid, i
 if __name__ == "__main__":
     start = time.time()
     # Load data
-    train_data = pd.read_csv("../dslcc4/DSL-TRAIN.txt", sep='\t', header=None, names=['text', 'label'])
-    validation_data = pd.read_csv("../dslcc4/DSL-DEV.txt", sep='\t', header=None, names=['text', 'label'])
-    test_data = pd.read_csv("../dslcc4/DSL-TEST-GOLD.txt", sep='\t', header=None, names=['text', 'label'])
-    unlabelled_test_data = pd.read_csv("../dslcc4/DSL-TEST-UNLABELLED.txt", sep='\t', header=None, names=['text'])
+    train_data = pd.read_csv("../DSLCC4 datasets/DSL-TRAIN.txt", sep='\t', header=None, names=['text', 'label'])
+    validation_data = pd.read_csv("../DSLCC4 datasets/DSL-DEV.txt", sep='\t', header=None, names=['text', 'label'])
+    test_data = pd.read_csv("../DSLCC4 datasets/DSL-TEST-GOLD.txt", sep='\t', header=None, names=['text', 'label'])
+    unlabelled_test_data = pd.read_csv("../DSLCC4 datasets/DSL-TEST-UNLABELLED.txt", sep='\t', header=None, names=['text'])
     # Replace missing values with empty strings
     train_data = train_data.fillna("")
     validation_data = validation_data.fillna("")
@@ -77,8 +77,8 @@ if __name__ == "__main__":
     # word level tf-idf
     tfidf_vect = TfidfVectorizer(ngram_range=(1,2))
     tfidf_vect.fit(train_data['text'])
-    xtrain_tfidf = tfidf_vect.transform(X_train)
-    xvalid_tfidf = tfidf_vect.transform(X_test)
+    xtrain_tfidf = tfidf_vect.transform(X_train).toarray()
+    xvalid_tfidf = tfidf_vect.transform(X_test).toarray()
 
     # create a tokenizer
     token = text.Tokenizer()
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     train_seq_x = sequence.pad_sequences(token.texts_to_sequences(X_train), maxlen=70)
     valid_seq_x = sequence.pad_sequences(token.texts_to_sequences(X_test), maxlen=70)
 
-    classifier = create_model_architecture(xtrain_tfidf.sparse.reorder.shape[1])
+    classifier = create_model_architecture(xtrain_tfidf.shape[1])
     accuracy = train_model(classifier, xtrain_tfidf, train_y, xvalid_tfidf, is_neural_net=True)
     print("NN, Ngram Level TF IDF Vectors", accuracy)
 

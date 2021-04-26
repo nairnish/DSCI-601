@@ -1,7 +1,7 @@
 import time
 import sys
 import pandas as pd
-from project_4 import my_model
+from project_SVC import my_model
 from sklearn.compose import ColumnTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import StratifiedKFold, train_test_split
@@ -26,14 +26,6 @@ def test(train_data, validation_data, test_data, unlabelled_test_data):
 
     X_un_test = unlabelled_test_data
 
-    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y,
-    #                                                     random_state=42)
-    # split_point = int(0.8 * len(y))
-    # X_train = X.iloc[:split_point]
-    # X_test = X.iloc[split_point:]
-    # y_train = y.iloc[:split_point]
-    # y_test = y.iloc[split_point:]
-
     clf.fit(X_train, y_train)
     predictions = clf.predict(X_test)
     eval = my_evaluation(predictions, y_test)
@@ -48,17 +40,36 @@ def test(train_data, validation_data, test_data, unlabelled_test_data):
 
 
 if __name__ == "__main__":
+    # Recording the start time of the process
     start = time.time()
-    # Load data
-    train_data = pd.read_csv("../dslcc4/DSL-TRAIN.txt", sep='\t', header=None, names=['text', 'label'])
-    validation_data = pd.read_csv("../dslcc4/DSL-DEV.txt", sep='\t', header=None, names=['text', 'label'])
-    test_data = pd.read_csv("../dslcc4/DSL-TEST-GOLD.txt", sep='\t', header=None, names=['text', 'label'])
-    unlabelled_test_data = pd.read_csv("../dslcc4/DSL-TEST-UNLABELLED.txt", sep='\t', header=None, names=['text'])
-    # Replace missing values with empty strings
+    # Load train data
+    train_data = pd.read_csv("../DSLCC4 datasets/DSL-TRAIN.txt", sep='\t', header=None, names=['text', 'label'])
+    # Load validation data
+    validation_data = pd.read_csv("../DSLCC4 datasets/DSL-DEV.txt", sep='\t', header=None, names=['text', 'label'])
+    # Load test data
+    test_data = pd.read_csv("../DSLCC4 datasets/DSL-TEST-GOLD.txt", sep='\t', header=None, names=['text', 'label'])
+    # Load unlabelled test data
+    unlabelled_test_data = pd.read_csv("../DSLCC4 datasets/DSL-TEST-UNLABELLED.txt", sep='\t', header=None, names=['text'])
+    # Preliminary data cleaning - Replace missing values with empty strings
     train_data = train_data.fillna("")
     validation_data = validation_data.fillna("")
     test_data = test_data.fillna("")
     unlabelled_test_data = unlabelled_test_data.fillna("")
+
+    # # Filtering portuguese data
+    # new_train_data = train_data[(train_data.label == "pt-BR") | (train_data.label == "pt-PT")]
+    # new_validation_data = validation_data[(validation_data.label == "pt-BR") | (validation_data.label == "pt-PT")]
+    # new_test_data = test_data[(test_data.label == "pt-BR") | (test_data.label == "pt-PT")]
+    #
+    # # Filtering Spanish data
+    # new_train_data = train_data[(train_data.label == "es-AR") | (train_data.label == "es-ES") | (train_data.label == "es-PE")]
+    # new_validation_data = validation_data[(validation_data.label == "es-AR") | (validation_data.label == "es-ES") | (validation_data.label == "es-PE")]
+    # new_test_data = test_data[(test_data.label == "es-AR") | (test_data.label == "es-ES") | (test_data.label == "es-PE")]
+    #
+    # result = test(new_train_data, new_validation_data, new_test_data, unlabelled_test_data)
+
+
+
     result = test(train_data, validation_data, test_data, unlabelled_test_data)
     print(result)
     # print("F1 score: %f" % result)
