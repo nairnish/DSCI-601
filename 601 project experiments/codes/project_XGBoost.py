@@ -49,11 +49,21 @@ from xgboost import XGBClassifier
 
 class my_model():
 
-    def fit(self, X, y):
-        X = self.clean_data(X)
-        required_text_features = ['new_text']
-        text_transformer = Pipeline(steps=[('tfidf', TfidfVectorizer(ngram_range=(1,2)))])
+    '''
+    Description - This function tries to fit the data in the LinearSVC model
+    @:param - X is the independent feature in the dataset which is the textual data
+    @:param - y is the dependent class label in the dataset which is the language variant label
+    '''
 
+    def fit(self, X, y):
+        # Data cleaning
+        X = self.clean_data(X)
+        # Only keeping required text features
+        required_text_features = ['new_text']
+        # Vectorizing text data using TF-IDF vectorizer
+        text_transformer = Pipeline(steps=[('tfidf', TfidfVectorizer(ngram_range=(1, 2)))])
+
+        # Using column transformer for dimensionality reduction
         preprocessor = ColumnTransformer(
             transformers=[
                 *[(feature_name, text_transformer, feature_name)
@@ -61,37 +71,49 @@ class my_model():
             ]
         )
 
+        # Building the pipeline for preprocessing and training
         log_reg_pipe = Pipeline(steps=[('preprocessor', preprocessor),
                                        ('classifier', XGBClassifier())])
         self.clf = log_reg_pipe
 
+        # Fitting the data to the model
         self.clf.fit(X,y)
 
         return
 
+    '''
+    Description - This function tries to predict the y labels for the test dataset based on the trained model
+    @:param - X is the independent feature in the dataset which is the textual data
+    '''
+
     def predict(self, X):
-        # remember to apply the same preprocessing in fit() on test data before making predictions
+        # Data cleaning
         X = self.clean_data(X)
+        # Only keeping required text features
         required_text_features = ['new_text']
         text_transformer = Pipeline(steps=[('tfidf', TfidfVectorizer(ngram_range=(1, 2)))])
 
         preprocessor = ColumnTransformer(
             transformers=[
-                # ('bin', binary_transformer, required_binary_features),
-                # ('cat', cat_transformer, required_cat_features),
                 *[(feature_name, text_transformer, feature_name)
                   for feature_name in required_text_features]
             ]
         )
         log_reg_pipe = Pipeline(steps=[('preprocessor', preprocessor),
-                                       ('classifier', LogisticRegression())])
+                                       ('classifier', XGBClassifier())])
         predictions = self.clf.predict(X)
         return predictions
+
+    '''
+    Description - This function cleans the dataset and removes any unwanted text features which is not helpful in model training
+    @:param - X is the independent feature in the dataset which is the textual data
+    '''
 
     def clean_data(self, X):
 
         df = pd.DataFrame(X)
 
+        # Removal of special characters
         spec_chars = ["!", '"', "#", "%", "&", "'", "(", ")",
                       "*", "+", ",", "-", ".", "/", ":", ";", "<",
                       "=", ">", "?", "@", "[", "\\", "]", "^", "_",
@@ -99,6 +121,7 @@ class my_model():
         for char in spec_chars:
             df['text'] = df['text'].str.replace(char, ' ')
 
+        # Removal of web-tags
         df['text'] = df['text'].str.replace('https?://\S+|www\.\S+', ' ')
 
         # Removal of White Spaces
@@ -109,17 +132,26 @@ class my_model():
 
         return df1
 
+    '''
+    Description - This function removes stopwords from the textual data
+    @:param - X is the independent feature in the dataset which is the textual data
+    '''
+
     def stopwords_removal(self, X):
+        # Creating list of stopwords from all available language variants
         stopwords_list_bosnian = stopwords.words("slovene")
         stopwords_list_indonesian = stopwords.words("indonesian")
         stopwords_list_spanish = stopwords.words("spanish")
         stopwords_list_portuguese = stopwords.words("portuguese")
         stopwords_list_french = stopwords.words("french")
+        # Collating the list of stopwords
         stopwords_list_collated = [
             stopwords_list_bosnian + stopwords_list_indonesian + stopwords_list_spanish + stopwords_list_portuguese + stopwords_list_french]
         new_text = []
         for i in range(len(X)):
+            # tokenizing each text data
             tokens = nltk.word_tokenize(X['text'][i])
+            # Removing stopwords
             filtered_text = [t for t in tokens if t not in stopwords_list_collated]
             new_text.append(" ".join(filtered_text))
 

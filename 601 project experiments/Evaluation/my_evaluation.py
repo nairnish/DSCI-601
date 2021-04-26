@@ -24,7 +24,6 @@ class my_evaluation:
         # compute confusion matrix for each class in self.classes_
         # self.confusion_matrix = {self.classes_[i]: {"TP":tp, "TN": tn, "FP": fp, "FN": fn}}
         # no return variables
-        # write your own code below
         correct = self.predictions == self.actuals
         self.acc = float(Counter(correct)[True])/len(correct)
         self.confusion_matrix = {}
@@ -46,7 +45,6 @@ class my_evaluation:
         # target: target class (str). If not None, then return precision of target class
         # average: {"macro", "micro", "weighted"}. If target==None, return average precision
         # output: prec = float
-        # note: be careful for divided by 0
 
         if self.confusion_matrix==None:
             self.confusion()
@@ -84,7 +82,6 @@ class my_evaluation:
         # target: target class (str). If not None, then return recall of target class
         # average: {"macro", "micro", "weighted"}. If target==None, return average recall
         # output: recall = float
-        # note: be careful for divided by 0
 
         if self.confusion_matrix==None:
             self.confusion()
