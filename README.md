@@ -10,7 +10,15 @@ Below are the list of items present in each folder:
 Contains all the necessary datasets required for the experiments
 
 ### 601 project experiments - 1 ###
-1. Codes - Contains the model classification source codes and associated testing codes
+#### 1. Codes - Contains the model classification source codes and associated testing codes ####
+1. SVC
+2. SGDC
+3. MultinomialNB
+4. XGBoost
+5. KNN
+6. LogisticRegression
+7. Shallow NeuralNetwork
+
 2. DSLCC4 datastes - Contains the required datasets for the model to train, validate and test
 3. Evaluation - Contains the code for evaluation of the resuls from model classification 
 
