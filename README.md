@@ -6,6 +6,11 @@ This repository consists of several experimentation carried out on the DSLCC dat
 
 Below are the list of items present in each folder:
 
+Markup :  # 601 project experiments - 1 #
+1. Codes - Contains the model classification source codes and associated testing codes
+2. DSLCC4 datastes - Contains the required datasets for the model to train, validate and test
+3. Evaluation - Contains the code for evaluation of the resuls from model classification 
+
 1. **601 project experiments - 1** (contains experiments with tf-idf word uni/bi grams)
     -> Codes - Contains the model classification source codes and associated testing codes
     -> DSLCC4 datastes - Contains the required datasets for the model to train, validate and test
