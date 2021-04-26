@@ -1,0 +1,78 @@
+\hypertarget{namespacetest___s_v_c}{}\doxysection{test\+\_\+\+SVC Namespace Reference}
+\label{namespacetest___s_v_c}\index{test\_SVC@{test\_SVC}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetest___s_v_c_a0921df94684d7aa83bb30f0f7e64418e}{test}} (\mbox{\hyperlink{namespacetest___s_v_c_a38a9236a91352e0728c3b0101a8eca9c}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a3bef2700ef0b2377ce1e2e96e25e9552}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a77cdbccd183eaac419b4bb5e10a5f7d0}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a21b1813173ccf5fee4b371b2c8602fec}{unlabelled\+\_\+test\+\_\+data}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a2cee21e748dcc7cbf9bef019e5835e99}{start}} = time.\+time()
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a38a9236a91352e0728c3b0101a8eca9c}{train\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a3bef2700ef0b2377ce1e2e96e25e9552}{validation\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a77cdbccd183eaac419b4bb5e10a5f7d0}{test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a21b1813173ccf5fee4b371b2c8602fec}{unlabelled\+\_\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})
+\item 
+def \mbox{\hyperlink{namespacetest___s_v_c_ad7e1e1d0f82db95a4e6356edfe0f6a09}{result}} = \mbox{\hyperlink{namespacetest___s_v_c_a0921df94684d7aa83bb30f0f7e64418e}{test}}(\mbox{\hyperlink{namespacetest___s_v_c_a38a9236a91352e0728c3b0101a8eca9c}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a3bef2700ef0b2377ce1e2e96e25e9552}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a77cdbccd183eaac419b4bb5e10a5f7d0}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a21b1813173ccf5fee4b371b2c8602fec}{unlabelled\+\_\+test\+\_\+data}})
+\item 
+tuple \mbox{\hyperlink{namespacetest___s_v_c_a326e380e3fbe60d7e5321a03e8963752}{runtime}} = (time.\+time() -\/ \mbox{\hyperlink{namespacetest___s_v_c_a2cee21e748dcc7cbf9bef019e5835e99}{start}}) / 60.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacetest___s_v_c_a0921df94684d7aa83bb30f0f7e64418e}\label{namespacetest___s_v_c_a0921df94684d7aa83bb30f0f7e64418e}} 
+\index{test\_SVC@{test\_SVC}!test@{test}}
+\index{test@{test}!test\_SVC@{test\_SVC}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily def test\+\_\+\+SVC.\+test (\begin{DoxyParamCaption}\item[{}]{train\+\_\+data,  }\item[{}]{validation\+\_\+data,  }\item[{}]{test\+\_\+data,  }\item[{}]{unlabelled\+\_\+test\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetest___s_v_c_ad7e1e1d0f82db95a4e6356edfe0f6a09}\label{namespacetest___s_v_c_ad7e1e1d0f82db95a4e6356edfe0f6a09}} 
+\index{test\_SVC@{test\_SVC}!result@{result}}
+\index{result@{result}!test\_SVC@{test\_SVC}}
+\doxysubsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily def test\+\_\+\+SVC.\+result = \mbox{\hyperlink{namespacetest___s_v_c_a0921df94684d7aa83bb30f0f7e64418e}{test}}(\mbox{\hyperlink{namespacetest___s_v_c_a38a9236a91352e0728c3b0101a8eca9c}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a3bef2700ef0b2377ce1e2e96e25e9552}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a77cdbccd183eaac419b4bb5e10a5f7d0}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___s_v_c_a21b1813173ccf5fee4b371b2c8602fec}{unlabelled\+\_\+test\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacetest___s_v_c_a326e380e3fbe60d7e5321a03e8963752}\label{namespacetest___s_v_c_a326e380e3fbe60d7e5321a03e8963752}} 
+\index{test\_SVC@{test\_SVC}!runtime@{runtime}}
+\index{runtime@{runtime}!test\_SVC@{test\_SVC}}
+\doxysubsubsection{\texorpdfstring{runtime}{runtime}}
+{\footnotesize\ttfamily tuple test\+\_\+\+SVC.\+runtime = (time.\+time() -\/ \mbox{\hyperlink{namespacetest___s_v_c_a2cee21e748dcc7cbf9bef019e5835e99}{start}}) / 60.\+0}
+
+\mbox{\Hypertarget{namespacetest___s_v_c_a2cee21e748dcc7cbf9bef019e5835e99}\label{namespacetest___s_v_c_a2cee21e748dcc7cbf9bef019e5835e99}} 
+\index{test\_SVC@{test\_SVC}!start@{start}}
+\index{start@{start}!test\_SVC@{test\_SVC}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily test\+\_\+\+SVC.\+start = time.\+time()}
+
+\mbox{\Hypertarget{namespacetest___s_v_c_a77cdbccd183eaac419b4bb5e10a5f7d0}\label{namespacetest___s_v_c_a77cdbccd183eaac419b4bb5e10a5f7d0}} 
+\index{test\_SVC@{test\_SVC}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!test\_SVC@{test\_SVC}}
+\doxysubsubsection{\texorpdfstring{test\_data}{test\_data}}
+{\footnotesize\ttfamily test\+\_\+\+SVC.\+test\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___s_v_c_a38a9236a91352e0728c3b0101a8eca9c}\label{namespacetest___s_v_c_a38a9236a91352e0728c3b0101a8eca9c}} 
+\index{test\_SVC@{test\_SVC}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!test\_SVC@{test\_SVC}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily test\+\_\+\+SVC.\+train\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___s_v_c_a21b1813173ccf5fee4b371b2c8602fec}\label{namespacetest___s_v_c_a21b1813173ccf5fee4b371b2c8602fec}} 
+\index{test\_SVC@{test\_SVC}!unlabelled\_test\_data@{unlabelled\_test\_data}}
+\index{unlabelled\_test\_data@{unlabelled\_test\_data}!test\_SVC@{test\_SVC}}
+\doxysubsubsection{\texorpdfstring{unlabelled\_test\_data}{unlabelled\_test\_data}}
+{\footnotesize\ttfamily test\+\_\+\+SVC.\+unlabelled\+\_\+test\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___s_v_c_a3bef2700ef0b2377ce1e2e96e25e9552}\label{namespacetest___s_v_c_a3bef2700ef0b2377ce1e2e96e25e9552}} 
+\index{test\_SVC@{test\_SVC}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!test\_SVC@{test\_SVC}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily test\+\_\+\+SVC.\+validation\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+

@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['stopwords_5fremoval_89',['stopwords_removal',['../classproject___k_n_n_1_1my__model.html#a11af27dc675df604397958cfd5e05eeb',1,'project_KNN.my_model.stopwords_removal()'],['../classproject___l_r_1_1my__model.html#ab33a7e61898f0c2914a35df5662b014d',1,'project_LR.my_model.stopwords_removal()'],['../classproject___n_b_1_1my__model.html#ad09daf129a539d1094ef93646cce2357',1,'project_NB.my_model.stopwords_removal()'],['../classproject___s_g_d_c_1_1my__model.html#a4e514f3a4eb78e96ff966615d17fdb37',1,'project_SGDC.my_model.stopwords_removal()'],['../classproject___s_v_c_1_1my__model.html#ac289d0b03d53b0dde8d03f38f580e73e',1,'project_SVC.my_model.stopwords_removal()'],['../classproject___x_g_boost_1_1my__model.html#a2ebcdb995a57ca0a3c4f7bb39138f4b4',1,'project_XGBoost.my_model.stopwords_removal()']]]
+];

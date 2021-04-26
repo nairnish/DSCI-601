@@ -1,0 +1,29 @@
+\hypertarget{test___n_b_8py}{}\doxysection{test\+\_\+\+NB.\+py File Reference}
+\label{test___n_b_8py}\index{test\_NB.py@{test\_NB.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacetest___n_b}{test\+\_\+\+NB}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetest___n_b_af7403b0036b647e6046afe5f8eeda4bc}{test\+\_\+\+NB.\+test}} (train\+\_\+data, validation\+\_\+data, test\+\_\+data, unlabelled\+\_\+test\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetest___n_b_a0a573083eba57f14f3f394e25f7283d5}{test\+\_\+\+NB.\+start}} = time.\+time()
+\item 
+\mbox{\hyperlink{namespacetest___n_b_aea44d4d405759f6e3874bca7c34034bc}{test\+\_\+\+NB.\+train\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___n_b_afd477f963e46eef7e2725ec926eafe52}{test\+\_\+\+NB.\+validation\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___n_b_a46b409fc904a5c0a3d206f2286467ef5}{test\+\_\+\+NB.\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___n_b_aa8ca04ec7e826b91a3183e87e7bf87a5}{test\+\_\+\+NB.\+unlabelled\+\_\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})
+\item 
+def \mbox{\hyperlink{namespacetest___n_b_abaec0e82f818b7138f0c79b8bd4198d1}{test\+\_\+\+NB.\+result}} = test(train\+\_\+data, validation\+\_\+data, test\+\_\+data, unlabelled\+\_\+test\+\_\+data)
+\item 
+tuple \mbox{\hyperlink{namespacetest___n_b_a032b5da4f67950e3217a4f8dc8eb1237}{test\+\_\+\+NB.\+runtime}} = (time.\+time() -\/ start) / 60.\+0
+\end{DoxyCompactItemize}

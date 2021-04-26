@@ -1,0 +1,29 @@
+\hypertarget{test___s_v_c_8py}{}\doxysection{test\+\_\+\+SVC.\+py File Reference}
+\label{test___s_v_c_8py}\index{test\_SVC.py@{test\_SVC.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacetest___s_v_c}{test\+\_\+\+SVC}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetest___s_v_c_a0921df94684d7aa83bb30f0f7e64418e}{test\+\_\+\+SVC.\+test}} (train\+\_\+data, validation\+\_\+data, test\+\_\+data, unlabelled\+\_\+test\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a2cee21e748dcc7cbf9bef019e5835e99}{test\+\_\+\+SVC.\+start}} = time.\+time()
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a38a9236a91352e0728c3b0101a8eca9c}{test\+\_\+\+SVC.\+train\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a3bef2700ef0b2377ce1e2e96e25e9552}{test\+\_\+\+SVC.\+validation\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a77cdbccd183eaac419b4bb5e10a5f7d0}{test\+\_\+\+SVC.\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___s_v_c_a21b1813173ccf5fee4b371b2c8602fec}{test\+\_\+\+SVC.\+unlabelled\+\_\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})
+\item 
+def \mbox{\hyperlink{namespacetest___s_v_c_ad7e1e1d0f82db95a4e6356edfe0f6a09}{test\+\_\+\+SVC.\+result}} = test(train\+\_\+data, validation\+\_\+data, test\+\_\+data, unlabelled\+\_\+test\+\_\+data)
+\item 
+tuple \mbox{\hyperlink{namespacetest___s_v_c_a326e380e3fbe60d7e5321a03e8963752}{test\+\_\+\+SVC.\+runtime}} = (time.\+time() -\/ start) / 60.\+0
+\end{DoxyCompactItemize}

@@ -1,0 +1,61 @@
+\hypertarget{_sample__shallow___n_n_8py}{}\doxysection{Sample\+\_\+shallow\+\_\+\+NN.\+py File Reference}
+\label{_sample__shallow___n_n_8py}\index{Sample\_shallow\_NN.py@{Sample\_shallow\_NN.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_sample__shallow___n_n}{Sample\+\_\+shallow\+\_\+\+NN}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_sample__shallow___n_n_a8562277500b8a373f50adff07992e569}{Sample\+\_\+shallow\+\_\+\+NN.\+create\+\_\+model\+\_\+architecture}} (input\+\_\+size)
+\item 
+def \mbox{\hyperlink{namespace_sample__shallow___n_n_aae131e0ec9dc22cf8c722534add95b2d}{Sample\+\_\+shallow\+\_\+\+NN.\+train\+\_\+model}} (classifier, feature\+\_\+vector\+\_\+train, label, feature\+\_\+vector\+\_\+valid, is\+\_\+neural\+\_\+net=False)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_ac1889e5a91a769fe73c887f6548fd008}{Sample\+\_\+shallow\+\_\+\+NN.\+start}} = time.\+time()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aa7b01e1d935d690005804c62a2e4f201}{Sample\+\_\+shallow\+\_\+\+NN.\+train\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_af58afb3de00c382166f89acebd30483f}{Sample\+\_\+shallow\+\_\+\+NN.\+validation\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_ae4746cd54bcfdfffc322810c9fa05348}{Sample\+\_\+shallow\+\_\+\+NN.\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aa25d1bdbc663c7d284e922baa8fa8951}{Sample\+\_\+shallow\+\_\+\+NN.\+unlabelled\+\_\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a394c41c02d6ac863cbcc5fdd101915fa}{Sample\+\_\+shallow\+\_\+\+NN.\+y\+\_\+train}} = train\+\_\+data.\+drop(\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}, axis=1).squeeze()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a6d9647deed295417222b7968a709ae99}{Sample\+\_\+shallow\+\_\+\+NN.\+X\+\_\+train}} = train\+\_\+data.\+drop(\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}, axis=1).squeeze()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a2329d8b49de91d33a65cfb8f47d0ad5d}{Sample\+\_\+shallow\+\_\+\+NN.\+y\+\_\+test}} = test\+\_\+data.\+drop(\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}, axis=1).squeeze()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_ab34ec88bc911dcbad76020c097b3f7ec}{Sample\+\_\+shallow\+\_\+\+NN.\+X\+\_\+test}} = test\+\_\+data.\+drop(\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}, axis=1).squeeze()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aec89ab59dc6caa110f4ea986d89610c0}{Sample\+\_\+shallow\+\_\+\+NN.\+encoder}} = preprocessing.\+Label\+Encoder()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_af701a1357fd26b7c4803860812a6a8a6}{Sample\+\_\+shallow\+\_\+\+NN.\+train\+\_\+y}} = encoder.\+fit\+\_\+transform(y\+\_\+train)
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a4200b19ce7dfe5b085db8bb91c9f4958}{Sample\+\_\+shallow\+\_\+\+NN.\+valid\+\_\+y}} = encoder.\+fit\+\_\+transform(y\+\_\+test)
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a316602c1f61c6c46b7907e89aa4be523}{Sample\+\_\+shallow\+\_\+\+NN.\+tfidf\+\_\+vect}} = Tfidf\+Vectorizer(ngram\+\_\+range=(1,2))
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aba789e67f774b521be7ca783a8d37255}{Sample\+\_\+shallow\+\_\+\+NN.\+xtrain\+\_\+tfidf}} = tfidf\+\_\+vect.\+transform(X\+\_\+train).toarray()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a60e5b135f9dfe2e789dd3d320255d879}{Sample\+\_\+shallow\+\_\+\+NN.\+xvalid\+\_\+tfidf}} = tfidf\+\_\+vect.\+transform(X\+\_\+test).toarray()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a028a7b036191ed2e03fb422af1b626a8}{Sample\+\_\+shallow\+\_\+\+NN.\+token}} = text.\+Tokenizer()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a376a4c9c4d3db9137b0e2f5a2b26844b}{Sample\+\_\+shallow\+\_\+\+NN.\+word\+\_\+index}} = token.\+word\+\_\+index
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aec52624ed49464836b1a01717d097566}{Sample\+\_\+shallow\+\_\+\+NN.\+train\+\_\+seq\+\_\+x}} = sequence.\+pad\+\_\+sequences(token.\+texts\+\_\+to\+\_\+sequences(X\+\_\+train), maxlen=70)
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_af02a750061331e7dfabc37b731181c76}{Sample\+\_\+shallow\+\_\+\+NN.\+valid\+\_\+seq\+\_\+x}} = sequence.\+pad\+\_\+sequences(token.\+texts\+\_\+to\+\_\+sequences(X\+\_\+test), maxlen=70)
+\item 
+def \mbox{\hyperlink{namespace_sample__shallow___n_n_adbc44a1428fda68f7f82135be442e9eb}{Sample\+\_\+shallow\+\_\+\+NN.\+classifier}} = create\+\_\+model\+\_\+architecture(xtrain\+\_\+tfidf.\+shape\mbox{[}1\mbox{]})
+\item 
+def \mbox{\hyperlink{namespace_sample__shallow___n_n_a8229223221140525dab0153beca2cbb8}{Sample\+\_\+shallow\+\_\+\+NN.\+accuracy}} = train\+\_\+model(classifier, xtrain\+\_\+tfidf, train\+\_\+y, xvalid\+\_\+tfidf, is\+\_\+neural\+\_\+net=True)
+\item 
+tuple \mbox{\hyperlink{namespace_sample__shallow___n_n_a53f2ee89029feb4c6b4e5ba4148171be}{Sample\+\_\+shallow\+\_\+\+NN.\+runtime}} = (time.\+time() -\/ start) / 60.\+0
+\end{DoxyCompactItemize}

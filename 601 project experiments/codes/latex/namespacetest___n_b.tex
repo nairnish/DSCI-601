@@ -1,0 +1,78 @@
+\hypertarget{namespacetest___n_b}{}\doxysection{test\+\_\+\+NB Namespace Reference}
+\label{namespacetest___n_b}\index{test\_NB@{test\_NB}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetest___n_b_af7403b0036b647e6046afe5f8eeda4bc}{test}} (\mbox{\hyperlink{namespacetest___n_b_aea44d4d405759f6e3874bca7c34034bc}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_afd477f963e46eef7e2725ec926eafe52}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_a46b409fc904a5c0a3d206f2286467ef5}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_aa8ca04ec7e826b91a3183e87e7bf87a5}{unlabelled\+\_\+test\+\_\+data}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetest___n_b_a0a573083eba57f14f3f394e25f7283d5}{start}} = time.\+time()
+\item 
+\mbox{\hyperlink{namespacetest___n_b_aea44d4d405759f6e3874bca7c34034bc}{train\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___n_b_afd477f963e46eef7e2725ec926eafe52}{validation\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___n_b_a46b409fc904a5c0a3d206f2286467ef5}{test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___n_b_aa8ca04ec7e826b91a3183e87e7bf87a5}{unlabelled\+\_\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})
+\item 
+def \mbox{\hyperlink{namespacetest___n_b_abaec0e82f818b7138f0c79b8bd4198d1}{result}} = \mbox{\hyperlink{namespacetest___n_b_af7403b0036b647e6046afe5f8eeda4bc}{test}}(\mbox{\hyperlink{namespacetest___n_b_aea44d4d405759f6e3874bca7c34034bc}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_afd477f963e46eef7e2725ec926eafe52}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_a46b409fc904a5c0a3d206f2286467ef5}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_aa8ca04ec7e826b91a3183e87e7bf87a5}{unlabelled\+\_\+test\+\_\+data}})
+\item 
+tuple \mbox{\hyperlink{namespacetest___n_b_a032b5da4f67950e3217a4f8dc8eb1237}{runtime}} = (time.\+time() -\/ \mbox{\hyperlink{namespacetest___n_b_a0a573083eba57f14f3f394e25f7283d5}{start}}) / 60.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacetest___n_b_af7403b0036b647e6046afe5f8eeda4bc}\label{namespacetest___n_b_af7403b0036b647e6046afe5f8eeda4bc}} 
+\index{test\_NB@{test\_NB}!test@{test}}
+\index{test@{test}!test\_NB@{test\_NB}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily def test\+\_\+\+NB.\+test (\begin{DoxyParamCaption}\item[{}]{train\+\_\+data,  }\item[{}]{validation\+\_\+data,  }\item[{}]{test\+\_\+data,  }\item[{}]{unlabelled\+\_\+test\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetest___n_b_abaec0e82f818b7138f0c79b8bd4198d1}\label{namespacetest___n_b_abaec0e82f818b7138f0c79b8bd4198d1}} 
+\index{test\_NB@{test\_NB}!result@{result}}
+\index{result@{result}!test\_NB@{test\_NB}}
+\doxysubsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily def test\+\_\+\+NB.\+result = \mbox{\hyperlink{namespacetest___n_b_af7403b0036b647e6046afe5f8eeda4bc}{test}}(\mbox{\hyperlink{namespacetest___n_b_aea44d4d405759f6e3874bca7c34034bc}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_afd477f963e46eef7e2725ec926eafe52}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_a46b409fc904a5c0a3d206f2286467ef5}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___n_b_aa8ca04ec7e826b91a3183e87e7bf87a5}{unlabelled\+\_\+test\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacetest___n_b_a032b5da4f67950e3217a4f8dc8eb1237}\label{namespacetest___n_b_a032b5da4f67950e3217a4f8dc8eb1237}} 
+\index{test\_NB@{test\_NB}!runtime@{runtime}}
+\index{runtime@{runtime}!test\_NB@{test\_NB}}
+\doxysubsubsection{\texorpdfstring{runtime}{runtime}}
+{\footnotesize\ttfamily tuple test\+\_\+\+NB.\+runtime = (time.\+time() -\/ \mbox{\hyperlink{namespacetest___n_b_a0a573083eba57f14f3f394e25f7283d5}{start}}) / 60.\+0}
+
+\mbox{\Hypertarget{namespacetest___n_b_a0a573083eba57f14f3f394e25f7283d5}\label{namespacetest___n_b_a0a573083eba57f14f3f394e25f7283d5}} 
+\index{test\_NB@{test\_NB}!start@{start}}
+\index{start@{start}!test\_NB@{test\_NB}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily test\+\_\+\+NB.\+start = time.\+time()}
+
+\mbox{\Hypertarget{namespacetest___n_b_a46b409fc904a5c0a3d206f2286467ef5}\label{namespacetest___n_b_a46b409fc904a5c0a3d206f2286467ef5}} 
+\index{test\_NB@{test\_NB}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!test\_NB@{test\_NB}}
+\doxysubsubsection{\texorpdfstring{test\_data}{test\_data}}
+{\footnotesize\ttfamily test\+\_\+\+NB.\+test\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___n_b_aea44d4d405759f6e3874bca7c34034bc}\label{namespacetest___n_b_aea44d4d405759f6e3874bca7c34034bc}} 
+\index{test\_NB@{test\_NB}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!test\_NB@{test\_NB}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily test\+\_\+\+NB.\+train\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___n_b_aa8ca04ec7e826b91a3183e87e7bf87a5}\label{namespacetest___n_b_aa8ca04ec7e826b91a3183e87e7bf87a5}} 
+\index{test\_NB@{test\_NB}!unlabelled\_test\_data@{unlabelled\_test\_data}}
+\index{unlabelled\_test\_data@{unlabelled\_test\_data}!test\_NB@{test\_NB}}
+\doxysubsubsection{\texorpdfstring{unlabelled\_test\_data}{unlabelled\_test\_data}}
+{\footnotesize\ttfamily test\+\_\+\+NB.\+unlabelled\+\_\+test\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___n_b_afd477f963e46eef7e2725ec926eafe52}\label{namespacetest___n_b_afd477f963e46eef7e2725ec926eafe52}} 
+\index{test\_NB@{test\_NB}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!test\_NB@{test\_NB}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily test\+\_\+\+NB.\+validation\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+

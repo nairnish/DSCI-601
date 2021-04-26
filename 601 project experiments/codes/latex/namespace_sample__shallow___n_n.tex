@@ -1,0 +1,206 @@
+\hypertarget{namespace_sample__shallow___n_n}{}\doxysection{Sample\+\_\+shallow\+\_\+\+NN Namespace Reference}
+\label{namespace_sample__shallow___n_n}\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_sample__shallow___n_n_a8562277500b8a373f50adff07992e569}{create\+\_\+model\+\_\+architecture}} (input\+\_\+size)
+\item 
+def \mbox{\hyperlink{namespace_sample__shallow___n_n_aae131e0ec9dc22cf8c722534add95b2d}{train\+\_\+model}} (\mbox{\hyperlink{namespace_sample__shallow___n_n_adbc44a1428fda68f7f82135be442e9eb}{classifier}}, feature\+\_\+vector\+\_\+train, label, feature\+\_\+vector\+\_\+valid, is\+\_\+neural\+\_\+net=False)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_ac1889e5a91a769fe73c887f6548fd008}{start}} = time.\+time()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aa7b01e1d935d690005804c62a2e4f201}{train\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_af58afb3de00c382166f89acebd30483f}{validation\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_ae4746cd54bcfdfffc322810c9fa05348}{test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aa25d1bdbc663c7d284e922baa8fa8951}{unlabelled\+\_\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a394c41c02d6ac863cbcc5fdd101915fa}{y\+\_\+train}} = train\+\_\+data.\+drop(\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}, axis=1).squeeze()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a6d9647deed295417222b7968a709ae99}{X\+\_\+train}} = train\+\_\+data.\+drop(\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}, axis=1).squeeze()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a2329d8b49de91d33a65cfb8f47d0ad5d}{y\+\_\+test}} = test\+\_\+data.\+drop(\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}, axis=1).squeeze()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_ab34ec88bc911dcbad76020c097b3f7ec}{X\+\_\+test}} = test\+\_\+data.\+drop(\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}, axis=1).squeeze()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aec89ab59dc6caa110f4ea986d89610c0}{encoder}} = preprocessing.\+Label\+Encoder()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_af701a1357fd26b7c4803860812a6a8a6}{train\+\_\+y}} = encoder.\+fit\+\_\+transform(\mbox{\hyperlink{namespace_sample__shallow___n_n_a394c41c02d6ac863cbcc5fdd101915fa}{y\+\_\+train}})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a4200b19ce7dfe5b085db8bb91c9f4958}{valid\+\_\+y}} = encoder.\+fit\+\_\+transform(\mbox{\hyperlink{namespace_sample__shallow___n_n_a2329d8b49de91d33a65cfb8f47d0ad5d}{y\+\_\+test}})
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a316602c1f61c6c46b7907e89aa4be523}{tfidf\+\_\+vect}} = Tfidf\+Vectorizer(ngram\+\_\+range=(1,2))
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aba789e67f774b521be7ca783a8d37255}{xtrain\+\_\+tfidf}} = tfidf\+\_\+vect.\+transform(\mbox{\hyperlink{namespace_sample__shallow___n_n_a6d9647deed295417222b7968a709ae99}{X\+\_\+train}}).toarray()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a60e5b135f9dfe2e789dd3d320255d879}{xvalid\+\_\+tfidf}} = tfidf\+\_\+vect.\+transform(\mbox{\hyperlink{namespace_sample__shallow___n_n_ab34ec88bc911dcbad76020c097b3f7ec}{X\+\_\+test}}).toarray()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a028a7b036191ed2e03fb422af1b626a8}{token}} = text.\+Tokenizer()
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_a376a4c9c4d3db9137b0e2f5a2b26844b}{word\+\_\+index}} = token.\+word\+\_\+index
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_aec52624ed49464836b1a01717d097566}{train\+\_\+seq\+\_\+x}} = sequence.\+pad\+\_\+sequences(token.\+texts\+\_\+to\+\_\+sequences(\mbox{\hyperlink{namespace_sample__shallow___n_n_a6d9647deed295417222b7968a709ae99}{X\+\_\+train}}), maxlen=70)
+\item 
+\mbox{\hyperlink{namespace_sample__shallow___n_n_af02a750061331e7dfabc37b731181c76}{valid\+\_\+seq\+\_\+x}} = sequence.\+pad\+\_\+sequences(token.\+texts\+\_\+to\+\_\+sequences(\mbox{\hyperlink{namespace_sample__shallow___n_n_ab34ec88bc911dcbad76020c097b3f7ec}{X\+\_\+test}}), maxlen=70)
+\item 
+def \mbox{\hyperlink{namespace_sample__shallow___n_n_adbc44a1428fda68f7f82135be442e9eb}{classifier}} = \mbox{\hyperlink{namespace_sample__shallow___n_n_a8562277500b8a373f50adff07992e569}{create\+\_\+model\+\_\+architecture}}(xtrain\+\_\+tfidf.\+shape\mbox{[}1\mbox{]})
+\item 
+def \mbox{\hyperlink{namespace_sample__shallow___n_n_a8229223221140525dab0153beca2cbb8}{accuracy}} = \mbox{\hyperlink{namespace_sample__shallow___n_n_aae131e0ec9dc22cf8c722534add95b2d}{train\+\_\+model}}(\mbox{\hyperlink{namespace_sample__shallow___n_n_adbc44a1428fda68f7f82135be442e9eb}{classifier}}, \mbox{\hyperlink{namespace_sample__shallow___n_n_aba789e67f774b521be7ca783a8d37255}{xtrain\+\_\+tfidf}}, \mbox{\hyperlink{namespace_sample__shallow___n_n_af701a1357fd26b7c4803860812a6a8a6}{train\+\_\+y}}, \mbox{\hyperlink{namespace_sample__shallow___n_n_a60e5b135f9dfe2e789dd3d320255d879}{xvalid\+\_\+tfidf}}, is\+\_\+neural\+\_\+net=True)
+\item 
+tuple \mbox{\hyperlink{namespace_sample__shallow___n_n_a53f2ee89029feb4c6b4e5ba4148171be}{runtime}} = (time.\+time() -\/ \mbox{\hyperlink{namespace_sample__shallow___n_n_ac1889e5a91a769fe73c887f6548fd008}{start}}) / 60.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a8562277500b8a373f50adff07992e569}\label{namespace_sample__shallow___n_n_a8562277500b8a373f50adff07992e569}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!create\_model\_architecture@{create\_model\_architecture}}
+\index{create\_model\_architecture@{create\_model\_architecture}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{create\_model\_architecture()}{create\_model\_architecture()}}
+{\footnotesize\ttfamily def Sample\+\_\+shallow\+\_\+\+NN.\+create\+\_\+model\+\_\+architecture (\begin{DoxyParamCaption}\item[{}]{input\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_aae131e0ec9dc22cf8c722534add95b2d}\label{namespace_sample__shallow___n_n_aae131e0ec9dc22cf8c722534add95b2d}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!train\_model@{train\_model}}
+\index{train\_model@{train\_model}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{train\_model()}{train\_model()}}
+{\footnotesize\ttfamily def Sample\+\_\+shallow\+\_\+\+NN.\+train\+\_\+model (\begin{DoxyParamCaption}\item[{}]{classifier,  }\item[{}]{feature\+\_\+vector\+\_\+train,  }\item[{}]{label,  }\item[{}]{feature\+\_\+vector\+\_\+valid,  }\item[{}]{is\+\_\+neural\+\_\+net = {\ttfamily False} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a8229223221140525dab0153beca2cbb8}\label{namespace_sample__shallow___n_n_a8229223221140525dab0153beca2cbb8}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!accuracy@{accuracy}}
+\index{accuracy@{accuracy}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{accuracy}{accuracy}}
+{\footnotesize\ttfamily def Sample\+\_\+shallow\+\_\+\+NN.\+accuracy = \mbox{\hyperlink{namespace_sample__shallow___n_n_aae131e0ec9dc22cf8c722534add95b2d}{train\+\_\+model}}(\mbox{\hyperlink{namespace_sample__shallow___n_n_adbc44a1428fda68f7f82135be442e9eb}{classifier}}, \mbox{\hyperlink{namespace_sample__shallow___n_n_aba789e67f774b521be7ca783a8d37255}{xtrain\+\_\+tfidf}}, \mbox{\hyperlink{namespace_sample__shallow___n_n_af701a1357fd26b7c4803860812a6a8a6}{train\+\_\+y}}, \mbox{\hyperlink{namespace_sample__shallow___n_n_a60e5b135f9dfe2e789dd3d320255d879}{xvalid\+\_\+tfidf}}, is\+\_\+neural\+\_\+net=True)}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_adbc44a1428fda68f7f82135be442e9eb}\label{namespace_sample__shallow___n_n_adbc44a1428fda68f7f82135be442e9eb}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!classifier@{classifier}}
+\index{classifier@{classifier}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{classifier}{classifier}}
+{\footnotesize\ttfamily def Sample\+\_\+shallow\+\_\+\+NN.\+classifier = \mbox{\hyperlink{namespace_sample__shallow___n_n_a8562277500b8a373f50adff07992e569}{create\+\_\+model\+\_\+architecture}}(xtrain\+\_\+tfidf.\+shape\mbox{[}1\mbox{]})}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_aec89ab59dc6caa110f4ea986d89610c0}\label{namespace_sample__shallow___n_n_aec89ab59dc6caa110f4ea986d89610c0}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!encoder@{encoder}}
+\index{encoder@{encoder}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{encoder}{encoder}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+encoder = preprocessing.\+Label\+Encoder()}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a53f2ee89029feb4c6b4e5ba4148171be}\label{namespace_sample__shallow___n_n_a53f2ee89029feb4c6b4e5ba4148171be}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!runtime@{runtime}}
+\index{runtime@{runtime}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{runtime}{runtime}}
+{\footnotesize\ttfamily tuple Sample\+\_\+shallow\+\_\+\+NN.\+runtime = (time.\+time() -\/ \mbox{\hyperlink{namespace_sample__shallow___n_n_ac1889e5a91a769fe73c887f6548fd008}{start}}) / 60.\+0}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_ac1889e5a91a769fe73c887f6548fd008}\label{namespace_sample__shallow___n_n_ac1889e5a91a769fe73c887f6548fd008}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!start@{start}}
+\index{start@{start}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+start = time.\+time()}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_ae4746cd54bcfdfffc322810c9fa05348}\label{namespace_sample__shallow___n_n_ae4746cd54bcfdfffc322810c9fa05348}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{test\_data}{test\_data}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+test\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a316602c1f61c6c46b7907e89aa4be523}\label{namespace_sample__shallow___n_n_a316602c1f61c6c46b7907e89aa4be523}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!tfidf\_vect@{tfidf\_vect}}
+\index{tfidf\_vect@{tfidf\_vect}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{tfidf\_vect}{tfidf\_vect}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+tfidf\+\_\+vect = Tfidf\+Vectorizer(ngram\+\_\+range=(1,2))}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a028a7b036191ed2e03fb422af1b626a8}\label{namespace_sample__shallow___n_n_a028a7b036191ed2e03fb422af1b626a8}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!token@{token}}
+\index{token@{token}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{token}{token}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+token = text.\+Tokenizer()}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_aa7b01e1d935d690005804c62a2e4f201}\label{namespace_sample__shallow___n_n_aa7b01e1d935d690005804c62a2e4f201}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+train\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_aec52624ed49464836b1a01717d097566}\label{namespace_sample__shallow___n_n_aec52624ed49464836b1a01717d097566}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!train\_seq\_x@{train\_seq\_x}}
+\index{train\_seq\_x@{train\_seq\_x}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{train\_seq\_x}{train\_seq\_x}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+train\+\_\+seq\+\_\+x = sequence.\+pad\+\_\+sequences(token.\+texts\+\_\+to\+\_\+sequences(\mbox{\hyperlink{namespace_sample__shallow___n_n_a6d9647deed295417222b7968a709ae99}{X\+\_\+train}}), maxlen=70)}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_af701a1357fd26b7c4803860812a6a8a6}\label{namespace_sample__shallow___n_n_af701a1357fd26b7c4803860812a6a8a6}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!train\_y@{train\_y}}
+\index{train\_y@{train\_y}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{train\_y}{train\_y}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+train\+\_\+y = encoder.\+fit\+\_\+transform(\mbox{\hyperlink{namespace_sample__shallow___n_n_a394c41c02d6ac863cbcc5fdd101915fa}{y\+\_\+train}})}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_aa25d1bdbc663c7d284e922baa8fa8951}\label{namespace_sample__shallow___n_n_aa25d1bdbc663c7d284e922baa8fa8951}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!unlabelled\_test\_data@{unlabelled\_test\_data}}
+\index{unlabelled\_test\_data@{unlabelled\_test\_data}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{unlabelled\_test\_data}{unlabelled\_test\_data}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+unlabelled\+\_\+test\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_af02a750061331e7dfabc37b731181c76}\label{namespace_sample__shallow___n_n_af02a750061331e7dfabc37b731181c76}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!valid\_seq\_x@{valid\_seq\_x}}
+\index{valid\_seq\_x@{valid\_seq\_x}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{valid\_seq\_x}{valid\_seq\_x}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+valid\+\_\+seq\+\_\+x = sequence.\+pad\+\_\+sequences(token.\+texts\+\_\+to\+\_\+sequences(\mbox{\hyperlink{namespace_sample__shallow___n_n_ab34ec88bc911dcbad76020c097b3f7ec}{X\+\_\+test}}), maxlen=70)}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a4200b19ce7dfe5b085db8bb91c9f4958}\label{namespace_sample__shallow___n_n_a4200b19ce7dfe5b085db8bb91c9f4958}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!valid\_y@{valid\_y}}
+\index{valid\_y@{valid\_y}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{valid\_y}{valid\_y}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+valid\+\_\+y = encoder.\+fit\+\_\+transform(\mbox{\hyperlink{namespace_sample__shallow___n_n_a2329d8b49de91d33a65cfb8f47d0ad5d}{y\+\_\+test}})}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_af58afb3de00c382166f89acebd30483f}\label{namespace_sample__shallow___n_n_af58afb3de00c382166f89acebd30483f}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+validation\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a376a4c9c4d3db9137b0e2f5a2b26844b}\label{namespace_sample__shallow___n_n_a376a4c9c4d3db9137b0e2f5a2b26844b}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!word\_index@{word\_index}}
+\index{word\_index@{word\_index}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{word\_index}{word\_index}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+word\+\_\+index = token.\+word\+\_\+index}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_ab34ec88bc911dcbad76020c097b3f7ec}\label{namespace_sample__shallow___n_n_ab34ec88bc911dcbad76020c097b3f7ec}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!X\_test@{X\_test}}
+\index{X\_test@{X\_test}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{X\_test}{X\_test}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+X\+\_\+test = test\+\_\+data.\+drop(\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}, axis=1).squeeze()}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a6d9647deed295417222b7968a709ae99}\label{namespace_sample__shallow___n_n_a6d9647deed295417222b7968a709ae99}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!X\_train@{X\_train}}
+\index{X\_train@{X\_train}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{X\_train}{X\_train}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+X\+\_\+train = train\+\_\+data.\+drop(\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}, axis=1).squeeze()}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_aba789e67f774b521be7ca783a8d37255}\label{namespace_sample__shallow___n_n_aba789e67f774b521be7ca783a8d37255}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!xtrain\_tfidf@{xtrain\_tfidf}}
+\index{xtrain\_tfidf@{xtrain\_tfidf}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{xtrain\_tfidf}{xtrain\_tfidf}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+xtrain\+\_\+tfidf = tfidf\+\_\+vect.\+transform(\mbox{\hyperlink{namespace_sample__shallow___n_n_a6d9647deed295417222b7968a709ae99}{X\+\_\+train}}).toarray()}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a60e5b135f9dfe2e789dd3d320255d879}\label{namespace_sample__shallow___n_n_a60e5b135f9dfe2e789dd3d320255d879}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!xvalid\_tfidf@{xvalid\_tfidf}}
+\index{xvalid\_tfidf@{xvalid\_tfidf}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{xvalid\_tfidf}{xvalid\_tfidf}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+xvalid\+\_\+tfidf = tfidf\+\_\+vect.\+transform(\mbox{\hyperlink{namespace_sample__shallow___n_n_ab34ec88bc911dcbad76020c097b3f7ec}{X\+\_\+test}}).toarray()}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a2329d8b49de91d33a65cfb8f47d0ad5d}\label{namespace_sample__shallow___n_n_a2329d8b49de91d33a65cfb8f47d0ad5d}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!y\_test@{y\_test}}
+\index{y\_test@{y\_test}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{y\_test}{y\_test}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+y\+\_\+test = test\+\_\+data.\+drop(\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}, axis=1).squeeze()}
+
+\mbox{\Hypertarget{namespace_sample__shallow___n_n_a394c41c02d6ac863cbcc5fdd101915fa}\label{namespace_sample__shallow___n_n_a394c41c02d6ac863cbcc5fdd101915fa}} 
+\index{Sample\_shallow\_NN@{Sample\_shallow\_NN}!y\_train@{y\_train}}
+\index{y\_train@{y\_train}!Sample\_shallow\_NN@{Sample\_shallow\_NN}}
+\doxysubsubsection{\texorpdfstring{y\_train}{y\_train}}
+{\footnotesize\ttfamily Sample\+\_\+shallow\+\_\+\+NN.\+y\+\_\+train = train\+\_\+data.\+drop(\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}, axis=1).squeeze()}
+

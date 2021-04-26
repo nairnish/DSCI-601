@@ -1,0 +1,78 @@
+\hypertarget{namespacetest___x_g_boost}{}\doxysection{test\+\_\+\+XGBoost Namespace Reference}
+\label{namespacetest___x_g_boost}\index{test\_XGBoost@{test\_XGBoost}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetest___x_g_boost_acee7dc97d985fcce356dbb225cf299db}{test}} (\mbox{\hyperlink{namespacetest___x_g_boost_a3ad36557691813581d8d84cae0f1bfd7}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_a68ff29b69d2afab666a7b1e930f57b3e}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_ad92cb2c7f5269fb2dd833c3ac281f722}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_a9b331ed004705fbd9710c4b692517ed6}{unlabelled\+\_\+test\+\_\+data}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetest___x_g_boost_a930197f098837c9166374226c6d43532}{start}} = time.\+time()
+\item 
+\mbox{\hyperlink{namespacetest___x_g_boost_a3ad36557691813581d8d84cae0f1bfd7}{train\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___x_g_boost_a68ff29b69d2afab666a7b1e930f57b3e}{validation\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___x_g_boost_ad92cb2c7f5269fb2dd833c3ac281f722}{test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespacetest___x_g_boost_a9b331ed004705fbd9710c4b692517ed6}{unlabelled\+\_\+test\+\_\+data}} = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})
+\item 
+def \mbox{\hyperlink{namespacetest___x_g_boost_a448e83be28384ef60de7114b62577c2a}{result}} = \mbox{\hyperlink{namespacetest___x_g_boost_acee7dc97d985fcce356dbb225cf299db}{test}}(\mbox{\hyperlink{namespacetest___x_g_boost_a3ad36557691813581d8d84cae0f1bfd7}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_a68ff29b69d2afab666a7b1e930f57b3e}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_ad92cb2c7f5269fb2dd833c3ac281f722}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_a9b331ed004705fbd9710c4b692517ed6}{unlabelled\+\_\+test\+\_\+data}})
+\item 
+tuple \mbox{\hyperlink{namespacetest___x_g_boost_a67a3711152149b0a114f261ed0a9ffdf}{runtime}} = (time.\+time() -\/ \mbox{\hyperlink{namespacetest___x_g_boost_a930197f098837c9166374226c6d43532}{start}}) / 60.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacetest___x_g_boost_acee7dc97d985fcce356dbb225cf299db}\label{namespacetest___x_g_boost_acee7dc97d985fcce356dbb225cf299db}} 
+\index{test\_XGBoost@{test\_XGBoost}!test@{test}}
+\index{test@{test}!test\_XGBoost@{test\_XGBoost}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily def test\+\_\+\+XGBoost.\+test (\begin{DoxyParamCaption}\item[{}]{train\+\_\+data,  }\item[{}]{validation\+\_\+data,  }\item[{}]{test\+\_\+data,  }\item[{}]{unlabelled\+\_\+test\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetest___x_g_boost_a448e83be28384ef60de7114b62577c2a}\label{namespacetest___x_g_boost_a448e83be28384ef60de7114b62577c2a}} 
+\index{test\_XGBoost@{test\_XGBoost}!result@{result}}
+\index{result@{result}!test\_XGBoost@{test\_XGBoost}}
+\doxysubsubsection{\texorpdfstring{result}{result}}
+{\footnotesize\ttfamily def test\+\_\+\+XGBoost.\+result = \mbox{\hyperlink{namespacetest___x_g_boost_acee7dc97d985fcce356dbb225cf299db}{test}}(\mbox{\hyperlink{namespacetest___x_g_boost_a3ad36557691813581d8d84cae0f1bfd7}{train\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_a68ff29b69d2afab666a7b1e930f57b3e}{validation\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_ad92cb2c7f5269fb2dd833c3ac281f722}{test\+\_\+data}}, \mbox{\hyperlink{namespacetest___x_g_boost_a9b331ed004705fbd9710c4b692517ed6}{unlabelled\+\_\+test\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacetest___x_g_boost_a67a3711152149b0a114f261ed0a9ffdf}\label{namespacetest___x_g_boost_a67a3711152149b0a114f261ed0a9ffdf}} 
+\index{test\_XGBoost@{test\_XGBoost}!runtime@{runtime}}
+\index{runtime@{runtime}!test\_XGBoost@{test\_XGBoost}}
+\doxysubsubsection{\texorpdfstring{runtime}{runtime}}
+{\footnotesize\ttfamily tuple test\+\_\+\+XGBoost.\+runtime = (time.\+time() -\/ \mbox{\hyperlink{namespacetest___x_g_boost_a930197f098837c9166374226c6d43532}{start}}) / 60.\+0}
+
+\mbox{\Hypertarget{namespacetest___x_g_boost_a930197f098837c9166374226c6d43532}\label{namespacetest___x_g_boost_a930197f098837c9166374226c6d43532}} 
+\index{test\_XGBoost@{test\_XGBoost}!start@{start}}
+\index{start@{start}!test\_XGBoost@{test\_XGBoost}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily test\+\_\+\+XGBoost.\+start = time.\+time()}
+
+\mbox{\Hypertarget{namespacetest___x_g_boost_ad92cb2c7f5269fb2dd833c3ac281f722}\label{namespacetest___x_g_boost_ad92cb2c7f5269fb2dd833c3ac281f722}} 
+\index{test\_XGBoost@{test\_XGBoost}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!test\_XGBoost@{test\_XGBoost}}
+\doxysubsubsection{\texorpdfstring{test\_data}{test\_data}}
+{\footnotesize\ttfamily test\+\_\+\+XGBoost.\+test\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/GOLD.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___x_g_boost_a3ad36557691813581d8d84cae0f1bfd7}\label{namespacetest___x_g_boost_a3ad36557691813581d8d84cae0f1bfd7}} 
+\index{test\_XGBoost@{test\_XGBoost}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!test\_XGBoost@{test\_XGBoost}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily test\+\_\+\+XGBoost.\+train\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TRAIN.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___x_g_boost_a9b331ed004705fbd9710c4b692517ed6}\label{namespacetest___x_g_boost_a9b331ed004705fbd9710c4b692517ed6}} 
+\index{test\_XGBoost@{test\_XGBoost}!unlabelled\_test\_data@{unlabelled\_test\_data}}
+\index{unlabelled\_test\_data@{unlabelled\_test\_data}!test\_XGBoost@{test\_XGBoost}}
+\doxysubsubsection{\texorpdfstring{unlabelled\_test\_data}{unlabelled\_test\_data}}
+{\footnotesize\ttfamily test\+\_\+\+XGBoost.\+unlabelled\+\_\+test\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/TEST-\/UNLABELLED.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespacetest___x_g_boost_a68ff29b69d2afab666a7b1e930f57b3e}\label{namespacetest___x_g_boost_a68ff29b69d2afab666a7b1e930f57b3e}} 
+\index{test\_XGBoost@{test\_XGBoost}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!test\_XGBoost@{test\_XGBoost}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily test\+\_\+\+XGBoost.\+validation\+\_\+data = pd.\+read\+\_\+csv(\char`\"{}../DSLCC4 datasets/DSL-\/DEV.\+txt\char`\"{}, sep=\textquotesingle{}\textbackslash{}t\textquotesingle{}, header=None, names=\mbox{[}\textquotesingle{}text\textquotesingle{}, \textquotesingle{}label\textquotesingle{}\mbox{]})}
+
