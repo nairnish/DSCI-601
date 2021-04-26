@@ -29,13 +29,13 @@ DSLCC 4.0 Corpus
 
 This is the training and test data for the Discriminating between Similar Languages (DSL) task at VarDial 2017.
 
-The package contains the following files:
+#### The package contains the following files: ####
 
-DSL-TRAIN.txt 						- Training set for the DSL task
-DSL-DEV.txt 							- Development set for the DSL task
-DSL-DEV.txt 							- Unlabelled test set
-DSL-TEST-UNLABELLED.txt 	- Test set with gold labels
-README.txt 								- Brief description of the DSL data
+1. DSL-TRAIN.txt 						- Training set for the DSL task
+2. DSL-DEV.txt 							- Development set for the DSL task
+3. DSL-DEV.txt 							- Unlabelled test set
+4. DSL-TEST-UNLABELLED.txt 	- Test set with gold labels
+5. README.txt 								- Brief description of the DSL data
 
 Each line in the .txt files are tab-delimited in the format:
 sentence<tab>language-label
