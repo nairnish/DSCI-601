@@ -1,0 +1,38 @@
+\doxysection{/\+Users/neha/\+Documents/\+Semester\+\_\+2/\+Nisn\+Nair\+Repo/\+DSCI-\/601/601\+\_\+\+Project\+\_\+4grams\+\_\+char/pr-\/variant/\+DSL-\/pr-\/4gram.py File Reference}
+\label{_d_s_l-pr-4gram_8py}\index{/Users/neha/Documents/Semester\_2/NisnNairRepo/DSCI-\/601/601\_Project\_4grams\_char/pr-\/variant/DSL-\/pr-\/4gram.py@{/Users/neha/Documents/Semester\_2/NisnNairRepo/DSCI-\/601/601\_Project\_4grams\_char/pr-\/variant/DSL-\/pr-\/4gram.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ DSL-\/pr-\/4gram}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+start} = time.\+time()
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+train\+\_\+data} = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TRAIN.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)
+\item 
+list \textbf{ DSL-\/pr-\/4gram.\+portugese\+\_\+var} = [\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}]
+\item 
+list \textbf{ DSL-\/pr-\/4gram.\+spec\+\_\+chars}
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+y\+\_\+train} = train\+\_\+data[\char`\"{}lang\+\_\+variant\char`\"{}]
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+X\+\_\+train} = train\+\_\+data[\char`\"{}text\char`\"{}]
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+vectorizer} = Tfidf\+Vectorizer(analyzer=\textquotesingle{}char\textquotesingle{}, ngram\+\_\+range=(4,4))
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+test\+\_\+data} = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+y\+\_\+test} = test\+\_\+data[\char`\"{}lang\+\_\+variant\char`\"{}]
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+X\+\_\+test} = test\+\_\+data[\char`\"{}text\char`\"{}]
+\item 
+list \textbf{ DSL-\/pr-\/4gram.\+spec\+\_\+chars\+\_\+test}
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+clf} = SVC()
+\item 
+\textbf{ DSL-\/pr-\/4gram.\+predictions} = clf.\+predict(X\+\_\+test)
+\item 
+tuple \textbf{ DSL-\/pr-\/4gram.\+model\+\_\+runtime} = (time.\+time() -\/ start)
+\end{DoxyCompactItemize}

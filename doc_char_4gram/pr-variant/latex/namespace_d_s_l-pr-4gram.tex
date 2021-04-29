@@ -1,0 +1,136 @@
+\doxysection{DSL-\/pr-\/4gram Namespace Reference}
+\label{namespace_d_s_l-pr-4gram}\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ start} = time.\+time()
+\item 
+\textbf{ train\+\_\+data} = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TRAIN.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)
+\item 
+list \textbf{ portugese\+\_\+var} = [\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}]
+\item 
+list \textbf{ spec\+\_\+chars}
+\item 
+\textbf{ y\+\_\+train} = \textbf{ train\+\_\+data}[\char`\"{}lang\+\_\+variant\char`\"{}]
+\item 
+\textbf{ X\+\_\+train} = \textbf{ train\+\_\+data}[\char`\"{}text\char`\"{}]
+\item 
+\textbf{ vectorizer} = Tfidf\+Vectorizer(analyzer=\textquotesingle{}char\textquotesingle{}, ngram\+\_\+range=(4,4))
+\item 
+\textbf{ test\+\_\+data} = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)
+\item 
+\textbf{ y\+\_\+test} = \textbf{ test\+\_\+data}[\char`\"{}lang\+\_\+variant\char`\"{}]
+\item 
+\textbf{ X\+\_\+test} = \textbf{ test\+\_\+data}[\char`\"{}text\char`\"{}]
+\item 
+list \textbf{ spec\+\_\+chars\+\_\+test}
+\item 
+\textbf{ clf} = SVC()
+\item 
+\textbf{ predictions} = clf.\+predict(\textbf{ X\+\_\+test})
+\item 
+tuple \textbf{ model\+\_\+runtime} = (time.\+time() -\/ \textbf{ start})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{namespace_d_s_l-pr-4gram_a5f21c0d40d15a76b5e2b036bc9d40f38}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!clf@{clf}}
+\index{clf@{clf}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{clf}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+clf = SVC()}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_a3d9aea1702507859a911d2c5535d92b5}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!model\_runtime@{model\_runtime}}
+\index{model\_runtime@{model\_runtime}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{model\_runtime}
+{\footnotesize\ttfamily tuple DSL-\/pr-\/4gram.\+model\+\_\+runtime = (time.\+time() -\/ \textbf{ start})}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_a7774c15bf401caa8f9592307877619fc}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!portugese\_var@{portugese\_var}}
+\index{portugese\_var@{portugese\_var}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{portugese\_var}
+{\footnotesize\ttfamily list DSL-\/pr-\/4gram.\+portugese\+\_\+var = [\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}]}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_a4ad1ceb9a84ae047311aa51573a1382f}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!predictions@{predictions}}
+\index{predictions@{predictions}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{predictions}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+predictions = clf.\+predict(\textbf{ X\+\_\+test})}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_a49f00df9d992ecb5ba2481bb84854f8d}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!spec\_chars@{spec\_chars}}
+\index{spec\_chars@{spec\_chars}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{spec\_chars}
+{\footnotesize\ttfamily list DSL-\/pr-\/4gram.\+spec\+\_\+chars}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [\textcolor{stringliteral}{"{}!"{}}, \textcolor{stringliteral}{'"{}'}, \textcolor{stringliteral}{"{}\#"{}}, \textcolor{stringliteral}{"{}\%"{}}, \textcolor{stringliteral}{"{}\&"{}}, \textcolor{stringliteral}{"{}'"{}}, \textcolor{stringliteral}{"{}("{}}, \textcolor{stringliteral}{"{})"{}},}
+\DoxyCodeLine{2               \textcolor{stringliteral}{"{}*"{}}, \textcolor{stringliteral}{"{}+"{}}, \textcolor{stringliteral}{"{},"{}}, \textcolor{stringliteral}{"{}-\/"{}}, \textcolor{stringliteral}{"{}."{}}, \textcolor{stringliteral}{"{}/"{}}, \textcolor{stringliteral}{"{}:"{}}, \textcolor{stringliteral}{"{};"{}}, \textcolor{stringliteral}{"{}<"{}},}
+\DoxyCodeLine{3               \textcolor{stringliteral}{"{}="{}}, \textcolor{stringliteral}{"{}>"{}}, \textcolor{stringliteral}{"{}?"{}}, \textcolor{stringliteral}{"{}@"{}}, \textcolor{stringliteral}{"{}["{}}, \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}, \textcolor{stringliteral}{"{}]"{}}, \textcolor{stringliteral}{"{}\string^"{}}, \textcolor{stringliteral}{"{}\_"{}},}
+\DoxyCodeLine{4               \textcolor{stringliteral}{"{}`"{}}, \textcolor{stringliteral}{"{}\{"{}}, \textcolor{stringliteral}{"{}|"{}}, \textcolor{stringliteral}{"{}\}"{}}, \textcolor{stringliteral}{"{}\string~"{}}, \textcolor{stringliteral}{"{}–"{}}]}
+
+\end{DoxyCode}
+\mbox{\label{namespace_d_s_l-pr-4gram_ae113f4c45c073cbc3f6e94b746a169f7}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!spec\_chars\_test@{spec\_chars\_test}}
+\index{spec\_chars\_test@{spec\_chars\_test}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{spec\_chars\_test}
+{\footnotesize\ttfamily list DSL-\/pr-\/4gram.\+spec\+\_\+chars\+\_\+test}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [\textcolor{stringliteral}{"{}!"{}}, \textcolor{stringliteral}{'"{}'}, \textcolor{stringliteral}{"{}\#"{}}, \textcolor{stringliteral}{"{}\%"{}}, \textcolor{stringliteral}{"{}\&"{}}, \textcolor{stringliteral}{"{}'"{}}, \textcolor{stringliteral}{"{}("{}}, \textcolor{stringliteral}{"{})"{}},}
+\DoxyCodeLine{2               \textcolor{stringliteral}{"{}*"{}}, \textcolor{stringliteral}{"{}+"{}}, \textcolor{stringliteral}{"{},"{}}, \textcolor{stringliteral}{"{}-\/"{}}, \textcolor{stringliteral}{"{}."{}}, \textcolor{stringliteral}{"{}/"{}}, \textcolor{stringliteral}{"{}:"{}}, \textcolor{stringliteral}{"{};"{}}, \textcolor{stringliteral}{"{}<"{}},}
+\DoxyCodeLine{3               \textcolor{stringliteral}{"{}="{}}, \textcolor{stringliteral}{"{}>"{}}, \textcolor{stringliteral}{"{}?"{}}, \textcolor{stringliteral}{"{}@"{}}, \textcolor{stringliteral}{"{}["{}}, \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}, \textcolor{stringliteral}{"{}]"{}}, \textcolor{stringliteral}{"{}\string^"{}}, \textcolor{stringliteral}{"{}\_"{}},}
+\DoxyCodeLine{4               \textcolor{stringliteral}{"{}`"{}}, \textcolor{stringliteral}{"{}\{"{}}, \textcolor{stringliteral}{"{}|"{}}, \textcolor{stringliteral}{"{}\}"{}}, \textcolor{stringliteral}{"{}\string~"{}}, \textcolor{stringliteral}{"{}–"{}}]}
+
+\end{DoxyCode}
+\mbox{\label{namespace_d_s_l-pr-4gram_a7ffee12d587b1f2b3bae285eb866d191}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!start@{start}}
+\index{start@{start}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{start}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+start = time.\+time()}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_afa31d044c317d9d0207f117422873674}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{test\_data}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+test\+\_\+data = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_a83eee5e2abb82ebcef1451b624c847ec}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{train\_data}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+train\+\_\+data = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TRAIN.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_ac3124952c105de2fda16b5668f150082}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!vectorizer@{vectorizer}}
+\index{vectorizer@{vectorizer}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{vectorizer}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+vectorizer = Tfidf\+Vectorizer(analyzer=\textquotesingle{}char\textquotesingle{}, ngram\+\_\+range=(4,4))}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_a9ff11a3880957588658a51cfb04ed657}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!X\_test@{X\_test}}
+\index{X\_test@{X\_test}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{X\_test}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+X\+\_\+test = \textbf{ test\+\_\+data}[\char`\"{}text\char`\"{}]}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_a0291c7c523a57886994b5382d2ad1144}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!X\_train@{X\_train}}
+\index{X\_train@{X\_train}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{X\_train}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+X\+\_\+train = \textbf{ train\+\_\+data}[\char`\"{}text\char`\"{}]}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_ae9e689ae01b1fe397d06847f57a050d9}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!y\_test@{y\_test}}
+\index{y\_test@{y\_test}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{y\_test}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+y\+\_\+test = \textbf{ test\+\_\+data}[\char`\"{}lang\+\_\+variant\char`\"{}]}
+
+\mbox{\label{namespace_d_s_l-pr-4gram_a9b665c733233c695b22a8123d759b5dd}} 
+\index{DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}!y\_train@{y\_train}}
+\index{y\_train@{y\_train}!DSL-\/pr-\/4gram@{DSL-\/pr-\/4gram}}
+\doxysubsubsection{y\_train}
+{\footnotesize\ttfamily DSL-\/pr-\/4gram.\+y\+\_\+train = \textbf{ train\+\_\+data}[\char`\"{}lang\+\_\+variant\char`\"{}]}
+

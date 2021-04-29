@@ -1,0 +1,136 @@
+\doxysection{DSL-\/es-\/4gram-\/\+SVC Namespace Reference}
+\label{namespace_d_s_l-es-4gram-_s_v_c}\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ start} = time.\+time()
+\item 
+\textbf{ train\+\_\+data} = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TRAIN.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)
+\item 
+list \textbf{ spanish\+\_\+var} = [\textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}]
+\item 
+list \textbf{ spec\+\_\+chars}
+\item 
+\textbf{ y\+\_\+train} = \textbf{ train\+\_\+data}[\char`\"{}lang\+\_\+variant\char`\"{}]
+\item 
+\textbf{ X\+\_\+train} = \textbf{ train\+\_\+data}[\char`\"{}text\char`\"{}]
+\item 
+\textbf{ vectorizer} = Tfidf\+Vectorizer(analyzer=\textquotesingle{}char\textquotesingle{}, ngram\+\_\+range=(4,4))
+\item 
+\textbf{ test\+\_\+data} = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)
+\item 
+\textbf{ y\+\_\+test} = \textbf{ test\+\_\+data}[\char`\"{}lang\+\_\+variant\char`\"{}]
+\item 
+\textbf{ X\+\_\+test} = \textbf{ test\+\_\+data}[\char`\"{}text\char`\"{}]
+\item 
+list \textbf{ spec\+\_\+chars\+\_\+test}
+\item 
+\textbf{ clf} = SVC()
+\item 
+\textbf{ predictions} = clf.\+predict(\textbf{ X\+\_\+test})
+\item 
+tuple \textbf{ model\+\_\+runtime} = (time.\+time() -\/ \textbf{ start})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a051abe034db9c9f7e50a1f6b6bbe2c2a}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!clf@{clf}}
+\index{clf@{clf}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{clf}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+clf = SVC()}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_acf49a22c5b9721baee731824da39f678}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!model\_runtime@{model\_runtime}}
+\index{model\_runtime@{model\_runtime}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{model\_runtime}
+{\footnotesize\ttfamily tuple DSL-\/es-\/4gram-\/SVC.\+model\+\_\+runtime = (time.\+time() -\/ \textbf{ start})}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a9a6398273237880eecc81c01e677fdc1}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!predictions@{predictions}}
+\index{predictions@{predictions}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{predictions}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+predictions = clf.\+predict(\textbf{ X\+\_\+test})}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_acae9b2ca11852dc3ddc3e9238a33e52d}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!spanish\_var@{spanish\_var}}
+\index{spanish\_var@{spanish\_var}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{spanish\_var}
+{\footnotesize\ttfamily list DSL-\/es-\/4gram-\/SVC.\+spanish\+\_\+var = [\textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}]}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a4dd9a66a260af7d4b5af92e610d8ec7f}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!spec\_chars@{spec\_chars}}
+\index{spec\_chars@{spec\_chars}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{spec\_chars}
+{\footnotesize\ttfamily list DSL-\/es-\/4gram-\/SVC.\+spec\+\_\+chars}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [\textcolor{stringliteral}{"{}!"{}}, \textcolor{stringliteral}{'"{}'}, \textcolor{stringliteral}{"{}\#"{}}, \textcolor{stringliteral}{"{}\%"{}}, \textcolor{stringliteral}{"{}\&"{}}, \textcolor{stringliteral}{"{}'"{}}, \textcolor{stringliteral}{"{}("{}}, \textcolor{stringliteral}{"{})"{}},}
+\DoxyCodeLine{2               \textcolor{stringliteral}{"{}*"{}}, \textcolor{stringliteral}{"{}+"{}}, \textcolor{stringliteral}{"{},"{}}, \textcolor{stringliteral}{"{}-\/"{}}, \textcolor{stringliteral}{"{}."{}}, \textcolor{stringliteral}{"{}/"{}}, \textcolor{stringliteral}{"{}:"{}}, \textcolor{stringliteral}{"{};"{}}, \textcolor{stringliteral}{"{}<"{}},}
+\DoxyCodeLine{3               \textcolor{stringliteral}{"{}="{}}, \textcolor{stringliteral}{"{}>"{}}, \textcolor{stringliteral}{"{}?"{}}, \textcolor{stringliteral}{"{}@"{}}, \textcolor{stringliteral}{"{}["{}}, \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}, \textcolor{stringliteral}{"{}]"{}}, \textcolor{stringliteral}{"{}\string^"{}}, \textcolor{stringliteral}{"{}\_"{}},}
+\DoxyCodeLine{4               \textcolor{stringliteral}{"{}`"{}}, \textcolor{stringliteral}{"{}\{"{}}, \textcolor{stringliteral}{"{}|"{}}, \textcolor{stringliteral}{"{}\}"{}}, \textcolor{stringliteral}{"{}\string~"{}}, \textcolor{stringliteral}{"{}–"{}}]}
+
+\end{DoxyCode}
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a541f7382c87b6f1d79bb8086d1b1c24e}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!spec\_chars\_test@{spec\_chars\_test}}
+\index{spec\_chars\_test@{spec\_chars\_test}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{spec\_chars\_test}
+{\footnotesize\ttfamily list DSL-\/es-\/4gram-\/SVC.\+spec\+\_\+chars\+\_\+test}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  [\textcolor{stringliteral}{"{}!"{}}, \textcolor{stringliteral}{'"{}'}, \textcolor{stringliteral}{"{}\#"{}}, \textcolor{stringliteral}{"{}\%"{}}, \textcolor{stringliteral}{"{}\&"{}}, \textcolor{stringliteral}{"{}'"{}}, \textcolor{stringliteral}{"{}("{}}, \textcolor{stringliteral}{"{})"{}},}
+\DoxyCodeLine{2               \textcolor{stringliteral}{"{}*"{}}, \textcolor{stringliteral}{"{}+"{}}, \textcolor{stringliteral}{"{},"{}}, \textcolor{stringliteral}{"{}-\/"{}}, \textcolor{stringliteral}{"{}."{}}, \textcolor{stringliteral}{"{}/"{}}, \textcolor{stringliteral}{"{}:"{}}, \textcolor{stringliteral}{"{};"{}}, \textcolor{stringliteral}{"{}<"{}},}
+\DoxyCodeLine{3               \textcolor{stringliteral}{"{}="{}}, \textcolor{stringliteral}{"{}>"{}}, \textcolor{stringliteral}{"{}?"{}}, \textcolor{stringliteral}{"{}@"{}}, \textcolor{stringliteral}{"{}["{}}, \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}, \textcolor{stringliteral}{"{}]"{}}, \textcolor{stringliteral}{"{}\string^"{}}, \textcolor{stringliteral}{"{}\_"{}},}
+\DoxyCodeLine{4               \textcolor{stringliteral}{"{}`"{}}, \textcolor{stringliteral}{"{}\{"{}}, \textcolor{stringliteral}{"{}|"{}}, \textcolor{stringliteral}{"{}\}"{}}, \textcolor{stringliteral}{"{}\string~"{}}, \textcolor{stringliteral}{"{}–"{}}]}
+
+\end{DoxyCode}
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_ab51d3ab33506354e9482551751115af1}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!start@{start}}
+\index{start@{start}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{start}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+start = time.\+time()}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a5a8c69ffe09b6689e6fb798f93d0c020}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{test\_data}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+test\+\_\+data = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a9be006ce35eda3379475a367b6faf598}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{train\_data}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+train\+\_\+data = pd.\+read\+\_\+csv(\textquotesingle{}/Users/neha/Documents/Semester\+\_\+2/601Trail\+Runs/DSCI-\/601-\/DSL/dslcc4/DSL-\/TRAIN.\+txt\textquotesingle{}, delimiter = \char`\"{}\textbackslash{}t\char`\"{}, header = None)}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a7c4e917e3757552feaa9c23e603dd872}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!vectorizer@{vectorizer}}
+\index{vectorizer@{vectorizer}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{vectorizer}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+vectorizer = Tfidf\+Vectorizer(analyzer=\textquotesingle{}char\textquotesingle{}, ngram\+\_\+range=(4,4))}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a59db75d21723303a5f9b82eddb2ec3ac}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!X\_test@{X\_test}}
+\index{X\_test@{X\_test}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{X\_test}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+X\+\_\+test = \textbf{ test\+\_\+data}[\char`\"{}text\char`\"{}]}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a2a0f9924312f65243c35ee319b5d8d7b}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!X\_train@{X\_train}}
+\index{X\_train@{X\_train}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{X\_train}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+X\+\_\+train = \textbf{ train\+\_\+data}[\char`\"{}text\char`\"{}]}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a840df9c4a7d88669b8c9d4a2d58b7686}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!y\_test@{y\_test}}
+\index{y\_test@{y\_test}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{y\_test}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+y\+\_\+test = \textbf{ test\+\_\+data}[\char`\"{}lang\+\_\+variant\char`\"{}]}
+
+\mbox{\label{namespace_d_s_l-es-4gram-_s_v_c_a0143bc134bb1653a9a1b292f71aef522}} 
+\index{DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}!y\_train@{y\_train}}
+\index{y\_train@{y\_train}!DSL-\/es-\/4gram-\/SVC@{DSL-\/es-\/4gram-\/SVC}}
+\doxysubsubsection{y\_train}
+{\footnotesize\ttfamily DSL-\/es-\/4gram-\/SVC.\+y\+\_\+train = \textbf{ train\+\_\+data}[\char`\"{}lang\+\_\+variant\char`\"{}]}
+
