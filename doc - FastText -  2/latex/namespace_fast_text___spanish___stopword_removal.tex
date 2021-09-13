@@ -1,0 +1,110 @@
+\hypertarget{namespace_fast_text___spanish___stopword_removal}{}\doxysection{Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal Namespace Reference}
+\label{namespace_fast_text___spanish___stopword_removal}\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a4fdd1e946a0228fe970c34f7eaf5b4b5}{preprocess}} (path)
+\item 
+def \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a54a1164bfd0a6c7e893187e37145c698}{stopwords\+\_\+removal}} (df)
+\item 
+def \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a84b5d0b30c69518b65791cc8c0ff2f44}{convert\+\_\+data}} (df, filename)
+\item 
+def \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_ace5c7242eb391d0ecc95f02764b3e2be}{fast\+Text\+\_\+train\+\_\+predict}} (filename, filename\+\_\+test)
+\item 
+def \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a357bec0f1b50a15ae5bcbdf936baf8a0}{print\+\_\+results}} (N, p, r)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_aba7107b15f99595914f6c591568337a6}{train\+\_\+path}} = \textquotesingle{}C\+:/Users/Yash/Downloads/DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a0046e2a109fb1b7dd2ad365d0aeeaa29}{dev\+\_\+path}} = \textquotesingle{}C\+:/Users/Yash/Downloads/DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a524ca2e218f624c6164a0e2a21f32a2e}{test\+\_\+path}} = \textquotesingle{}C\+:/Users/Yash/Downloads/DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+def \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_afff4e954615336ae6c5f8d3c33c854d7}{df\+\_\+train}} = \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a4fdd1e946a0228fe970c34f7eaf5b4b5}{preprocess}}(\mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_aba7107b15f99595914f6c591568337a6}{train\+\_\+path}})
+\item 
+def \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a39ce7fa8f27d3d8c302e05047c8b8fa0}{df\+\_\+test}} = \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a4fdd1e946a0228fe970c34f7eaf5b4b5}{preprocess}}(\mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a524ca2e218f624c6164a0e2a21f32a2e}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a7e595f88dd2ded66dbcefe1134cb1a0e}{start}} = time.\+time()
+\item 
+\mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_abf449a23edb5009758daf99f205b1bd5}{end}} = time.\+time()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_a84b5d0b30c69518b65791cc8c0ff2f44}\label{namespace_fast_text___spanish___stopword_removal_a84b5d0b30c69518b65791cc8c0ff2f44}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!convert\_data@{convert\_data}}
+\index{convert\_data@{convert\_data}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{convert\_data()}{convert\_data()}}
+{\footnotesize\ttfamily def Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+convert\+\_\+data (\begin{DoxyParamCaption}\item[{}]{df,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_ace5c7242eb391d0ecc95f02764b3e2be}\label{namespace_fast_text___spanish___stopword_removal_ace5c7242eb391d0ecc95f02764b3e2be}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!fastText\_train\_predict@{fastText\_train\_predict}}
+\index{fastText\_train\_predict@{fastText\_train\_predict}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{fastText\_train\_predict()}{fastText\_train\_predict()}}
+{\footnotesize\ttfamily def Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+fast\+Text\+\_\+train\+\_\+predict (\begin{DoxyParamCaption}\item[{}]{filename,  }\item[{}]{filename\+\_\+test }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_a4fdd1e946a0228fe970c34f7eaf5b4b5}\label{namespace_fast_text___spanish___stopword_removal_a4fdd1e946a0228fe970c34f7eaf5b4b5}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily def Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+preprocess (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_a357bec0f1b50a15ae5bcbdf936baf8a0}\label{namespace_fast_text___spanish___stopword_removal_a357bec0f1b50a15ae5bcbdf936baf8a0}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!print\_results@{print\_results}}
+\index{print\_results@{print\_results}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{print\_results()}{print\_results()}}
+{\footnotesize\ttfamily def Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+print\+\_\+results (\begin{DoxyParamCaption}\item[{}]{N,  }\item[{}]{p,  }\item[{}]{r }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_a54a1164bfd0a6c7e893187e37145c698}\label{namespace_fast_text___spanish___stopword_removal_a54a1164bfd0a6c7e893187e37145c698}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!stopwords\_removal@{stopwords\_removal}}
+\index{stopwords\_removal@{stopwords\_removal}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{stopwords\_removal()}{stopwords\_removal()}}
+{\footnotesize\ttfamily def Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+stopwords\+\_\+removal (\begin{DoxyParamCaption}\item[{}]{df }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_a0046e2a109fb1b7dd2ad365d0aeeaa29}\label{namespace_fast_text___spanish___stopword_removal_a0046e2a109fb1b7dd2ad365d0aeeaa29}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!dev\_path@{dev\_path}}
+\index{dev\_path@{dev\_path}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{dev\_path}{dev\_path}}
+{\footnotesize\ttfamily string Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+dev\+\_\+path = \textquotesingle{}C\+:/Users/Yash/Downloads/DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_a39ce7fa8f27d3d8c302e05047c8b8fa0}\label{namespace_fast_text___spanish___stopword_removal_a39ce7fa8f27d3d8c302e05047c8b8fa0}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!df\_test@{df\_test}}
+\index{df\_test@{df\_test}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{df\_test}{df\_test}}
+{\footnotesize\ttfamily def Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+df\+\_\+test = \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a4fdd1e946a0228fe970c34f7eaf5b4b5}{preprocess}}(\mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a524ca2e218f624c6164a0e2a21f32a2e}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_afff4e954615336ae6c5f8d3c33c854d7}\label{namespace_fast_text___spanish___stopword_removal_afff4e954615336ae6c5f8d3c33c854d7}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!df\_train@{df\_train}}
+\index{df\_train@{df\_train}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{df\_train}{df\_train}}
+{\footnotesize\ttfamily def Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+df\+\_\+train = \mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_a4fdd1e946a0228fe970c34f7eaf5b4b5}{preprocess}}(\mbox{\hyperlink{namespace_fast_text___spanish___stopword_removal_aba7107b15f99595914f6c591568337a6}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_abf449a23edb5009758daf99f205b1bd5}\label{namespace_fast_text___spanish___stopword_removal_abf449a23edb5009758daf99f205b1bd5}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!end@{end}}
+\index{end@{end}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+end = time.\+time()}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_a7e595f88dd2ded66dbcefe1134cb1a0e}\label{namespace_fast_text___spanish___stopword_removal_a7e595f88dd2ded66dbcefe1134cb1a0e}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!start@{start}}
+\index{start@{start}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+start = time.\+time()}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_a524ca2e218f624c6164a0e2a21f32a2e}\label{namespace_fast_text___spanish___stopword_removal_a524ca2e218f624c6164a0e2a21f32a2e}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+test\+\_\+path = \textquotesingle{}C\+:/Users/Yash/Downloads/DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_fast_text___spanish___stopword_removal_aba7107b15f99595914f6c591568337a6}\label{namespace_fast_text___spanish___stopword_removal_aba7107b15f99595914f6c591568337a6}} 
+\index{FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!FastText\_Spanish\_StopwordRemoval@{FastText\_Spanish\_StopwordRemoval}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string Fast\+Text\+\_\+\+Spanish\+\_\+\+Stopword\+Removal.\+train\+\_\+path = \textquotesingle{}C\+:/Users/Yash/Downloads/DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
