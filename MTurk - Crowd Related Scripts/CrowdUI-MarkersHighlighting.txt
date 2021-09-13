@@ -1,0 +1,52 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+    <!-- The crowd-classifier element will create a tool for the Worker to select the
+           correct answer to your question -->
+    <crowd-classifier
+       name="Language Variety"
+      categories="['pt-BR', 'pt-PT']"
+      header="What language variety of Portuguese does this text represent?"
+    >
+
+      <classification-target>
+        <!-- The text you want classified will be substituted for the "text" variable when you
+               publish a batch with a CSV input file containing multiple text items  -->
+       
+        <br>
+        <br>
+        <crowd-entity-annotation
+  name="markers-annotation"
+  header="Highlight parts of the text below"
+  labels="[{'label': 'marker1', 'shortDisplayName': 'mark1', 'fullDisplayName': 'Marker1'}, {'label': 'marker2', 'shortDisplayName': 'mark2', 'fullDisplayName': 'Marker2'}, {'label': 'marker3', 'shortDisplayName': 'mark3', 'fullDisplayName': 'Marker3'}]"
+  text= ${text}
+    >
+      </classification-target>
+
+     <!-- Use the short-instructions section for quick instructions that the Worker
+            will see while working on the task. Including some basic examples of
+            good and bad answers here can help get good results. You can include
+            any HTML here. -->
+      <short-instructions>
+        Choose the correct variant of the text given.
+      </short-instructions>
+
+
+      <!-- Use the full-instructions section for more detailed instructions that the
+            Worker can open while working on the task. Including more detailed
+            instructions and additional examples of good and bad answers here can
+            help get good results. You can include any HTML here. -->
+      <full-instructions header="Language Variety Detection Analysis Instructions">
+         <p><strong>pt-PT</strong> European Portuguese Variety </p>
+        <p><strong>pt-BR</strong> Brazilian Portuguese Variety</p>
+        <p>**If the markers of the varieties is mixed for a text, use your judgement to choose the language category.</p>
+      </full-instructions>
+
+    </crowd-classifier>
+</crowd-form> 
