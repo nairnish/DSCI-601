@@ -1,7 +1,7 @@
 import time
 import sys
 import pandas as pd
-from project_5 import my_model
+# from project_5 import my_model
 from sklearn.compose import ColumnTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import StratifiedKFold, train_test_split
@@ -12,25 +12,51 @@ from sklearn import preprocessing
 from tensorflow import keras
 from keras.preprocessing import text, sequence
 from keras import layers, models, optimizers
+from keras.models import Sequential
+from keras import layers
 from sklearn import metrics
 import numpy as np
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn import model_selection
 import csv
+import tensorflow as tf
+from keras.backend import clear_session
+import os
 
 
-def create_model_architecture(input_size):
-    # create input layer
-    input_layer = layers.Input((input_size,), sparse=True)
+def create_model_architecture(X_train, y_train, X_test, y_test):
 
-    # create hidden layer
-    hidden_layer = layers.Dense(100, activation="relu")(input_layer)
+    input_dim = X_train.shape[1]  # Number of features
 
-    # create output layer
-    output_layer = layers.Dense(1, activation="sigmoid")(hidden_layer)
+    model = Sequential()
+    model.add(layers.Dense(10, input_dim=input_dim, activation='relu'))
+    model.add(layers.Dense(1, activation='sigmoid'))
 
-    classifier = models.Model(inputs=input_layer, outputs=output_layer)
-    classifier.compile(optimizer=optimizers.Adam(), loss='binary_crossentropy')
+    model.compile(loss='binary_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
+    model.summary()
+
+    history = model.fit(X_train, y_train, epochs = 100, verbose = False, validation_data = (X_test, y_test),batch_size = 10)
+
+    clear_session()
+
+    loss, accuracy = model.evaluate(X_train, y_train, verbose=False)
+    print("Training Accuracy: {:.4f}".format(accuracy))
+    loss, accuracy = model.evaluate(X_test, y_test, verbose=False)
+    print("Testing Accuracy:  {:.4f}".format(accuracy))
+
+
+
+    # # create input layer
+    # input_layer = layers.Input((input_size,), sparse=True)
+    #
+    # # create hidden layer
+    # hidden_layer = layers.Dense(10, activation="relu")(input_layer)
+    #
+    # # create output layer
+    # output_layer = layers.Dense(1, activation="sigmoid")(hidden_layer)
+    #
+    # classifier = models.Model(inputs=input_layer, outputs=output_layer)
+    # classifier.compile(optimizer=optimizers.Adam(), loss='binary_crossentropy')
     return classifier
 
 
@@ -48,6 +74,7 @@ def train_model(classifier, feature_vector_train, label, feature_vector_valid, i
 
 
 if __name__ == "__main__":
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
     start = time.time()
     # Load data
     train_data = pd.read_csv("../DSLCC4 datasets/DSL-TRAIN.txt", sep='\t', header=None, names=['text', 'label'])
@@ -81,17 +108,18 @@ if __name__ == "__main__":
     xvalid_tfidf = tfidf_vect.transform(X_test).toarray()
 
     # create a tokenizer
-    token = text.Tokenizer()
-    token.fit_on_texts(train_data['text'])
-    word_index = token.word_index
+    # token = text.Tokenizer()
+    # token.fit_on_texts(train_data['text'])
+    # word_index = token.word_index
 
     # convert text to sequence of tokens and pad them to ensure equal length vectors
-    train_seq_x = sequence.pad_sequences(token.texts_to_sequences(X_train), maxlen=70)
-    valid_seq_x = sequence.pad_sequences(token.texts_to_sequences(X_test), maxlen=70)
+    # train_seq_x = sequence.pad_sequences(token.texts_to_sequences(X_train), maxlen=70)
+    # valid_seq_x = sequence.pad_sequences(token.texts_to_sequences(X_test), maxlen=70)
 
-    classifier = create_model_architecture(xtrain_tfidf.shape[1])
-    accuracy = train_model(classifier, xtrain_tfidf, train_y, xvalid_tfidf, is_neural_net=True)
-    print("NN, Ngram Level TF IDF Vectors", accuracy)
+    # classifier = create_model_architecture(xtrain_tfidf.shape[1])
+    classifier = create_model_architecture(xtrain_tfidf, train_y, xvalid_tfidf, valid_y)
+    # accuracy = train_model(classifier, xtrain_tfidf, train_y, xvalid_tfidf, is_neural_net=True)
+    # print("NN, Ngram Level TF IDF Vectors", accuracy)
 
     runtime = (time.time() - start) / 60.0
     print(runtime)
