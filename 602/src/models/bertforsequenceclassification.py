@@ -8,56 +8,33 @@ Original file is located at
 """
 
 from google.colab import drive
+from data_load import load_data
+import numpy as np
+import pandas as pd
+import torch
+import time
+import datetime
+import random
 drive.mount('/content/drive')
 
 # Commented out IPython magic to ensure Python compatibility.
 # %cd drive
 
-ls
-
-import pandas as pd
-
 train_path = 'MyDrive/DSLCCv4.0_1/DSL-TRAIN.txt'
 dev_path = 'MyDrive/DSLCCv4.0_1/DSL-DEV.txt'
 test_path = 'MyDrive/DSLCCv4.0_1/DSL-TEST-GOLD.txt'
 
-"""
-Pre-process data 
-@param: path : file path
-@return: df : DataFrame with the DSLCC - train,test (gold) or dev
-"""
-def preprocess(path):
-    data = []
-    #Reading contents from file 
-    file_contents = open(path,"r",encoding="utf-8")
-    #Appending read data to the file
-    data.append(file_contents.read())
-    text = []
-    language = []
-    #splitting each instance by \n
-    temp = data[0].split("\n")
-    for i in range(len(temp)):
-        #putting each instance's text into one column
-        text.append(temp[i].split("\t")[0])
-        #putting language variety into second column
-        language.append(temp[i].split("\t")[1])
-    #making the DataFrame    
-    df = pd.DataFrame(data={'text':text,'language':language})
-    return df
-
-df_train = preprocess(train_path)
-df_test = preprocess(test_path)
+data = load_data()
+df_train = data.load(train_path)
+df_test = data.load(test_path)
+df_val = data.load(dev_path)
 
 df_train = df_train[df_train["language"].isin(["pt-BR","pt-PT"])]
 df_test =  df_test[df_test["language"].isin(["pt-BR","pt-PT"])]
 
-df_train
-
-df_val = preprocess(dev_path)
 
 df_val = df_val[df_val["language"].isin(["pt-BR","pt-PT"])]
 
-df_val
 
 pip install transformers
 
@@ -187,10 +164,6 @@ validation_labels = df_val["language"]
 
 validation_labels
 
-import numpy as np
-
-import torch
-
 train_inputs = torch.tensor(np.array(train_inputs))
 
 map1 = {'pt-BR':0,'pt-PT':1}
@@ -271,17 +244,12 @@ print('Found GPU at: {}'.format(device_name))
 
 device = cuda0
 
-import numpy as np
-
 # Function to calculate the accuracy of our predictions vs labels
 def flat_accuracy(preds, labels):
     pred_flat = np.argmax(preds, axis=1).flatten()
     labels_flat = labels.flatten()
     return np.sum(pred_flat == labels_flat) / len(labels_flat)
 #Creating the helper function to have a watch on elapsed time
-
-import time
-import datetime
 
 def format_time(elapsed):
     '''
@@ -294,11 +262,8 @@ def format_time(elapsed):
     return str(datetime.timedelta(seconds=elapsed_rounded))
 #Let's start the training process
 
-import random
-
 # This training code is based on the `run_glue.py` script here:
 # https://github.com/huggingface/transformers/blob/5bfcd0485ece086ebcbed2d008813037968a9e58/examples/run_glue.py#L128
-
 
 # Set the seed value all over the place to make this reproducible.
 seed_val = 42
