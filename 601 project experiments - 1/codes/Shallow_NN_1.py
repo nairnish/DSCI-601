@@ -51,12 +51,12 @@ if __name__ == "__main__":
     model.add(layers.Dense(10, input_dim=input_dim, activation='relu'))
     model.add(layers.Dense(5, activation='softmax'))
     model.compile(loss='binary_crossentropy',
-                  optimizer='SGD',
+                  optimizer='adam',
                   metrics=['accuracy'])
     model.summary()
 
     history = model.fit(X_train, y_train,
-                        epochs=50,
+                        epochs=10,
                         verbose=True,
                         validation_data=(X_test, y_test),
                         batch_size=10)
