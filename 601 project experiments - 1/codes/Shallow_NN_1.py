@@ -40,15 +40,15 @@ if __name__ == "__main__":
 
     sentences_train, sentences_test, y_train, y_test = train_test_split(sentences, y, test_size=0.25, random_state=1000)
 
-    vectorizer = CountVectorizer()
+    vectorizer = TfidfVectorizer()
     vectorizer.fit(sentences_train)
-    X_train = vectorizer.transform(sentences_train)
-    X_test = vectorizer.transform(sentences_test)
+    X_train = vectorizer.transform(sentences_train).todense()
+    X_test = vectorizer.transform(sentences_test).todense()
 
     input_dim = X_train.shape[1]  # Number of features
 
     model = Sequential()
-    model.add(layers.Dense(10, input_dim=input_dim, activation='tanh'))
+    model.add(layers.Dense(10, input_dim=input_dim, activation='relu'))
     model.add(layers.Dense(5, activation='softmax'))
     model.compile(loss='binary_crossentropy',
                   optimizer='SGD',
