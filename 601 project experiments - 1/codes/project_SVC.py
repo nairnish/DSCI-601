@@ -53,9 +53,35 @@ class my_model():
     @:param - y is the dependent class label in the dataset which is the language variant label
     '''
 
-    def fit(self, X, y):
+    def fit(self, X, y, testX, testY):
         # Data cleaning
         X = self.clean_data(X)
+        testX = self.clean_data(testX)
+
+        vectorizer = TfidfVectorizer()
+        trainX = vectorizer.fit_transform(X)
+        X_test = vectorizer.transform(testX)
+
+        # initialize model and define the space of the hyperparameters to
+        # perform the grid-search over
+        model = SVR()
+        kernel = ["linear", "rbf", "sigmoid", "poly"]
+        tolerance = [1e-3, 1e-4, 1e-5, 1e-6]
+        C = [1, 1.5, 2, 2.5, 3]
+        grid = dict(kernel=kernel, tol=tolerance, C=C)
+
+        # initialize a cross-validation fold and perform a grid-search to
+        # tune the hyperparameters
+        print("[INFO] grid searching over the hyperparameters...")
+        cvFold = RepeatedKFold(n_splits=10, n_repeats=3, random_state=1)
+        gridSearch = GridSearchCV(estimator=model, param_grid=grid, n_jobs=-1,
+                                  cv=cvFold, scoring="neg_mean_squared_error")
+        searchResults = gridSearch.fit(trainX, y)
+        # extract the best model and evaluate it
+        print("[INFO] evaluating...")
+        bestModel = searchResults.best_estimator_
+        print("R2: {:.2f}".format(bestModel.score(X_test, testY)))
+
         # Only keeping required text features
         required_text_features = ['new_text']
         # Vectorizing text data using TF-IDF vectorizer
