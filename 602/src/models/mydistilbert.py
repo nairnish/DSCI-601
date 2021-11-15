@@ -492,4 +492,18 @@ for batch in prediction_dataloader:
   predictions.append(logits)
   true_labels.append(label_ids)
 
+def evaluate(y_true,predictions):
+  predictions_arr = []
+  for i in predictions: 
+      for j in i:
+        print(j)
+        predictions_arr.append(np.argmax(j))
+  y_true_arr = []
+  for i in true_labels:
+    for j in i:
+      y_true_arr.append(j)
+  return predictions_arr,y_true_arr
+
+
+prediction_arr,y_true_arr = evaluate(true_labels,predictions)
 
