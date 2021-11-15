@@ -9,43 +9,21 @@ Original file is located at
 
 from google.colab import drive
 drive.mount('/content/drive')
-
-# Commented out IPython magic to ensure Python compatibility.
-# %cd drive
-
+from data_load import load_data
+import numpy as np
 import pandas as pd
+import torch
+import time
+import datetime
+import random
 
 train_path = 'MyDrive/DSLCCv4.0_1/DSL-TRAIN.txt'
 dev_path = 'MyDrive/DSLCCv4.0_1/DSL-DEV.txt'
 test_path = 'MyDrive/DSLCCv4.0_1/DSL-TEST-GOLD.txt'
 
-"""
-Pre-process data 
-@param: path : file path
-@return: df : DataFrame with the DSLCC - train,test (gold) or dev
-"""
-def preprocess(path):
-    data = []
-    #Reading contents from file 
-    file_contents = open(path,"r",encoding="utf-8")
-    #Appending read data to the file
-    data.append(file_contents.read())
-    text = []
-    language = []
-    #splitting each instance by \n
-    temp = data[0].split("\n")
-    for i in range(len(temp)):
-        #putting each instance's text into one column
-        text.append(temp[i].split("\t")[0])
-        #putting language variety into second column
-        language.append(temp[i].split("\t")[1])
-    #making the DataFrame    
-    df = pd.DataFrame(data={'text':text,'language':language})
-    return df
 
 df_train = preprocess(train_path)
 df_test = preprocess(test_path)
-
 df_val = preprocess(dev_path)
 
 df_train = df_train[df_train["language"].isin(["pt-BR","pt-PT"])]
@@ -65,8 +43,6 @@ py.init_notebook_mode(connected=True)
 # Others
 import nltk
 import string
-import numpy as np
-import pandas as pd
 from nltk.corpus import stopwords
 
 from sklearn.manifold import TSNE
