@@ -56,7 +56,7 @@ if __name__ == "__main__":
     model.summary()
 
     history = model.fit(X_train, y_train,
-                        epochs=10,
+                        epochs=100,
                         verbose=True,
                         validation_data=(X_test, y_test),
                         batch_size=10)
