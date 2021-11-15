@@ -48,15 +48,15 @@ if __name__ == "__main__":
     input_dim = X_train.shape[1]  # Number of features
 
     model = Sequential()
-    model.add(layers.Dense(10, input_dim=input_dim, activation='tanh'))
+    model.add(layers.Dense(10, input_dim=input_dim, activation='relu'))
     model.add(layers.Dense(5, activation='softmax'))
     model.compile(loss='binary_crossentropy',
-                  optimizer='adam',
+                  optimizer='SGD',
                   metrics=['accuracy'])
     model.summary()
 
     history = model.fit(X_train, y_train,
-                        epochs=10,
+                        epochs=50,
                         verbose=True,
                         validation_data=(X_test, y_test),
                         batch_size=10)
