@@ -67,6 +67,16 @@ class feature_reduction():
     @return: feature_set 
     '''
     def column_transformer(df):
+        # Only keeping required text features
+        required_text_features = ['new_text']
+        # Vectorizing text data using TF-IDF vectorizer
+        text_transformer = Pipeline(steps=[('tfidf', TfidfVectorizer(ngram_range=(1,2)))])
+        preprocessor = ColumnTransformer(
+            transformers=[
+                *[(feature_name, text_transformer, feature_name)
+                  for feature_name in required_text_features]
+            ]
+        )
 
-        return feature_set
+        return preprocessor
 
