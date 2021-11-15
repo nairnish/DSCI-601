@@ -62,7 +62,7 @@ class feature_reduction():
 
 
     '''
-    Column Transformer (still having doubts about this)
+    Column Transformer
     @param: df
     @return: feature_set 
     '''
