@@ -28,9 +28,9 @@ if __name__ == "__main__":
     # The maximum number of words to be used. (most frequent)
     MAX_NB_WORDS = 50000
     # Max number of words in each complaint.
-    MAX_SEQUENCE_LENGTH = 250
+    MAX_SEQUENCE_LENGTH = 500
     # This is fixed.
-    EMBEDDING_DIM = 100
+    EMBEDDING_DIM = 500
     tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
     tokenizer.fit_on_texts(rslt_df['text'].values)
     word_index = tokenizer.word_index
