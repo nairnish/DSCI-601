@@ -48,7 +48,7 @@ if __name__ == "__main__":
     input_dim = X_train.shape[1]  # Number of features
 
     model = Sequential()
-    model.add(layers.Dense(10, input_dim=input_dim, activation='relu'))
+    model.add(layers.Dense(10, input_dim=input_dim, activation='tanh'))
     model.add(layers.Dense(5, activation='softmax'))
     model.compile(loss='binary_crossentropy',
                   optimizer='SGD',
