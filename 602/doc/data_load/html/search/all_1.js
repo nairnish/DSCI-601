@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['feature_5ftest_4',['feature_test',['../namespacemain.html#aa5a914e5b6c1715fd4c09d97aa0238ed',1,'main']]],
-  ['feature_5ftrain_5',['feature_train',['../namespacemain.html#a5501585d300c3299858987fc88f6d2ea',1,'main']]]
+  ['load_1',['load',['../classload__data_1_1load__data.html#a8221e91e200833750a878086738a869b',1,'load_data::load_data']]],
+  ['load_5fdata_2',['load_data',['../namespaceload__data.html',1,'load_data'],['../classload__data_1_1load__data.html',1,'load_data.load_data']]],
+  ['load_5fdata_2epy_3',['load_data.py',['../load__data_8py.html',1,'']]]
 ];

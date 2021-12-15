@@ -1,0 +1,72 @@
+\hypertarget{_l_s_t_m_c_n_nmodel_8py}{}\doxysection{LSTMCNNmodel.\+py File Reference}
+\label{_l_s_t_m_c_n_nmodel_8py}\index{LSTMCNNmodel.py@{LSTMCNNmodel.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel}{LSTMCNNmodel}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a1311705eef1081bebe348139a0fcd8b9}{LSTMCNNmodel.\+train\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac7df377a6ddc2c7aef926fbfb16b70f4}{LSTMCNNmodel.\+val\+\_\+path}} = \textquotesingle{}../../data/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_afc307fed456280dd69f004ba59335a25}{LSTMCNNmodel.\+test\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a179e612a4f5510e1d3f80603364f8c16}{LSTMCNNmodel.\+train\+\_\+data}} = load\+\_\+data(train\+\_\+path)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a05b000abc1e1310e306d097a2d4541ae}{LSTMCNNmodel.\+validation\+\_\+data}} = load\+\_\+data(val\+\_\+path)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_addfec07728b0672ca3e28ed9b3e39d1a}{LSTMCNNmodel.\+test\+\_\+data}} = load\+\_\+data(test\+\_\+path)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a62f30e0616914fa54bffe023aaac730a}{LSTMCNNmodel.\+df}} = pd.\+concat(\mbox{[}train\+\_\+data, validation\+\_\+data\mbox{]}, ignore\+\_\+index=True)
+\item 
+list \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a70acfdb9ada4f5bd3a497900c8577e7d}{LSTMCNNmodel.\+req\+\_\+labels}} = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a91e9c133df387e1b2d4a9f5e10235650}{LSTMCNNmodel.\+rslt\+\_\+df}} = df\mbox{[}df.\+label.\+isin(req\+\_\+labels)\mbox{]}
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac788c790ba69614a3c991ea61d09a8b5}{LSTMCNNmodel.\+MAX\+\_\+\+NB\+\_\+\+WORDS}} = 50000
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a8ad669212bc0ef098093dd58b5e54aa4}{LSTMCNNmodel.\+MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}} = 250
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a223b0f76cc36b63cb1d527dd82d59636}{LSTMCNNmodel.\+EMBEDDING\+\_\+\+DIM}} = 100
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a7f23b9fcdd4e9ec86d87bdcf40388a21}{LSTMCNNmodel.\+tokenizer}} = Tokenizer(num\+\_\+words=MAX\+\_\+\+NB\+\_\+\+WORDS, filters=\textquotesingle{}!\char`\"{}\#\$\%\&()$\ast$+,-\/./\+:;$<$=$>$?@\mbox{[}\textbackslash{}\mbox{]}$^\wedge$\+\_\+\`{}\{$\vert$\}$\sim$\textquotesingle{}, lower=True)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac8f1da43c08e3c988cfb8502c268d237}{LSTMCNNmodel.\+word\+\_\+index}} = tokenizer.\+word\+\_\+index
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a409ac164e22831a7bad72a4fe09e1ef6}{LSTMCNNmodel.\+X}} = tokenizer.\+texts\+\_\+to\+\_\+sequences(rslt\+\_\+df\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}.values)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_af8275922ca3d8fea5e9a7becb5e78233}{LSTMCNNmodel.\+Y}} = pd.\+get\+\_\+dummies(rslt\+\_\+df\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}).values
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a25d4a47c2a93ab9cddb46da1df07e9c3}{LSTMCNNmodel.\+top\+\_\+words}} = 5000
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac26997b6c3318800023559c0fe4c7851}{LSTMCNNmodel.\+X\+\_\+train}} = sequence.\+pad\+\_\+sequences(X\+\_\+train, maxlen=MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ad5661b3dc3d13c8708d540da3c562571}{LSTMCNNmodel.\+X\+\_\+test}} = sequence.\+pad\+\_\+sequences(X\+\_\+test, maxlen=MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac2a56536ab39cf96e313914aac4ac996}{LSTMCNNmodel.\+y\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_aa98803eb37d38ea98fa5c7c8b085248d}{LSTMCNNmodel.\+y\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_aa41fdbfb60deff1f48e959a8dd55ba46}{LSTMCNNmodel.\+test\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a296e8db3ae8a0f61c63dea135cc4e8ec}{LSTMCNNmodel.\+random\+\_\+state}}
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a166f3348f0f7305c9f53f27880d066cb}{LSTMCNNmodel.\+max\+\_\+review\+\_\+length}} = 500
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ae02c1b6ed0076f5fa3ecbe88fb6a2d86}{LSTMCNNmodel.\+model}} = Sequential()
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a7f686a1e1f70d478b184cc14c7eee926}{LSTMCNNmodel.\+loss}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a30729af633b3e8ca07d4921e5c258f4d}{LSTMCNNmodel.\+optimizer}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_af3b9cd444343930fc8d930e9371cd91e}{LSTMCNNmodel.\+metrics}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a0ce4fc8a846a01044c79300b1eff42b2}{LSTMCNNmodel.\+epochs}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a7ed12e44f5f0aec6288897d79fbf859c}{LSTMCNNmodel.\+batch\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ad37f162d6768d9d7c2727cd4fb624ffe}{LSTMCNNmodel.\+scores}} = model.\+evaluate(X\+\_\+test, y\+\_\+test, verbose=0)
+\end{DoxyCompactItemize}

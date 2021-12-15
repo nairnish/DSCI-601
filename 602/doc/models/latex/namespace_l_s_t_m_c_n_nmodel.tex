@@ -1,0 +1,256 @@
+\hypertarget{namespace_l_s_t_m_c_n_nmodel}{}\doxysection{LSTMCNNmodel Namespace Reference}
+\label{namespace_l_s_t_m_c_n_nmodel}\index{LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a1311705eef1081bebe348139a0fcd8b9}{train\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac7df377a6ddc2c7aef926fbfb16b70f4}{val\+\_\+path}} = \textquotesingle{}../../data/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_afc307fed456280dd69f004ba59335a25}{test\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a179e612a4f5510e1d3f80603364f8c16}{train\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a1311705eef1081bebe348139a0fcd8b9}{train\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a05b000abc1e1310e306d097a2d4541ae}{validation\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac7df377a6ddc2c7aef926fbfb16b70f4}{val\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_addfec07728b0672ca3e28ed9b3e39d1a}{test\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_afc307fed456280dd69f004ba59335a25}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a62f30e0616914fa54bffe023aaac730a}{df}} = pd.\+concat(\mbox{[}\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a179e612a4f5510e1d3f80603364f8c16}{train\+\_\+data}}, \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a05b000abc1e1310e306d097a2d4541ae}{validation\+\_\+data}}\mbox{]}, ignore\+\_\+index=True)
+\item 
+list \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a70acfdb9ada4f5bd3a497900c8577e7d}{req\+\_\+labels}} = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a91e9c133df387e1b2d4a9f5e10235650}{rslt\+\_\+df}} = \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a62f30e0616914fa54bffe023aaac730a}{df}}\mbox{[}df.\+label.\+isin(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a70acfdb9ada4f5bd3a497900c8577e7d}{req\+\_\+labels}})\mbox{]}
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac788c790ba69614a3c991ea61d09a8b5}{MAX\+\_\+\+NB\+\_\+\+WORDS}} = 50000
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a8ad669212bc0ef098093dd58b5e54aa4}{MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}} = 250
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a223b0f76cc36b63cb1d527dd82d59636}{EMBEDDING\+\_\+\+DIM}} = 100
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a7f23b9fcdd4e9ec86d87bdcf40388a21}{tokenizer}} = Tokenizer(num\+\_\+words=\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac788c790ba69614a3c991ea61d09a8b5}{MAX\+\_\+\+NB\+\_\+\+WORDS}}, filters=\textquotesingle{}!\char`\"{}\#\$\%\&()$\ast$+,-\/./\+:;$<$=$>$?@\mbox{[}\textbackslash{}\mbox{]}$^\wedge$\+\_\+\`{}\{$\vert$\}$\sim$\textquotesingle{}, lower=True)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac8f1da43c08e3c988cfb8502c268d237}{word\+\_\+index}} = tokenizer.\+word\+\_\+index
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a409ac164e22831a7bad72a4fe09e1ef6}{X}} = tokenizer.\+texts\+\_\+to\+\_\+sequences(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a91e9c133df387e1b2d4a9f5e10235650}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}.values)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_af8275922ca3d8fea5e9a7becb5e78233}{Y}} = pd.\+get\+\_\+dummies(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a91e9c133df387e1b2d4a9f5e10235650}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}).values
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a25d4a47c2a93ab9cddb46da1df07e9c3}{top\+\_\+words}} = 5000
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac26997b6c3318800023559c0fe4c7851}{X\+\_\+train}} = sequence.\+pad\+\_\+sequences(X\+\_\+train, maxlen=\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a8ad669212bc0ef098093dd58b5e54aa4}{MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ad5661b3dc3d13c8708d540da3c562571}{X\+\_\+test}} = sequence.\+pad\+\_\+sequences(X\+\_\+test, maxlen=\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a8ad669212bc0ef098093dd58b5e54aa4}{MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac2a56536ab39cf96e313914aac4ac996}{y\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_aa98803eb37d38ea98fa5c7c8b085248d}{y\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_aa41fdbfb60deff1f48e959a8dd55ba46}{test\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a296e8db3ae8a0f61c63dea135cc4e8ec}{random\+\_\+state}}
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a166f3348f0f7305c9f53f27880d066cb}{max\+\_\+review\+\_\+length}} = 500
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ae02c1b6ed0076f5fa3ecbe88fb6a2d86}{model}} = Sequential()
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a7f686a1e1f70d478b184cc14c7eee926}{loss}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a30729af633b3e8ca07d4921e5c258f4d}{optimizer}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_af3b9cd444343930fc8d930e9371cd91e}{metrics}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a0ce4fc8a846a01044c79300b1eff42b2}{epochs}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a7ed12e44f5f0aec6288897d79fbf859c}{batch\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ad37f162d6768d9d7c2727cd4fb624ffe}{scores}} = model.\+evaluate(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ad5661b3dc3d13c8708d540da3c562571}{X\+\_\+test}}, \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_aa98803eb37d38ea98fa5c7c8b085248d}{y\+\_\+test}}, verbose=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a7ed12e44f5f0aec6288897d79fbf859c}\label{namespace_l_s_t_m_c_n_nmodel_a7ed12e44f5f0aec6288897d79fbf859c}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+batch\+\_\+size}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a62f30e0616914fa54bffe023aaac730a}\label{namespace_l_s_t_m_c_n_nmodel_a62f30e0616914fa54bffe023aaac730a}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!df@{df}}
+\index{df@{df}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+df = pd.\+concat(\mbox{[}\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a179e612a4f5510e1d3f80603364f8c16}{train\+\_\+data}}, \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a05b000abc1e1310e306d097a2d4541ae}{validation\+\_\+data}}\mbox{]}, ignore\+\_\+index=True)}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a223b0f76cc36b63cb1d527dd82d59636}\label{namespace_l_s_t_m_c_n_nmodel_a223b0f76cc36b63cb1d527dd82d59636}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!EMBEDDING\_DIM@{EMBEDDING\_DIM}}
+\index{EMBEDDING\_DIM@{EMBEDDING\_DIM}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{EMBEDDING\_DIM}{EMBEDDING\_DIM}}
+{\footnotesize\ttfamily int LSTMCNNmodel.\+EMBEDDING\+\_\+\+DIM = 100}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a0ce4fc8a846a01044c79300b1eff42b2}\label{namespace_l_s_t_m_c_n_nmodel_a0ce4fc8a846a01044c79300b1eff42b2}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!epochs@{epochs}}
+\index{epochs@{epochs}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{epochs}{epochs}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+epochs}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a7f686a1e1f70d478b184cc14c7eee926}\label{namespace_l_s_t_m_c_n_nmodel_a7f686a1e1f70d478b184cc14c7eee926}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!loss@{loss}}
+\index{loss@{loss}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{loss}{loss}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+loss}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_ac788c790ba69614a3c991ea61d09a8b5}\label{namespace_l_s_t_m_c_n_nmodel_ac788c790ba69614a3c991ea61d09a8b5}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!MAX\_NB\_WORDS@{MAX\_NB\_WORDS}}
+\index{MAX\_NB\_WORDS@{MAX\_NB\_WORDS}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{MAX\_NB\_WORDS}{MAX\_NB\_WORDS}}
+{\footnotesize\ttfamily int LSTMCNNmodel.\+MAX\+\_\+\+NB\+\_\+\+WORDS = 50000}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a166f3348f0f7305c9f53f27880d066cb}\label{namespace_l_s_t_m_c_n_nmodel_a166f3348f0f7305c9f53f27880d066cb}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!max\_review\_length@{max\_review\_length}}
+\index{max\_review\_length@{max\_review\_length}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{max\_review\_length}{max\_review\_length}}
+{\footnotesize\ttfamily int LSTMCNNmodel.\+max\+\_\+review\+\_\+length = 500}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a8ad669212bc0ef098093dd58b5e54aa4}\label{namespace_l_s_t_m_c_n_nmodel_a8ad669212bc0ef098093dd58b5e54aa4}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!MAX\_SEQUENCE\_LENGTH@{MAX\_SEQUENCE\_LENGTH}}
+\index{MAX\_SEQUENCE\_LENGTH@{MAX\_SEQUENCE\_LENGTH}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{MAX\_SEQUENCE\_LENGTH}{MAX\_SEQUENCE\_LENGTH}}
+{\footnotesize\ttfamily int LSTMCNNmodel.\+MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH = 250}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_af3b9cd444343930fc8d930e9371cd91e}\label{namespace_l_s_t_m_c_n_nmodel_af3b9cd444343930fc8d930e9371cd91e}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!metrics@{metrics}}
+\index{metrics@{metrics}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+metrics}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_ae02c1b6ed0076f5fa3ecbe88fb6a2d86}\label{namespace_l_s_t_m_c_n_nmodel_ae02c1b6ed0076f5fa3ecbe88fb6a2d86}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!model@{model}}
+\index{model@{model}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+model = Sequential()}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a30729af633b3e8ca07d4921e5c258f4d}\label{namespace_l_s_t_m_c_n_nmodel_a30729af633b3e8ca07d4921e5c258f4d}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!optimizer@{optimizer}}
+\index{optimizer@{optimizer}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{optimizer}{optimizer}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+optimizer}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a296e8db3ae8a0f61c63dea135cc4e8ec}\label{namespace_l_s_t_m_c_n_nmodel_a296e8db3ae8a0f61c63dea135cc4e8ec}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!random\_state@{random\_state}}
+\index{random\_state@{random\_state}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{random\_state}{random\_state}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+random\+\_\+state}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a70acfdb9ada4f5bd3a497900c8577e7d}\label{namespace_l_s_t_m_c_n_nmodel_a70acfdb9ada4f5bd3a497900c8577e7d}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!req\_labels@{req\_labels}}
+\index{req\_labels@{req\_labels}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{req\_labels}{req\_labels}}
+{\footnotesize\ttfamily list LSTMCNNmodel.\+req\+\_\+labels = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a91e9c133df387e1b2d4a9f5e10235650}\label{namespace_l_s_t_m_c_n_nmodel_a91e9c133df387e1b2d4a9f5e10235650}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!rslt\_df@{rslt\_df}}
+\index{rslt\_df@{rslt\_df}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{rslt\_df}{rslt\_df}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+rslt\+\_\+df = \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a62f30e0616914fa54bffe023aaac730a}{df}}\mbox{[}df.\+label.\+isin(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a70acfdb9ada4f5bd3a497900c8577e7d}{req\+\_\+labels}})\mbox{]}}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_ad37f162d6768d9d7c2727cd4fb624ffe}\label{namespace_l_s_t_m_c_n_nmodel_ad37f162d6768d9d7c2727cd4fb624ffe}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!scores@{scores}}
+\index{scores@{scores}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{scores}{scores}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+scores = model.\+evaluate(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ad5661b3dc3d13c8708d540da3c562571}{X\+\_\+test}}, \mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_aa98803eb37d38ea98fa5c7c8b085248d}{y\+\_\+test}}, verbose=0)}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_addfec07728b0672ca3e28ed9b3e39d1a}\label{namespace_l_s_t_m_c_n_nmodel_addfec07728b0672ca3e28ed9b3e39d1a}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{test\_data}{test\_data}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+test\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_afc307fed456280dd69f004ba59335a25}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_afc307fed456280dd69f004ba59335a25}\label{namespace_l_s_t_m_c_n_nmodel_afc307fed456280dd69f004ba59335a25}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string LSTMCNNmodel.\+test\+\_\+path = \textquotesingle{}../../data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_aa41fdbfb60deff1f48e959a8dd55ba46}\label{namespace_l_s_t_m_c_n_nmodel_aa41fdbfb60deff1f48e959a8dd55ba46}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!test\_size@{test\_size}}
+\index{test\_size@{test\_size}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{test\_size}{test\_size}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+test\+\_\+size}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a7f23b9fcdd4e9ec86d87bdcf40388a21}\label{namespace_l_s_t_m_c_n_nmodel_a7f23b9fcdd4e9ec86d87bdcf40388a21}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!tokenizer@{tokenizer}}
+\index{tokenizer@{tokenizer}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{tokenizer}{tokenizer}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+tokenizer = Tokenizer(num\+\_\+words=\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac788c790ba69614a3c991ea61d09a8b5}{MAX\+\_\+\+NB\+\_\+\+WORDS}}, filters=\textquotesingle{}!\char`\"{}\#\$\%\&()$\ast$+,-\/./\+:;$<$=$>$?@\mbox{[}\textbackslash{}\mbox{]}$^\wedge$\+\_\+\`{}\{$\vert$\}$\sim$\textquotesingle{}, lower=True)}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a25d4a47c2a93ab9cddb46da1df07e9c3}\label{namespace_l_s_t_m_c_n_nmodel_a25d4a47c2a93ab9cddb46da1df07e9c3}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!top\_words@{top\_words}}
+\index{top\_words@{top\_words}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{top\_words}{top\_words}}
+{\footnotesize\ttfamily int LSTMCNNmodel.\+top\+\_\+words = 5000}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a179e612a4f5510e1d3f80603364f8c16}\label{namespace_l_s_t_m_c_n_nmodel_a179e612a4f5510e1d3f80603364f8c16}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+train\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a1311705eef1081bebe348139a0fcd8b9}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a1311705eef1081bebe348139a0fcd8b9}\label{namespace_l_s_t_m_c_n_nmodel_a1311705eef1081bebe348139a0fcd8b9}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string LSTMCNNmodel.\+train\+\_\+path = \textquotesingle{}../../data/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_ac7df377a6ddc2c7aef926fbfb16b70f4}\label{namespace_l_s_t_m_c_n_nmodel_ac7df377a6ddc2c7aef926fbfb16b70f4}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!val\_path@{val\_path}}
+\index{val\_path@{val\_path}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{val\_path}{val\_path}}
+{\footnotesize\ttfamily string LSTMCNNmodel.\+val\+\_\+path = \textquotesingle{}../../data/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a05b000abc1e1310e306d097a2d4541ae}\label{namespace_l_s_t_m_c_n_nmodel_a05b000abc1e1310e306d097a2d4541ae}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+validation\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_ac7df377a6ddc2c7aef926fbfb16b70f4}{val\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_ac8f1da43c08e3c988cfb8502c268d237}\label{namespace_l_s_t_m_c_n_nmodel_ac8f1da43c08e3c988cfb8502c268d237}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!word\_index@{word\_index}}
+\index{word\_index@{word\_index}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{word\_index}{word\_index}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+word\+\_\+index = tokenizer.\+word\+\_\+index}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_a409ac164e22831a7bad72a4fe09e1ef6}\label{namespace_l_s_t_m_c_n_nmodel_a409ac164e22831a7bad72a4fe09e1ef6}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!X@{X}}
+\index{X@{X}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+X = tokenizer.\+texts\+\_\+to\+\_\+sequences(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a91e9c133df387e1b2d4a9f5e10235650}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}.values)}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_ad5661b3dc3d13c8708d540da3c562571}\label{namespace_l_s_t_m_c_n_nmodel_ad5661b3dc3d13c8708d540da3c562571}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!X\_test@{X\_test}}
+\index{X\_test@{X\_test}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{X\_test}{X\_test}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+X\+\_\+test = sequence.\+pad\+\_\+sequences(X\+\_\+test, maxlen=\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a8ad669212bc0ef098093dd58b5e54aa4}{MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_ac26997b6c3318800023559c0fe4c7851}\label{namespace_l_s_t_m_c_n_nmodel_ac26997b6c3318800023559c0fe4c7851}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!X\_train@{X\_train}}
+\index{X\_train@{X\_train}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{X\_train}{X\_train}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+X\+\_\+train = sequence.\+pad\+\_\+sequences(X\+\_\+train, maxlen=\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a8ad669212bc0ef098093dd58b5e54aa4}{MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_af8275922ca3d8fea5e9a7becb5e78233}\label{namespace_l_s_t_m_c_n_nmodel_af8275922ca3d8fea5e9a7becb5e78233}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!Y@{Y}}
+\index{Y@{Y}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+Y = pd.\+get\+\_\+dummies(\mbox{\hyperlink{namespace_l_s_t_m_c_n_nmodel_a91e9c133df387e1b2d4a9f5e10235650}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}).values}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_aa98803eb37d38ea98fa5c7c8b085248d}\label{namespace_l_s_t_m_c_n_nmodel_aa98803eb37d38ea98fa5c7c8b085248d}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!y\_test@{y\_test}}
+\index{y\_test@{y\_test}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{y\_test}{y\_test}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+y\+\_\+test}
+
+\mbox{\Hypertarget{namespace_l_s_t_m_c_n_nmodel_ac2a56536ab39cf96e313914aac4ac996}\label{namespace_l_s_t_m_c_n_nmodel_ac2a56536ab39cf96e313914aac4ac996}} 
+\index{LSTMCNNmodel@{LSTMCNNmodel}!y\_train@{y\_train}}
+\index{y\_train@{y\_train}!LSTMCNNmodel@{LSTMCNNmodel}}
+\doxysubsubsection{\texorpdfstring{y\_train}{y\_train}}
+{\footnotesize\ttfamily LSTMCNNmodel.\+y\+\_\+train}
+

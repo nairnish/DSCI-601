@@ -1,0 +1,630 @@
+\hypertarget{namespacebertforsequenceclassification}{}\doxysection{bertforsequenceclassification Namespace Reference}
+\label{namespacebertforsequenceclassification}\index{bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_a9ac01065efd9ba78befb42dcd033f140}{flat\+\_\+accuracy}} (preds, \mbox{\hyperlink{namespacebertforsequenceclassification_a6e4e793e7b5752962cf3603c4c0b2714}{labels}})
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_a18419cfba0ddeb9767f7e28f4922b926}{format\+\_\+time}} (\mbox{\hyperlink{namespacebertforsequenceclassification_a7e721fe43f6c3466ac1c40c7f7862959}{elapsed}})
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_aa82d678152976cd0e8f835e04d5e0118}{evaluate}} (y\+\_\+true, \mbox{\hyperlink{namespacebertforsequenceclassification_acd2de787c9c43166117eadcf4b3f5f70}{predictions}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacebertforsequenceclassification_ac2e91f9bd4ddf71176642143944779df}{train\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacebertforsequenceclassification_ad069ff9fda134369c3dcbc774169c1ac}{dev\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacebertforsequenceclassification_ae74a7b19b76da5ab7c9d01bbe33d7033}{test\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a954130d15a55eb8bbdc5937a8dcf8e4b}{data}} = load\+\_\+data()
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ae14cc64518380c67d00e937819db2fce}{df\+\_\+train}} = data.\+load(\mbox{\hyperlink{namespacebertforsequenceclassification_ac2e91f9bd4ddf71176642143944779df}{train\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a46a98ff847ca8e8ef2ebddfa75d686e4}{df\+\_\+test}} = data.\+load(\mbox{\hyperlink{namespacebertforsequenceclassification_ae74a7b19b76da5ab7c9d01bbe33d7033}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a25f8900b50a7324b520b5f0e88375d9f}{df\+\_\+val}} = data.\+load(\mbox{\hyperlink{namespacebertforsequenceclassification_ad069ff9fda134369c3dcbc774169c1ac}{dev\+\_\+path}})
+\item 
+string \mbox{\hyperlink{namespacebertforsequenceclassification_a98380dc25748b00869957a2a6f32b910}{model\+\_\+checkpoint}} = \char`\"{}bert-\/base-\/multilingual-\/cased\char`\"{}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a1f28028d09df469810800cf15ff495e7}{sentences}} = \mbox{\hyperlink{namespacebertforsequenceclassification_ae14cc64518380c67d00e937819db2fce}{df\+\_\+train}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a5b242f5f93df865493fa93d969c8c8d6}{tokenizer}} = Bert\+Tokenizer.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacebertforsequenceclassification_a98380dc25748b00869957a2a6f32b910}{model\+\_\+checkpoint}},use\+\_\+fast=True)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_aed66d6e8dfdbc160b1d07e60ecde6a36}{model}} = Bert\+For\+Sequence\+Classification.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacebertforsequenceclassification_a98380dc25748b00869957a2a6f32b910}{model\+\_\+checkpoint}})
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a337673da780bccb17002f5f600b73ba7}{input\+\_\+ids}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_af4981f54bd95a4461fb27b796b1b3b9e}{encoded\+\_\+sent}}
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a9631f727328a115ade48df47f81b83aa}{MAX\+\_\+\+LEN}} = 64
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_aeb72094dfe53fcb28cc5b88ca35d15d5}{attention\+\_\+masks}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a9180c21dbb59aa05098de95725812ab3}{att\+\_\+mask}} = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_ac6aaccde65e56a2deb92bbc47d9deb64}{train\+\_\+masks}} = \mbox{\hyperlink{namespacebertforsequenceclassification_aeb72094dfe53fcb28cc5b88ca35d15d5}{attention\+\_\+masks}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_aa2fe27981ebc703a868cf7158a5bb5a6}{sentences1}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a25f8900b50a7324b520b5f0e88375d9f}{df\+\_\+val}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_ae0a135e752d7f4326a51ac7ec4447649}{input\+\_\+ids1}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_ae746f0daf82867cede877a361ab7ef45}{attention\+\_\+masks2}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a8043da072fc8703ae81ba837f8ad625f}{validation\+\_\+masks}} = \mbox{\hyperlink{namespacebertforsequenceclassification_ae746f0daf82867cede877a361ab7ef45}{attention\+\_\+masks2}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ae55165a7da4cf7c5016c2bf20fad8dc7}{train\+\_\+inputs}} = pd.\+Data\+Frame(\mbox{\hyperlink{namespacebertforsequenceclassification_a337673da780bccb17002f5f600b73ba7}{input\+\_\+ids}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a0c91d561cb7926809c5f2b4875068f5d}{train\+\_\+labels}} = \mbox{\hyperlink{namespacebertforsequenceclassification_ae14cc64518380c67d00e937819db2fce}{df\+\_\+train}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_aa31e8e8732cc8c4be8c856a5565f5319}{validation\+\_\+inputs}} = pd.\+Data\+Frame(\mbox{\hyperlink{namespacebertforsequenceclassification_ae0a135e752d7f4326a51ac7ec4447649}{input\+\_\+ids1}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a682d47b3524238d3a6dbeddd3aec1d3a}{validation\+\_\+labels}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a25f8900b50a7324b520b5f0e88375d9f}{df\+\_\+val}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacebertforsequenceclassification_a4d4655186cdc768449932165dd57b11d}{map1}} = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}} = 32
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a5817d91f1c62dcbd04a54b8338f652af}{train\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacebertforsequenceclassification_ae55165a7da4cf7c5016c2bf20fad8dc7}{train\+\_\+inputs}}, \mbox{\hyperlink{namespacebertforsequenceclassification_ac6aaccde65e56a2deb92bbc47d9deb64}{train\+\_\+masks}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a0c91d561cb7926809c5f2b4875068f5d}{train\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_add98eb6c90a385909be59604acc14241}{train\+\_\+sampler}} = Random\+Sampler(\mbox{\hyperlink{namespacebertforsequenceclassification_a5817d91f1c62dcbd04a54b8338f652af}{train\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a3b8991dd2b3b6612f5fb02fed0706df6}{train\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacebertforsequenceclassification_a5817d91f1c62dcbd04a54b8338f652af}{train\+\_\+data}}, sampler=\mbox{\hyperlink{namespacebertforsequenceclassification_add98eb6c90a385909be59604acc14241}{train\+\_\+sampler}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}}=\mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a771260348af390c7573289389ecdd97c}{validation\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacebertforsequenceclassification_aa31e8e8732cc8c4be8c856a5565f5319}{validation\+\_\+inputs}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a8043da072fc8703ae81ba837f8ad625f}{validation\+\_\+masks}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a682d47b3524238d3a6dbeddd3aec1d3a}{validation\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_adfdf75f47e7abd58ce584148ade73115}{validation\+\_\+sampler}} = Sequential\+Sampler(\mbox{\hyperlink{namespacebertforsequenceclassification_a771260348af390c7573289389ecdd97c}{validation\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a9829945cfa5f981181670a61b365d9e3}{validation\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacebertforsequenceclassification_a771260348af390c7573289389ecdd97c}{validation\+\_\+data}}, sampler=\mbox{\hyperlink{namespacebertforsequenceclassification_adfdf75f47e7abd58ce584148ade73115}{validation\+\_\+sampler}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}}=\mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a3ed1a26a9fb70da7c0e16a3093889af0}{optimizer}}
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a64a60e21c05583d01a85e513548464bb}{epochs}} = 2
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_af2315d9ac397c81e14acc7b8d7bf30c0}{total\+\_\+steps}} = len(\mbox{\hyperlink{namespacebertforsequenceclassification_a3b8991dd2b3b6612f5fb02fed0706df6}{train\+\_\+dataloader}}) $\ast$ \mbox{\hyperlink{namespacebertforsequenceclassification_a64a60e21c05583d01a85e513548464bb}{epochs}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a26edf50cd60d91143eb39d0bfe81e915}{scheduler}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}} = \mbox{\hyperlink{namespacebertforsequenceclassification_afdf2537d298fdc37c36ea3b28928d420}{cuda0}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a89747efc14e5094a69ee7e8f23770303}{device\+\_\+name}} = tf.\+test.\+gpu\+\_\+device\+\_\+name()
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a7b93981f5da20a41b6c5c2af422b0167}{seed\+\_\+val}} = 42
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a2109a21911dff54c5edfa45333d82023}{loss\+\_\+values}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_af84ff9a474c12e27e63c7bd4fa47628c}{t0}} = time.\+time()
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a1bcfb60cad772fe267d017808375d0a4}{total\+\_\+loss}} = 0
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_a7e721fe43f6c3466ac1c40c7f7862959}{elapsed}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a18419cfba0ddeb9767f7e28f4922b926}{format\+\_\+time}}(time.\+time() -\/ \mbox{\hyperlink{namespacebertforsequenceclassification_af84ff9a474c12e27e63c7bd4fa47628c}{t0}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a9b59ad4632b19e2a7f396d1b7315bff6}{b\+\_\+input\+\_\+ids}} = \mbox{\hyperlink{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}{batch}}\mbox{[}0\mbox{]}.to(\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ae51b324c1cf83eaab19283346848fd76}{b\+\_\+input\+\_\+mask}} = \mbox{\hyperlink{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}{batch}}\mbox{[}1\mbox{]}.to(\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_af65f76bdef3cb40895049024a94d7f8c}{b\+\_\+labels}} = \mbox{\hyperlink{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}{batch}}\mbox{[}2\mbox{]}.to(\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a1d37b3496564ca9e62cc5932ced74e80}{outputs}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a79e2b252f0232af4e231861ca9221715}{loss}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a1d37b3496564ca9e62cc5932ced74e80}{outputs}}\mbox{[}0\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_aef4d497943cecefac15e396d439bd611}{avg\+\_\+train\+\_\+loss}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a1bcfb60cad772fe267d017808375d0a4}{total\+\_\+loss}} / len(\mbox{\hyperlink{namespacebertforsequenceclassification_a3b8991dd2b3b6612f5fb02fed0706df6}{train\+\_\+dataloader}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a7a5ee64ee0689ef2ab80df0154e3e74f}{eval\+\_\+loss}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a29e285abc2cfffea88ba2cff3619ada2}{eval\+\_\+accuracy}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a3daea4ac68d6d49349da97ccf847a2e6}{nb\+\_\+eval\+\_\+steps}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a30d1851534a10473de05b32aad084600}{nb\+\_\+eval\+\_\+examples}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}{batch}} = tuple(t.\+to(\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}}) for t in batch)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a5f8ca901a9501503186f36a72d004a2f}{logits}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a1d37b3496564ca9e62cc5932ced74e80}{outputs}}\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ad47a8e8a83facc5130c982f63230f355}{label\+\_\+ids}} = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_abc0e187e1b7af949b79f66a7b9d00b80}{tmp\+\_\+eval\+\_\+accuracy}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a9ac01065efd9ba78befb42dcd033f140}{flat\+\_\+accuracy}}(\mbox{\hyperlink{namespacebertforsequenceclassification_a5f8ca901a9501503186f36a72d004a2f}{logits}}, \mbox{\hyperlink{namespacebertforsequenceclassification_ad47a8e8a83facc5130c982f63230f355}{label\+\_\+ids}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a97217708e3bc1e8c320daaa41cc8fb13}{df}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a46a98ff847ca8e8ef2ebddfa75d686e4}{df\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a6e4e793e7b5752962cf3603c4c0b2714}{labels}} = \mbox{\hyperlink{namespacebertforsequenceclassification_a97217708e3bc1e8c320daaa41cc8fb13}{df}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}.map(\mbox{\hyperlink{namespacebertforsequenceclassification_a4d4655186cdc768449932165dd57b11d}{map1}})
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a4135cf2122151ece0d1f7dc285bfb940}{seq\+\_\+mask}} = \mbox{[}float(i$>$0) for i in seq\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a0903f9e26170daa2c4f6acc0825bbd7f}{prediction\+\_\+inputs}} = torch.\+tensor(\mbox{\hyperlink{namespacebertforsequenceclassification_a337673da780bccb17002f5f600b73ba7}{input\+\_\+ids}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ab8a57c5b05eac0b2ae77f88e002be9e1}{prediction\+\_\+masks}} = torch.\+tensor(\mbox{\hyperlink{namespacebertforsequenceclassification_aeb72094dfe53fcb28cc5b88ca35d15d5}{attention\+\_\+masks}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a3380184ec02dcafba124e63df0cba844}{prediction\+\_\+labels}} = torch.\+tensor(\mbox{\hyperlink{namespacebertforsequenceclassification_a6e4e793e7b5752962cf3603c4c0b2714}{labels}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a82db0bedd9f8c333e27b91eeb0ccd794}{prediction\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacebertforsequenceclassification_a0903f9e26170daa2c4f6acc0825bbd7f}{prediction\+\_\+inputs}}, \mbox{\hyperlink{namespacebertforsequenceclassification_ab8a57c5b05eac0b2ae77f88e002be9e1}{prediction\+\_\+masks}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a3380184ec02dcafba124e63df0cba844}{prediction\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a74ea8e193195b0c9f069129ccf9387cb}{prediction\+\_\+sampler}} = Sequential\+Sampler(\mbox{\hyperlink{namespacebertforsequenceclassification_a82db0bedd9f8c333e27b91eeb0ccd794}{prediction\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a4a090a5eb57d640d2b8f2ec2799b6052}{prediction\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacebertforsequenceclassification_a82db0bedd9f8c333e27b91eeb0ccd794}{prediction\+\_\+data}}, sampler=\mbox{\hyperlink{namespacebertforsequenceclassification_a74ea8e193195b0c9f069129ccf9387cb}{prediction\+\_\+sampler}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}}=\mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_acd2de787c9c43166117eadcf4b3f5f70}{predictions}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ae74fee822eab088faf55892093e63c2a}{true\+\_\+labels}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_afdf2537d298fdc37c36ea3b28928d420}{cuda0}} = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacebertforsequenceclassification_aa82d678152976cd0e8f835e04d5e0118}\label{namespacebertforsequenceclassification_aa82d678152976cd0e8f835e04d5e0118}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily def bertforsequenceclassification.\+evaluate (\begin{DoxyParamCaption}\item[{}]{y\+\_\+true,  }\item[{}]{predictions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a9ac01065efd9ba78befb42dcd033f140}\label{namespacebertforsequenceclassification_a9ac01065efd9ba78befb42dcd033f140}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!flat\_accuracy@{flat\_accuracy}}
+\index{flat\_accuracy@{flat\_accuracy}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{flat\_accuracy()}{flat\_accuracy()}}
+{\footnotesize\ttfamily def bertforsequenceclassification.\+flat\+\_\+accuracy (\begin{DoxyParamCaption}\item[{}]{preds,  }\item[{}]{labels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a18419cfba0ddeb9767f7e28f4922b926}\label{namespacebertforsequenceclassification_a18419cfba0ddeb9767f7e28f4922b926}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!format\_time@{format\_time}}
+\index{format\_time@{format\_time}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{format\_time()}{format\_time()}}
+{\footnotesize\ttfamily def bertforsequenceclassification.\+format\+\_\+time (\begin{DoxyParamCaption}\item[{}]{elapsed }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Takes a time in seconds and returns a string hh:mm:ss
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a9180c21dbb59aa05098de95725812ab3}\label{namespacebertforsequenceclassification_a9180c21dbb59aa05098de95725812ab3}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!att\_mask@{att\_mask}}
+\index{att\_mask@{att\_mask}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{att\_mask}{att\_mask}}
+{\footnotesize\ttfamily list bertforsequenceclassification.\+att\+\_\+mask = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_aeb72094dfe53fcb28cc5b88ca35d15d5}\label{namespacebertforsequenceclassification_aeb72094dfe53fcb28cc5b88ca35d15d5}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!attention\_masks@{attention\_masks}}
+\index{attention\_masks@{attention\_masks}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{attention\_masks}{attention\_masks}}
+{\footnotesize\ttfamily list bertforsequenceclassification.\+attention\+\_\+masks = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ae746f0daf82867cede877a361ab7ef45}\label{namespacebertforsequenceclassification_ae746f0daf82867cede877a361ab7ef45}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!attention\_masks2@{attention\_masks2}}
+\index{attention\_masks2@{attention\_masks2}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{attention\_masks2}{attention\_masks2}}
+{\footnotesize\ttfamily list bertforsequenceclassification.\+attention\+\_\+masks2 = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_aef4d497943cecefac15e396d439bd611}\label{namespacebertforsequenceclassification_aef4d497943cecefac15e396d439bd611}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!avg\_train\_loss@{avg\_train\_loss}}
+\index{avg\_train\_loss@{avg\_train\_loss}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{avg\_train\_loss}{avg\_train\_loss}}
+{\footnotesize\ttfamily int bertforsequenceclassification.\+avg\+\_\+train\+\_\+loss = \mbox{\hyperlink{namespacebertforsequenceclassification_a1bcfb60cad772fe267d017808375d0a4}{total\+\_\+loss}} / len(\mbox{\hyperlink{namespacebertforsequenceclassification_a3b8991dd2b3b6612f5fb02fed0706df6}{train\+\_\+dataloader}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a9b59ad4632b19e2a7f396d1b7315bff6}\label{namespacebertforsequenceclassification_a9b59ad4632b19e2a7f396d1b7315bff6}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!b\_input\_ids@{b\_input\_ids}}
+\index{b\_input\_ids@{b\_input\_ids}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{b\_input\_ids}{b\_input\_ids}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+b\+\_\+input\+\_\+ids = \mbox{\hyperlink{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}{batch}}\mbox{[}0\mbox{]}.to(\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ae51b324c1cf83eaab19283346848fd76}\label{namespacebertforsequenceclassification_ae51b324c1cf83eaab19283346848fd76}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!b\_input\_mask@{b\_input\_mask}}
+\index{b\_input\_mask@{b\_input\_mask}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{b\_input\_mask}{b\_input\_mask}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+b\+\_\+input\+\_\+mask = \mbox{\hyperlink{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}{batch}}\mbox{[}1\mbox{]}.to(\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_af65f76bdef3cb40895049024a94d7f8c}\label{namespacebertforsequenceclassification_af65f76bdef3cb40895049024a94d7f8c}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!b\_labels@{b\_labels}}
+\index{b\_labels@{b\_labels}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{b\_labels}{b\_labels}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+b\+\_\+labels = \mbox{\hyperlink{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}{batch}}\mbox{[}2\mbox{]}.to(\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}\label{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!batch@{batch}}
+\index{batch@{batch}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{batch}{batch}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+batch = tuple(t.\+to(\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{device}}) for t in batch)}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}\label{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily int bertforsequenceclassification.\+batch\+\_\+size = 32}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_afdf2537d298fdc37c36ea3b28928d420}\label{namespacebertforsequenceclassification_afdf2537d298fdc37c36ea3b28928d420}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!cuda0@{cuda0}}
+\index{cuda0@{cuda0}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{cuda0}{cuda0}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+cuda0 = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a954130d15a55eb8bbdc5937a8dcf8e4b}\label{namespacebertforsequenceclassification_a954130d15a55eb8bbdc5937a8dcf8e4b}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!data@{data}}
+\index{data@{data}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+data = load\+\_\+data()}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ad069ff9fda134369c3dcbc774169c1ac}\label{namespacebertforsequenceclassification_ad069ff9fda134369c3dcbc774169c1ac}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!dev\_path@{dev\_path}}
+\index{dev\_path@{dev\_path}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{dev\_path}{dev\_path}}
+{\footnotesize\ttfamily string bertforsequenceclassification.\+dev\+\_\+path = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}\label{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!device@{device}}
+\index{device@{device}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+device = \mbox{\hyperlink{namespacebertforsequenceclassification_afdf2537d298fdc37c36ea3b28928d420}{cuda0}}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a89747efc14e5094a69ee7e8f23770303}\label{namespacebertforsequenceclassification_a89747efc14e5094a69ee7e8f23770303}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!device\_name@{device\_name}}
+\index{device\_name@{device\_name}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{device\_name}{device\_name}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+device\+\_\+name = tf.\+test.\+gpu\+\_\+device\+\_\+name()}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a97217708e3bc1e8c320daaa41cc8fb13}\label{namespacebertforsequenceclassification_a97217708e3bc1e8c320daaa41cc8fb13}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!df@{df}}
+\index{df@{df}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+df = \mbox{\hyperlink{namespacebertforsequenceclassification_a46a98ff847ca8e8ef2ebddfa75d686e4}{df\+\_\+test}}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a46a98ff847ca8e8ef2ebddfa75d686e4}\label{namespacebertforsequenceclassification_a46a98ff847ca8e8ef2ebddfa75d686e4}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!df\_test@{df\_test}}
+\index{df\_test@{df\_test}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{df\_test}{df\_test}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+df\+\_\+test = data.\+load(\mbox{\hyperlink{namespacebertforsequenceclassification_ae74a7b19b76da5ab7c9d01bbe33d7033}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ae14cc64518380c67d00e937819db2fce}\label{namespacebertforsequenceclassification_ae14cc64518380c67d00e937819db2fce}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!df\_train@{df\_train}}
+\index{df\_train@{df\_train}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{df\_train}{df\_train}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+df\+\_\+train = data.\+load(\mbox{\hyperlink{namespacebertforsequenceclassification_ac2e91f9bd4ddf71176642143944779df}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a25f8900b50a7324b520b5f0e88375d9f}\label{namespacebertforsequenceclassification_a25f8900b50a7324b520b5f0e88375d9f}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!df\_val@{df\_val}}
+\index{df\_val@{df\_val}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{df\_val}{df\_val}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+df\+\_\+val = data.\+load(\mbox{\hyperlink{namespacebertforsequenceclassification_ad069ff9fda134369c3dcbc774169c1ac}{dev\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a7e721fe43f6c3466ac1c40c7f7862959}\label{namespacebertforsequenceclassification_a7e721fe43f6c3466ac1c40c7f7862959}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!elapsed@{elapsed}}
+\index{elapsed@{elapsed}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{elapsed}{elapsed}}
+{\footnotesize\ttfamily def bertforsequenceclassification.\+elapsed = \mbox{\hyperlink{namespacebertforsequenceclassification_a18419cfba0ddeb9767f7e28f4922b926}{format\+\_\+time}}(time.\+time() -\/ \mbox{\hyperlink{namespacebertforsequenceclassification_af84ff9a474c12e27e63c7bd4fa47628c}{t0}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_af4981f54bd95a4461fb27b796b1b3b9e}\label{namespacebertforsequenceclassification_af4981f54bd95a4461fb27b796b1b3b9e}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!encoded\_sent@{encoded\_sent}}
+\index{encoded\_sent@{encoded\_sent}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{encoded\_sent}{encoded\_sent}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+encoded\+\_\+sent}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  tokenizer.encode(}
+\DoxyCodeLine{2                         sent}
+\DoxyCodeLine{3                    )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a64a60e21c05583d01a85e513548464bb}\label{namespacebertforsequenceclassification_a64a60e21c05583d01a85e513548464bb}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!epochs@{epochs}}
+\index{epochs@{epochs}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{epochs}{epochs}}
+{\footnotesize\ttfamily int bertforsequenceclassification.\+epochs = 2}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a29e285abc2cfffea88ba2cff3619ada2}\label{namespacebertforsequenceclassification_a29e285abc2cfffea88ba2cff3619ada2}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!eval\_accuracy@{eval\_accuracy}}
+\index{eval\_accuracy@{eval\_accuracy}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{eval\_accuracy}{eval\_accuracy}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+eval\+\_\+accuracy}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a7a5ee64ee0689ef2ab80df0154e3e74f}\label{namespacebertforsequenceclassification_a7a5ee64ee0689ef2ab80df0154e3e74f}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!eval\_loss@{eval\_loss}}
+\index{eval\_loss@{eval\_loss}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{eval\_loss}{eval\_loss}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+eval\+\_\+loss}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a337673da780bccb17002f5f600b73ba7}\label{namespacebertforsequenceclassification_a337673da780bccb17002f5f600b73ba7}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!input\_ids@{input\_ids}}
+\index{input\_ids@{input\_ids}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{input\_ids}{input\_ids}}
+{\footnotesize\ttfamily list bertforsequenceclassification.\+input\+\_\+ids = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ae0a135e752d7f4326a51ac7ec4447649}\label{namespacebertforsequenceclassification_ae0a135e752d7f4326a51ac7ec4447649}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!input\_ids1@{input\_ids1}}
+\index{input\_ids1@{input\_ids1}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{input\_ids1}{input\_ids1}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+input\+\_\+ids1 = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ad47a8e8a83facc5130c982f63230f355}\label{namespacebertforsequenceclassification_ad47a8e8a83facc5130c982f63230f355}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!label\_ids@{label\_ids}}
+\index{label\_ids@{label\_ids}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{label\_ids}{label\_ids}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+label\+\_\+ids = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a6e4e793e7b5752962cf3603c4c0b2714}\label{namespacebertforsequenceclassification_a6e4e793e7b5752962cf3603c4c0b2714}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!labels@{labels}}
+\index{labels@{labels}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+labels = \mbox{\hyperlink{namespacebertforsequenceclassification_a97217708e3bc1e8c320daaa41cc8fb13}{df}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}.map(\mbox{\hyperlink{namespacebertforsequenceclassification_a4d4655186cdc768449932165dd57b11d}{map1}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a5f8ca901a9501503186f36a72d004a2f}\label{namespacebertforsequenceclassification_a5f8ca901a9501503186f36a72d004a2f}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!logits@{logits}}
+\index{logits@{logits}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{logits}{logits}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+logits = \mbox{\hyperlink{namespacebertforsequenceclassification_a1d37b3496564ca9e62cc5932ced74e80}{outputs}}\mbox{[}0\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a79e2b252f0232af4e231861ca9221715}\label{namespacebertforsequenceclassification_a79e2b252f0232af4e231861ca9221715}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!loss@{loss}}
+\index{loss@{loss}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{loss}{loss}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+loss = \mbox{\hyperlink{namespacebertforsequenceclassification_a1d37b3496564ca9e62cc5932ced74e80}{outputs}}\mbox{[}0\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a2109a21911dff54c5edfa45333d82023}\label{namespacebertforsequenceclassification_a2109a21911dff54c5edfa45333d82023}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!loss\_values@{loss\_values}}
+\index{loss\_values@{loss\_values}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{loss\_values}{loss\_values}}
+{\footnotesize\ttfamily list bertforsequenceclassification.\+loss\+\_\+values = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a4d4655186cdc768449932165dd57b11d}\label{namespacebertforsequenceclassification_a4d4655186cdc768449932165dd57b11d}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!map1@{map1}}
+\index{map1@{map1}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{map1}{map1}}
+{\footnotesize\ttfamily dictionary bertforsequenceclassification.\+map1 = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a9631f727328a115ade48df47f81b83aa}\label{namespacebertforsequenceclassification_a9631f727328a115ade48df47f81b83aa}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!MAX\_LEN@{MAX\_LEN}}
+\index{MAX\_LEN@{MAX\_LEN}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{MAX\_LEN}{MAX\_LEN}}
+{\footnotesize\ttfamily int bertforsequenceclassification.\+MAX\+\_\+\+LEN = 64}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_aed66d6e8dfdbc160b1d07e60ecde6a36}\label{namespacebertforsequenceclassification_aed66d6e8dfdbc160b1d07e60ecde6a36}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!model@{model}}
+\index{model@{model}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+model = Bert\+For\+Sequence\+Classification.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacebertforsequenceclassification_a98380dc25748b00869957a2a6f32b910}{model\+\_\+checkpoint}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a98380dc25748b00869957a2a6f32b910}\label{namespacebertforsequenceclassification_a98380dc25748b00869957a2a6f32b910}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!model\_checkpoint@{model\_checkpoint}}
+\index{model\_checkpoint@{model\_checkpoint}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{model\_checkpoint}{model\_checkpoint}}
+{\footnotesize\ttfamily string bertforsequenceclassification.\+model\+\_\+checkpoint = \char`\"{}bert-\/base-\/multilingual-\/cased\char`\"{}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a30d1851534a10473de05b32aad084600}\label{namespacebertforsequenceclassification_a30d1851534a10473de05b32aad084600}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!nb\_eval\_examples@{nb\_eval\_examples}}
+\index{nb\_eval\_examples@{nb\_eval\_examples}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{nb\_eval\_examples}{nb\_eval\_examples}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+nb\+\_\+eval\+\_\+examples}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a3daea4ac68d6d49349da97ccf847a2e6}\label{namespacebertforsequenceclassification_a3daea4ac68d6d49349da97ccf847a2e6}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!nb\_eval\_steps@{nb\_eval\_steps}}
+\index{nb\_eval\_steps@{nb\_eval\_steps}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{nb\_eval\_steps}{nb\_eval\_steps}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+nb\+\_\+eval\+\_\+steps}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a3ed1a26a9fb70da7c0e16a3093889af0}\label{namespacebertforsequenceclassification_a3ed1a26a9fb70da7c0e16a3093889af0}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!optimizer@{optimizer}}
+\index{optimizer@{optimizer}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{optimizer}{optimizer}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+optimizer}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  AdamW(model.parameters(),}
+\DoxyCodeLine{2                   lr = 2e-\/5, }
+\DoxyCodeLine{3                   eps = 1e-\/8 }
+\DoxyCodeLine{4                 )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a1d37b3496564ca9e62cc5932ced74e80}\label{namespacebertforsequenceclassification_a1d37b3496564ca9e62cc5932ced74e80}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!outputs@{outputs}}
+\index{outputs@{outputs}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{outputs}{outputs}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+outputs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \mbox{\hyperlink{namespacebertforsequenceclassification_aed66d6e8dfdbc160b1d07e60ecde6a36}{model}}(b\_input\_ids.type(torch.LongTensor).to(device), }
+\DoxyCodeLine{2                     token\_type\_ids=\textcolor{keywordtype}{None}, }
+\DoxyCodeLine{3                     attention\_mask=b\_input\_mask.type(torch.LongTensor).to(device), }
+\DoxyCodeLine{4                     labels=b\_labels)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a82db0bedd9f8c333e27b91eeb0ccd794}\label{namespacebertforsequenceclassification_a82db0bedd9f8c333e27b91eeb0ccd794}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!prediction\_data@{prediction\_data}}
+\index{prediction\_data@{prediction\_data}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_data}{prediction\_data}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+prediction\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacebertforsequenceclassification_a0903f9e26170daa2c4f6acc0825bbd7f}{prediction\+\_\+inputs}}, \mbox{\hyperlink{namespacebertforsequenceclassification_ab8a57c5b05eac0b2ae77f88e002be9e1}{prediction\+\_\+masks}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a3380184ec02dcafba124e63df0cba844}{prediction\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a4a090a5eb57d640d2b8f2ec2799b6052}\label{namespacebertforsequenceclassification_a4a090a5eb57d640d2b8f2ec2799b6052}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!prediction\_dataloader@{prediction\_dataloader}}
+\index{prediction\_dataloader@{prediction\_dataloader}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_dataloader}{prediction\_dataloader}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+prediction\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacebertforsequenceclassification_a82db0bedd9f8c333e27b91eeb0ccd794}{prediction\+\_\+data}}, sampler=\mbox{\hyperlink{namespacebertforsequenceclassification_a74ea8e193195b0c9f069129ccf9387cb}{prediction\+\_\+sampler}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}}=\mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a0903f9e26170daa2c4f6acc0825bbd7f}\label{namespacebertforsequenceclassification_a0903f9e26170daa2c4f6acc0825bbd7f}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!prediction\_inputs@{prediction\_inputs}}
+\index{prediction\_inputs@{prediction\_inputs}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_inputs}{prediction\_inputs}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+prediction\+\_\+inputs = torch.\+tensor(\mbox{\hyperlink{namespacebertforsequenceclassification_a337673da780bccb17002f5f600b73ba7}{input\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a3380184ec02dcafba124e63df0cba844}\label{namespacebertforsequenceclassification_a3380184ec02dcafba124e63df0cba844}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!prediction\_labels@{prediction\_labels}}
+\index{prediction\_labels@{prediction\_labels}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_labels}{prediction\_labels}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+prediction\+\_\+labels = torch.\+tensor(\mbox{\hyperlink{namespacebertforsequenceclassification_a6e4e793e7b5752962cf3603c4c0b2714}{labels}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ab8a57c5b05eac0b2ae77f88e002be9e1}\label{namespacebertforsequenceclassification_ab8a57c5b05eac0b2ae77f88e002be9e1}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!prediction\_masks@{prediction\_masks}}
+\index{prediction\_masks@{prediction\_masks}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_masks}{prediction\_masks}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+prediction\+\_\+masks = torch.\+tensor(\mbox{\hyperlink{namespacebertforsequenceclassification_aeb72094dfe53fcb28cc5b88ca35d15d5}{attention\+\_\+masks}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a74ea8e193195b0c9f069129ccf9387cb}\label{namespacebertforsequenceclassification_a74ea8e193195b0c9f069129ccf9387cb}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!prediction\_sampler@{prediction\_sampler}}
+\index{prediction\_sampler@{prediction\_sampler}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_sampler}{prediction\_sampler}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+prediction\+\_\+sampler = Sequential\+Sampler(\mbox{\hyperlink{namespacebertforsequenceclassification_a82db0bedd9f8c333e27b91eeb0ccd794}{prediction\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_acd2de787c9c43166117eadcf4b3f5f70}\label{namespacebertforsequenceclassification_acd2de787c9c43166117eadcf4b3f5f70}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!predictions@{predictions}}
+\index{predictions@{predictions}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{predictions}{predictions}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+predictions}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a26edf50cd60d91143eb39d0bfe81e915}\label{namespacebertforsequenceclassification_a26edf50cd60d91143eb39d0bfe81e915}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!scheduler@{scheduler}}
+\index{scheduler@{scheduler}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{scheduler}{scheduler}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+scheduler}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  get\_linear\_schedule\_with\_warmup(optimizer, }
+\DoxyCodeLine{2                                             num\_warmup\_steps = 0, \textcolor{comment}{\# Default value in run\_glue.py}}
+\DoxyCodeLine{3                                             num\_training\_steps = total\_steps)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a7b93981f5da20a41b6c5c2af422b0167}\label{namespacebertforsequenceclassification_a7b93981f5da20a41b6c5c2af422b0167}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!seed\_val@{seed\_val}}
+\index{seed\_val@{seed\_val}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{seed\_val}{seed\_val}}
+{\footnotesize\ttfamily int bertforsequenceclassification.\+seed\+\_\+val = 42}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a1f28028d09df469810800cf15ff495e7}\label{namespacebertforsequenceclassification_a1f28028d09df469810800cf15ff495e7}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!sentences@{sentences}}
+\index{sentences@{sentences}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{sentences}{sentences}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+sentences = \mbox{\hyperlink{namespacebertforsequenceclassification_ae14cc64518380c67d00e937819db2fce}{df\+\_\+train}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_aa2fe27981ebc703a868cf7158a5bb5a6}\label{namespacebertforsequenceclassification_aa2fe27981ebc703a868cf7158a5bb5a6}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!sentences1@{sentences1}}
+\index{sentences1@{sentences1}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{sentences1}{sentences1}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+sentences1 = \mbox{\hyperlink{namespacebertforsequenceclassification_a25f8900b50a7324b520b5f0e88375d9f}{df\+\_\+val}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a4135cf2122151ece0d1f7dc285bfb940}\label{namespacebertforsequenceclassification_a4135cf2122151ece0d1f7dc285bfb940}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!seq\_mask@{seq\_mask}}
+\index{seq\_mask@{seq\_mask}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{seq\_mask}{seq\_mask}}
+{\footnotesize\ttfamily list bertforsequenceclassification.\+seq\+\_\+mask = \mbox{[}float(i$>$0) for i in seq\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_af84ff9a474c12e27e63c7bd4fa47628c}\label{namespacebertforsequenceclassification_af84ff9a474c12e27e63c7bd4fa47628c}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!t0@{t0}}
+\index{t0@{t0}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{t0}{t0}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+t0 = time.\+time()}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ae74a7b19b76da5ab7c9d01bbe33d7033}\label{namespacebertforsequenceclassification_ae74a7b19b76da5ab7c9d01bbe33d7033}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string bertforsequenceclassification.\+test\+\_\+path = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_abc0e187e1b7af949b79f66a7b9d00b80}\label{namespacebertforsequenceclassification_abc0e187e1b7af949b79f66a7b9d00b80}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!tmp\_eval\_accuracy@{tmp\_eval\_accuracy}}
+\index{tmp\_eval\_accuracy@{tmp\_eval\_accuracy}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{tmp\_eval\_accuracy}{tmp\_eval\_accuracy}}
+{\footnotesize\ttfamily def bertforsequenceclassification.\+tmp\+\_\+eval\+\_\+accuracy = \mbox{\hyperlink{namespacebertforsequenceclassification_a9ac01065efd9ba78befb42dcd033f140}{flat\+\_\+accuracy}}(\mbox{\hyperlink{namespacebertforsequenceclassification_a5f8ca901a9501503186f36a72d004a2f}{logits}}, \mbox{\hyperlink{namespacebertforsequenceclassification_ad47a8e8a83facc5130c982f63230f355}{label\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a5b242f5f93df865493fa93d969c8c8d6}\label{namespacebertforsequenceclassification_a5b242f5f93df865493fa93d969c8c8d6}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!tokenizer@{tokenizer}}
+\index{tokenizer@{tokenizer}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{tokenizer}{tokenizer}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+tokenizer = Bert\+Tokenizer.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacebertforsequenceclassification_a98380dc25748b00869957a2a6f32b910}{model\+\_\+checkpoint}},use\+\_\+fast=True)}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a1bcfb60cad772fe267d017808375d0a4}\label{namespacebertforsequenceclassification_a1bcfb60cad772fe267d017808375d0a4}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!total\_loss@{total\_loss}}
+\index{total\_loss@{total\_loss}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{total\_loss}{total\_loss}}
+{\footnotesize\ttfamily int bertforsequenceclassification.\+total\+\_\+loss = 0}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_af2315d9ac397c81e14acc7b8d7bf30c0}\label{namespacebertforsequenceclassification_af2315d9ac397c81e14acc7b8d7bf30c0}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!total\_steps@{total\_steps}}
+\index{total\_steps@{total\_steps}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{total\_steps}{total\_steps}}
+{\footnotesize\ttfamily int bertforsequenceclassification.\+total\+\_\+steps = len(\mbox{\hyperlink{namespacebertforsequenceclassification_a3b8991dd2b3b6612f5fb02fed0706df6}{train\+\_\+dataloader}}) $\ast$ \mbox{\hyperlink{namespacebertforsequenceclassification_a64a60e21c05583d01a85e513548464bb}{epochs}}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a5817d91f1c62dcbd04a54b8338f652af}\label{namespacebertforsequenceclassification_a5817d91f1c62dcbd04a54b8338f652af}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+train\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacebertforsequenceclassification_ae55165a7da4cf7c5016c2bf20fad8dc7}{train\+\_\+inputs}}, \mbox{\hyperlink{namespacebertforsequenceclassification_ac6aaccde65e56a2deb92bbc47d9deb64}{train\+\_\+masks}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a0c91d561cb7926809c5f2b4875068f5d}{train\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a3b8991dd2b3b6612f5fb02fed0706df6}\label{namespacebertforsequenceclassification_a3b8991dd2b3b6612f5fb02fed0706df6}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!train\_dataloader@{train\_dataloader}}
+\index{train\_dataloader@{train\_dataloader}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_dataloader}{train\_dataloader}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+train\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacebertforsequenceclassification_a5817d91f1c62dcbd04a54b8338f652af}{train\+\_\+data}}, sampler=\mbox{\hyperlink{namespacebertforsequenceclassification_add98eb6c90a385909be59604acc14241}{train\+\_\+sampler}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}}=\mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ae55165a7da4cf7c5016c2bf20fad8dc7}\label{namespacebertforsequenceclassification_ae55165a7da4cf7c5016c2bf20fad8dc7}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!train\_inputs@{train\_inputs}}
+\index{train\_inputs@{train\_inputs}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_inputs}{train\_inputs}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+train\+\_\+inputs = pd.\+Data\+Frame(\mbox{\hyperlink{namespacebertforsequenceclassification_a337673da780bccb17002f5f600b73ba7}{input\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a0c91d561cb7926809c5f2b4875068f5d}\label{namespacebertforsequenceclassification_a0c91d561cb7926809c5f2b4875068f5d}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!train\_labels@{train\_labels}}
+\index{train\_labels@{train\_labels}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_labels}{train\_labels}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+train\+\_\+labels = \mbox{\hyperlink{namespacebertforsequenceclassification_ae14cc64518380c67d00e937819db2fce}{df\+\_\+train}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ac6aaccde65e56a2deb92bbc47d9deb64}\label{namespacebertforsequenceclassification_ac6aaccde65e56a2deb92bbc47d9deb64}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!train\_masks@{train\_masks}}
+\index{train\_masks@{train\_masks}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_masks}{train\_masks}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+train\+\_\+masks = \mbox{\hyperlink{namespacebertforsequenceclassification_aeb72094dfe53fcb28cc5b88ca35d15d5}{attention\+\_\+masks}}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ac2e91f9bd4ddf71176642143944779df}\label{namespacebertforsequenceclassification_ac2e91f9bd4ddf71176642143944779df}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string bertforsequenceclassification.\+train\+\_\+path = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_add98eb6c90a385909be59604acc14241}\label{namespacebertforsequenceclassification_add98eb6c90a385909be59604acc14241}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!train\_sampler@{train\_sampler}}
+\index{train\_sampler@{train\_sampler}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_sampler}{train\_sampler}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+train\+\_\+sampler = Random\+Sampler(\mbox{\hyperlink{namespacebertforsequenceclassification_a5817d91f1c62dcbd04a54b8338f652af}{train\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_ae74fee822eab088faf55892093e63c2a}\label{namespacebertforsequenceclassification_ae74fee822eab088faf55892093e63c2a}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!true\_labels@{true\_labels}}
+\index{true\_labels@{true\_labels}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{true\_labels}{true\_labels}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+true\+\_\+labels}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a771260348af390c7573289389ecdd97c}\label{namespacebertforsequenceclassification_a771260348af390c7573289389ecdd97c}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+validation\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacebertforsequenceclassification_aa31e8e8732cc8c4be8c856a5565f5319}{validation\+\_\+inputs}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a8043da072fc8703ae81ba837f8ad625f}{validation\+\_\+masks}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a682d47b3524238d3a6dbeddd3aec1d3a}{validation\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a9829945cfa5f981181670a61b365d9e3}\label{namespacebertforsequenceclassification_a9829945cfa5f981181670a61b365d9e3}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!validation\_dataloader@{validation\_dataloader}}
+\index{validation\_dataloader@{validation\_dataloader}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_dataloader}{validation\_dataloader}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+validation\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacebertforsequenceclassification_a771260348af390c7573289389ecdd97c}{validation\+\_\+data}}, sampler=\mbox{\hyperlink{namespacebertforsequenceclassification_adfdf75f47e7abd58ce584148ade73115}{validation\+\_\+sampler}}, \mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}}=\mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_aa31e8e8732cc8c4be8c856a5565f5319}\label{namespacebertforsequenceclassification_aa31e8e8732cc8c4be8c856a5565f5319}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!validation\_inputs@{validation\_inputs}}
+\index{validation\_inputs@{validation\_inputs}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_inputs}{validation\_inputs}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+validation\+\_\+inputs = pd.\+Data\+Frame(\mbox{\hyperlink{namespacebertforsequenceclassification_ae0a135e752d7f4326a51ac7ec4447649}{input\+\_\+ids1}})}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a682d47b3524238d3a6dbeddd3aec1d3a}\label{namespacebertforsequenceclassification_a682d47b3524238d3a6dbeddd3aec1d3a}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!validation\_labels@{validation\_labels}}
+\index{validation\_labels@{validation\_labels}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_labels}{validation\_labels}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+validation\+\_\+labels = \mbox{\hyperlink{namespacebertforsequenceclassification_a25f8900b50a7324b520b5f0e88375d9f}{df\+\_\+val}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_a8043da072fc8703ae81ba837f8ad625f}\label{namespacebertforsequenceclassification_a8043da072fc8703ae81ba837f8ad625f}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!validation\_masks@{validation\_masks}}
+\index{validation\_masks@{validation\_masks}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_masks}{validation\_masks}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+validation\+\_\+masks = \mbox{\hyperlink{namespacebertforsequenceclassification_ae746f0daf82867cede877a361ab7ef45}{attention\+\_\+masks2}}}
+
+\mbox{\Hypertarget{namespacebertforsequenceclassification_adfdf75f47e7abd58ce584148ade73115}\label{namespacebertforsequenceclassification_adfdf75f47e7abd58ce584148ade73115}} 
+\index{bertforsequenceclassification@{bertforsequenceclassification}!validation\_sampler@{validation\_sampler}}
+\index{validation\_sampler@{validation\_sampler}!bertforsequenceclassification@{bertforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_sampler}{validation\_sampler}}
+{\footnotesize\ttfamily bertforsequenceclassification.\+validation\+\_\+sampler = Sequential\+Sampler(\mbox{\hyperlink{namespacebertforsequenceclassification_a771260348af390c7573289389ecdd97c}{validation\+\_\+data}})}
+

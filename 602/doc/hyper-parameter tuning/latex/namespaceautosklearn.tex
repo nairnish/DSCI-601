@@ -1,0 +1,112 @@
+\hypertarget{namespaceautosklearn}{}\doxysection{autosklearn Namespace Reference}
+\label{namespaceautosklearn}\index{autosklearn@{autosklearn}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespaceautosklearn_a6da3ba9ffb7e25a847a71b85e3688c4d}{train\+\_\+path}} = \textquotesingle{}DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespaceautosklearn_a29a3257cc8426d54db6c68998b31bc25}{dev\+\_\+path}} = \textquotesingle{}DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespaceautosklearn_a9977a1c0cae5ba16e02d1b7bcb3ea84e}{test\+\_\+path}} = \textquotesingle{}DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespaceautosklearn_a1cfed18b06a7a21bfea2e3ec4a834513}{df\+\_\+train}} = load\+\_\+data(\mbox{\hyperlink{namespaceautosklearn_a6da3ba9ffb7e25a847a71b85e3688c4d}{train\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespaceautosklearn_a30c076e1f0b9ae78954903ab2973c805}{df\+\_\+test}} = load\+\_\+data(\mbox{\hyperlink{namespaceautosklearn_a9977a1c0cae5ba16e02d1b7bcb3ea84e}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespaceautosklearn_ac49c7be90a2188a79e79b897a7e9af8e}{df\+\_\+dev}} = load\+\_\+data(\mbox{\hyperlink{namespaceautosklearn_a29a3257cc8426d54db6c68998b31bc25}{dev\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespaceautosklearn_acbcc9cf9f963853a66a43096cf551fbd}{X\+\_\+train}} = \mbox{\hyperlink{namespaceautosklearn_a1cfed18b06a7a21bfea2e3ec4a834513}{df\+\_\+train}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceautosklearn_a435bb6ad06b0c8927927a16d5c0a5c92}{y\+\_\+train}} = \mbox{\hyperlink{namespaceautosklearn_a1cfed18b06a7a21bfea2e3ec4a834513}{df\+\_\+train}}\mbox{[}\textquotesingle{}language\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceautosklearn_abf83f8cd3344cec90c101a25e3138d44}{feature}}
+\item 
+\mbox{\hyperlink{namespaceautosklearn_a30eab30f109210ae18e1339b3790c36e}{feature\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespaceautosklearn_a1260f609f50cedcd226dc7b47876e398}{y\+\_\+test}} = \mbox{\hyperlink{namespaceautosklearn_a30c076e1f0b9ae78954903ab2973c805}{df\+\_\+test}}\mbox{[}\textquotesingle{}language\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceautosklearn_afe195c4fb4ffbcaca613cf1a349cbc0d}{cls}} = autosklearn.\+classification.\+Auto\+Sklearn\+Classifier(n\+\_\+jobs=-\/1)
+\item 
+\mbox{\hyperlink{namespaceautosklearn_a9e6cc218d947220a09ef7e73eaf6d302}{predictions}} = cls.\+predict(\mbox{\hyperlink{namespaceautosklearn_a30eab30f109210ae18e1339b3790c36e}{feature\+\_\+test}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceautosklearn_afe195c4fb4ffbcaca613cf1a349cbc0d}\label{namespaceautosklearn_afe195c4fb4ffbcaca613cf1a349cbc0d}} 
+\index{autosklearn@{autosklearn}!cls@{cls}}
+\index{cls@{cls}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{cls}{cls}}
+{\footnotesize\ttfamily autosklearn.\+cls = autosklearn.\+classification.\+Auto\+Sklearn\+Classifier(n\+\_\+jobs=-\/1)}
+
+\mbox{\Hypertarget{namespaceautosklearn_a29a3257cc8426d54db6c68998b31bc25}\label{namespaceautosklearn_a29a3257cc8426d54db6c68998b31bc25}} 
+\index{autosklearn@{autosklearn}!dev\_path@{dev\_path}}
+\index{dev\_path@{dev\_path}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{dev\_path}{dev\_path}}
+{\footnotesize\ttfamily string autosklearn.\+dev\+\_\+path = \textquotesingle{}DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespaceautosklearn_ac49c7be90a2188a79e79b897a7e9af8e}\label{namespaceautosklearn_ac49c7be90a2188a79e79b897a7e9af8e}} 
+\index{autosklearn@{autosklearn}!df\_dev@{df\_dev}}
+\index{df\_dev@{df\_dev}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{df\_dev}{df\_dev}}
+{\footnotesize\ttfamily autosklearn.\+df\+\_\+dev = load\+\_\+data(\mbox{\hyperlink{namespaceautosklearn_a29a3257cc8426d54db6c68998b31bc25}{dev\+\_\+path}})}
+
+\mbox{\Hypertarget{namespaceautosklearn_a30c076e1f0b9ae78954903ab2973c805}\label{namespaceautosklearn_a30c076e1f0b9ae78954903ab2973c805}} 
+\index{autosklearn@{autosklearn}!df\_test@{df\_test}}
+\index{df\_test@{df\_test}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{df\_test}{df\_test}}
+{\footnotesize\ttfamily autosklearn.\+df\+\_\+test = load\+\_\+data(\mbox{\hyperlink{namespaceautosklearn_a9977a1c0cae5ba16e02d1b7bcb3ea84e}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespaceautosklearn_a1cfed18b06a7a21bfea2e3ec4a834513}\label{namespaceautosklearn_a1cfed18b06a7a21bfea2e3ec4a834513}} 
+\index{autosklearn@{autosklearn}!df\_train@{df\_train}}
+\index{df\_train@{df\_train}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{df\_train}{df\_train}}
+{\footnotesize\ttfamily autosklearn.\+df\+\_\+train = load\+\_\+data(\mbox{\hyperlink{namespaceautosklearn_a6da3ba9ffb7e25a847a71b85e3688c4d}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespaceautosklearn_abf83f8cd3344cec90c101a25e3138d44}\label{namespaceautosklearn_abf83f8cd3344cec90c101a25e3138d44}} 
+\index{autosklearn@{autosklearn}!feature@{feature}}
+\index{feature@{feature}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{feature}{feature}}
+{\footnotesize\ttfamily autosklearn.\+feature}
+
+\mbox{\Hypertarget{namespaceautosklearn_a30eab30f109210ae18e1339b3790c36e}\label{namespaceautosklearn_a30eab30f109210ae18e1339b3790c36e}} 
+\index{autosklearn@{autosklearn}!feature\_test@{feature\_test}}
+\index{feature\_test@{feature\_test}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{feature\_test}{feature\_test}}
+{\footnotesize\ttfamily autosklearn.\+feature\+\_\+test}
+
+\mbox{\Hypertarget{namespaceautosklearn_a9e6cc218d947220a09ef7e73eaf6d302}\label{namespaceautosklearn_a9e6cc218d947220a09ef7e73eaf6d302}} 
+\index{autosklearn@{autosklearn}!predictions@{predictions}}
+\index{predictions@{predictions}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{predictions}{predictions}}
+{\footnotesize\ttfamily autosklearn.\+predictions = cls.\+predict(\mbox{\hyperlink{namespaceautosklearn_a30eab30f109210ae18e1339b3790c36e}{feature\+\_\+test}})}
+
+\mbox{\Hypertarget{namespaceautosklearn_a9977a1c0cae5ba16e02d1b7bcb3ea84e}\label{namespaceautosklearn_a9977a1c0cae5ba16e02d1b7bcb3ea84e}} 
+\index{autosklearn@{autosklearn}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string autosklearn.\+test\+\_\+path = \textquotesingle{}DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespaceautosklearn_a6da3ba9ffb7e25a847a71b85e3688c4d}\label{namespaceautosklearn_a6da3ba9ffb7e25a847a71b85e3688c4d}} 
+\index{autosklearn@{autosklearn}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string autosklearn.\+train\+\_\+path = \textquotesingle{}DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespaceautosklearn_acbcc9cf9f963853a66a43096cf551fbd}\label{namespaceautosklearn_acbcc9cf9f963853a66a43096cf551fbd}} 
+\index{autosklearn@{autosklearn}!X\_train@{X\_train}}
+\index{X\_train@{X\_train}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{X\_train}{X\_train}}
+{\footnotesize\ttfamily autosklearn.\+X\+\_\+train = \mbox{\hyperlink{namespaceautosklearn_a1cfed18b06a7a21bfea2e3ec4a834513}{df\+\_\+train}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespaceautosklearn_a1260f609f50cedcd226dc7b47876e398}\label{namespaceautosklearn_a1260f609f50cedcd226dc7b47876e398}} 
+\index{autosklearn@{autosklearn}!y\_test@{y\_test}}
+\index{y\_test@{y\_test}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{y\_test}{y\_test}}
+{\footnotesize\ttfamily autosklearn.\+y\+\_\+test = \mbox{\hyperlink{namespaceautosklearn_a30c076e1f0b9ae78954903ab2973c805}{df\+\_\+test}}\mbox{[}\textquotesingle{}language\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespaceautosklearn_a435bb6ad06b0c8927927a16d5c0a5c92}\label{namespaceautosklearn_a435bb6ad06b0c8927927a16d5c0a5c92}} 
+\index{autosklearn@{autosklearn}!y\_train@{y\_train}}
+\index{y\_train@{y\_train}!autosklearn@{autosklearn}}
+\doxysubsubsection{\texorpdfstring{y\_train}{y\_train}}
+{\footnotesize\ttfamily autosklearn.\+y\+\_\+train = \mbox{\hyperlink{namespaceautosklearn_a1cfed18b06a7a21bfea2e3ec4a834513}{df\+\_\+train}}\mbox{[}\textquotesingle{}language\textquotesingle{}\mbox{]}}
+

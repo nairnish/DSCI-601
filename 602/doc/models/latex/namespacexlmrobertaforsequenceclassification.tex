@@ -1,0 +1,630 @@
+\hypertarget{namespacexlmrobertaforsequenceclassification}{}\doxysection{xlmrobertaforsequenceclassification Namespace Reference}
+\label{namespacexlmrobertaforsequenceclassification}\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}{preprocess}} (path)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_acac13b1ffd90b9d9f5defcc71ec2332c}{flat\+\_\+accuracy}} (preds, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af1e104b92255f0cdad0f892714a53dd0}{labels}})
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a536ee84d6513b47c86f3ad1b847daf68}{format\+\_\+time}} (\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae4084262c1431b5a4778128320fd6935}{elapsed}})
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad47a61d35a7305d875a29bc1c9af8c25}{evaluate}} (y\+\_\+true, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa1f6fdf76d8cd92ab572492a15764218}{predictions}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac6fa46199771f36bf90b85287b5fed7f}{train\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1b2c26beadd3ef84b7bfbb0e00e7d7a3}{dev\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa6e921e50fa4f96c124af6a63689d378}{test\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a78b1357c74d627f97599f7cb3996b11b}{df\+\_\+train}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}{preprocess}}(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac6fa46199771f36bf90b85287b5fed7f}{train\+\_\+path}})
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae3bab964695eea767016edbcefbe92e1}{df\+\_\+test}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}{preprocess}}(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa6e921e50fa4f96c124af6a63689d378}{test\+\_\+path}})
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9c8918072ddce7c54562724a6810f932}{df\+\_\+val}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}{preprocess}}(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1b2c26beadd3ef84b7bfbb0e00e7d7a3}{dev\+\_\+path}})
+\item 
+string \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4ddbd7fee6267205fd82f2ff4d2b41d2}{model\+\_\+checkpoint}} = \char`\"{}xlm-\/roberta-\/base\char`\"{}
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a99755f6b0519839ae8483c1622689e1b}{sentences}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a78b1357c74d627f97599f7cb3996b11b}{df\+\_\+train}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af1e104b92255f0cdad0f892714a53dd0}{labels}} = df\+\_\+train.\+language.\+values
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2fa3fa815b9f7ef5bdb16348cb0112d2}{tokenizer}} = XLMRoberta\+Tokenizer.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4ddbd7fee6267205fd82f2ff4d2b41d2}{model\+\_\+checkpoint}},use\+\_\+fast=True)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4e85b84d2cfc7bb82e9a6d822e1d8f93}{model}} = XLMRoberta\+For\+Sequence\+Classification.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4ddbd7fee6267205fd82f2ff4d2b41d2}{model\+\_\+checkpoint}})
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a21cb048c5041cebc19c514f139d87afa}{input\+\_\+ids}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ab8d7f21ad611d5736a46be3ac0698325}{encoded\+\_\+sent}}
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a094671d2033a57935e5b9d39ac7f04e8}{MAX\+\_\+\+LEN}} = 64
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c64276670f55a1cede995ec8cbf547b}{attention\+\_\+masks}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9ab3462d26cdbd17e2f63c5b21be644e}{att\+\_\+mask}} = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a98619989899985f950c4c3f46fe7af9c}{train\+\_\+masks}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c64276670f55a1cede995ec8cbf547b}{attention\+\_\+masks}}
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad08a40762375babe8a1115b29e7c93f1}{sentences1}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9c8918072ddce7c54562724a6810f932}{df\+\_\+val}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a49cb3c7bc3e19b58fe997be4bc1f1689}{input\+\_\+ids1}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af990769905474783b3d60942605687f0}{attention\+\_\+masks2}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a83734d3b7b20175108d1f2b18f636aa4}{validation\+\_\+masks}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af990769905474783b3d60942605687f0}{attention\+\_\+masks2}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4c2ac5d8016fef5c2090e4f5fed51e5d}{train\+\_\+inputs}} = pd.\+Data\+Frame(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a21cb048c5041cebc19c514f139d87afa}{input\+\_\+ids}})
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4f5c2ffcfdc8a91788cb0284e7df39e5}{train\+\_\+labels}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a78b1357c74d627f97599f7cb3996b11b}{df\+\_\+train}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a38e23960bb04d3a6a2b76d49db5b5c60}{validation\+\_\+inputs}} = pd.\+Data\+Frame(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a49cb3c7bc3e19b58fe997be4bc1f1689}{input\+\_\+ids1}})
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a418b8e06d41a48cf599a088187763b49}{validation\+\_\+labels}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9c8918072ddce7c54562724a6810f932}{df\+\_\+val}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a7b5b639cbe720ce6071bf75a3a6fd417}{map1}} = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}} = 32
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad1adaa5a9b94c4254cee295b94ba59b6}{train\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4c2ac5d8016fef5c2090e4f5fed51e5d}{train\+\_\+inputs}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a98619989899985f950c4c3f46fe7af9c}{train\+\_\+masks}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4f5c2ffcfdc8a91788cb0284e7df39e5}{train\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6e7ed19af91f817604bf31a6178b5884}{train\+\_\+sampler}} = Random\+Sampler(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad1adaa5a9b94c4254cee295b94ba59b6}{train\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af10a04773e32b6f96aadb86296b8d09a}{train\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad1adaa5a9b94c4254cee295b94ba59b6}{train\+\_\+data}}, sampler=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6e7ed19af91f817604bf31a6178b5884}{train\+\_\+sampler}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}}=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abdd9fc1cf4edf978abdce832c6797d75}{validation\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a38e23960bb04d3a6a2b76d49db5b5c60}{validation\+\_\+inputs}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a83734d3b7b20175108d1f2b18f636aa4}{validation\+\_\+masks}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a418b8e06d41a48cf599a088187763b49}{validation\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ab1115254483f725374632d583abd0612}{validation\+\_\+sampler}} = Sequential\+Sampler(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abdd9fc1cf4edf978abdce832c6797d75}{validation\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a976940762680545bdb8637220f66334f}{validation\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abdd9fc1cf4edf978abdce832c6797d75}{validation\+\_\+data}}, sampler=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ab1115254483f725374632d583abd0612}{validation\+\_\+sampler}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}}=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aeb671d26311326f8b5447898e13cbeb8}{optimizer}}
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a7808c4ffcaff29014f6a340413ac3420}{epochs}} = 2
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a100891c5d482043c1eaa0832e7eef5a8}{total\+\_\+steps}} = len(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af10a04773e32b6f96aadb86296b8d09a}{train\+\_\+dataloader}}) $\ast$ \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a7808c4ffcaff29014f6a340413ac3420}{epochs}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4675f9f2348e1c375fd34b89f27f86da}{scheduler}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1ea6c875f313bd0ff03ccf5674cef218}{cuda0}} = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1ea6c875f313bd0ff03ccf5674cef218}{cuda0}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ab6194dc831b7b465acb02853cb76fae1}{device\+\_\+name}} = tf.\+test.\+gpu\+\_\+device\+\_\+name()
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8bfcc04975b901ca2aae2f0dfc019e3c}{seed\+\_\+val}} = 42
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa53394d15ab2c81252149257e2faec3b}{loss\+\_\+values}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adfe5e354a5a17fcae7223c887941726f}{t0}} = time.\+time()
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aef13094fb8976835a5556f32de5c25f4}{total\+\_\+loss}} = 0
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae4084262c1431b5a4778128320fd6935}{elapsed}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a536ee84d6513b47c86f3ad1b847daf68}{format\+\_\+time}}(time.\+time() -\/ \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adfe5e354a5a17fcae7223c887941726f}{t0}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1bb3d5b92a5d2472de1a0cbe25d44162}{b\+\_\+input\+\_\+ids}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}{batch}}\mbox{[}0\mbox{]}.to(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad09d6eb1474b58f6434d85094f7d4724}{b\+\_\+input\+\_\+mask}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}{batch}}\mbox{[}1\mbox{]}.to(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a53d810aa908e3d83f3c4b9dd82fc8316}{b\+\_\+labels}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}{batch}}\mbox{[}2\mbox{]}.to(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6d353281859da6102fc03b49b01f9993}{outputs}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8fa450da1718964a7436b7e79c3777b2}{loss}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6d353281859da6102fc03b49b01f9993}{outputs}}\mbox{[}0\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abd7cd6f79334f479cd82859d5a8e42c4}{avg\+\_\+train\+\_\+loss}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aef13094fb8976835a5556f32de5c25f4}{total\+\_\+loss}} / len(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af10a04773e32b6f96aadb86296b8d09a}{train\+\_\+dataloader}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a342c535344b0840af5054a84e8ae3fc1}{eval\+\_\+loss}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac17ec3ce17f05b17a756f767cfe7f962}{eval\+\_\+accuracy}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a67160e1f74517748f384fa57e093eec1}{nb\+\_\+eval\+\_\+steps}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae1b9adbfe14f33dcd3d453bd86e43aaa}{nb\+\_\+eval\+\_\+examples}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}{batch}} = tuple(t.\+to(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}}) for t in batch)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adfe92717ba91d19d4e930b2d145c2dfa}{logits}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6d353281859da6102fc03b49b01f9993}{outputs}}\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2fa22a73cf67cb0700428f9bf881bfc1}{label\+\_\+ids}} = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a49eaeb0b3c170f92ba38f4f022ce75d4}{tmp\+\_\+eval\+\_\+accuracy}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_acac13b1ffd90b9d9f5defcc71ec2332c}{flat\+\_\+accuracy}}(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adfe92717ba91d19d4e930b2d145c2dfa}{logits}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2fa22a73cf67cb0700428f9bf881bfc1}{label\+\_\+ids}})
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a149635f2bb8d51d45a2fe8e36da07ed5}{df}} = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae3bab964695eea767016edbcefbe92e1}{df\+\_\+test}}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_acb06c9e7ced29f30d60d735467ea2a7d}{seq\+\_\+mask}} = \mbox{[}float(i$>$0) for i in seq\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abd202ac05d92beba936ff2462e48e969}{prediction\+\_\+inputs}} = torch.\+tensor(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a21cb048c5041cebc19c514f139d87afa}{input\+\_\+ids}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aaeacac3f030cf09dabd7d9e24685a834}{prediction\+\_\+masks}} = torch.\+tensor(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c64276670f55a1cede995ec8cbf547b}{attention\+\_\+masks}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c141ebefea26b97675e17367b85dd6c}{prediction\+\_\+labels}} = torch.\+tensor(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af1e104b92255f0cdad0f892714a53dd0}{labels}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adb4e1e49f36815cfab399e495fcbc96f}{prediction\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abd202ac05d92beba936ff2462e48e969}{prediction\+\_\+inputs}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aaeacac3f030cf09dabd7d9e24685a834}{prediction\+\_\+masks}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c141ebefea26b97675e17367b85dd6c}{prediction\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9fdcb506bd2bc1f25dedef774d113d72}{prediction\+\_\+sampler}} = Sequential\+Sampler(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adb4e1e49f36815cfab399e495fcbc96f}{prediction\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a552d7e42c36898dd15cbac3ea3f2d86e}{prediction\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adb4e1e49f36815cfab399e495fcbc96f}{prediction\+\_\+data}}, sampler=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9fdcb506bd2bc1f25dedef774d113d72}{prediction\+\_\+sampler}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}}=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa1f6fdf76d8cd92ab572492a15764218}{predictions}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a0da230b284e3cb157a8bcfc51c414575}{true\+\_\+labels}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ad47a61d35a7305d875a29bc1c9af8c25}\label{namespacexlmrobertaforsequenceclassification_ad47a61d35a7305d875a29bc1c9af8c25}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+evaluate (\begin{DoxyParamCaption}\item[{}]{y\+\_\+true,  }\item[{}]{predictions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_acac13b1ffd90b9d9f5defcc71ec2332c}\label{namespacexlmrobertaforsequenceclassification_acac13b1ffd90b9d9f5defcc71ec2332c}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!flat\_accuracy@{flat\_accuracy}}
+\index{flat\_accuracy@{flat\_accuracy}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{flat\_accuracy()}{flat\_accuracy()}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+flat\+\_\+accuracy (\begin{DoxyParamCaption}\item[{}]{preds,  }\item[{}]{labels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a536ee84d6513b47c86f3ad1b847daf68}\label{namespacexlmrobertaforsequenceclassification_a536ee84d6513b47c86f3ad1b847daf68}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!format\_time@{format\_time}}
+\index{format\_time@{format\_time}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{format\_time()}{format\_time()}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+format\+\_\+time (\begin{DoxyParamCaption}\item[{}]{elapsed }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Takes a time in seconds and returns a string hh:mm:ss
+\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}\label{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+preprocess (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a9ab3462d26cdbd17e2f63c5b21be644e}\label{namespacexlmrobertaforsequenceclassification_a9ab3462d26cdbd17e2f63c5b21be644e}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!att\_mask@{att\_mask}}
+\index{att\_mask@{att\_mask}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{att\_mask}{att\_mask}}
+{\footnotesize\ttfamily list xlmrobertaforsequenceclassification.\+att\+\_\+mask = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a1c64276670f55a1cede995ec8cbf547b}\label{namespacexlmrobertaforsequenceclassification_a1c64276670f55a1cede995ec8cbf547b}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!attention\_masks@{attention\_masks}}
+\index{attention\_masks@{attention\_masks}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{attention\_masks}{attention\_masks}}
+{\footnotesize\ttfamily list xlmrobertaforsequenceclassification.\+attention\+\_\+masks = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_af990769905474783b3d60942605687f0}\label{namespacexlmrobertaforsequenceclassification_af990769905474783b3d60942605687f0}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!attention\_masks2@{attention\_masks2}}
+\index{attention\_masks2@{attention\_masks2}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{attention\_masks2}{attention\_masks2}}
+{\footnotesize\ttfamily list xlmrobertaforsequenceclassification.\+attention\+\_\+masks2 = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_abd7cd6f79334f479cd82859d5a8e42c4}\label{namespacexlmrobertaforsequenceclassification_abd7cd6f79334f479cd82859d5a8e42c4}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!avg\_train\_loss@{avg\_train\_loss}}
+\index{avg\_train\_loss@{avg\_train\_loss}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{avg\_train\_loss}{avg\_train\_loss}}
+{\footnotesize\ttfamily int xlmrobertaforsequenceclassification.\+avg\+\_\+train\+\_\+loss = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aef13094fb8976835a5556f32de5c25f4}{total\+\_\+loss}} / len(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af10a04773e32b6f96aadb86296b8d09a}{train\+\_\+dataloader}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a1bb3d5b92a5d2472de1a0cbe25d44162}\label{namespacexlmrobertaforsequenceclassification_a1bb3d5b92a5d2472de1a0cbe25d44162}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!b\_input\_ids@{b\_input\_ids}}
+\index{b\_input\_ids@{b\_input\_ids}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{b\_input\_ids}{b\_input\_ids}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+b\+\_\+input\+\_\+ids = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}{batch}}\mbox{[}0\mbox{]}.to(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ad09d6eb1474b58f6434d85094f7d4724}\label{namespacexlmrobertaforsequenceclassification_ad09d6eb1474b58f6434d85094f7d4724}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!b\_input\_mask@{b\_input\_mask}}
+\index{b\_input\_mask@{b\_input\_mask}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{b\_input\_mask}{b\_input\_mask}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+b\+\_\+input\+\_\+mask = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}{batch}}\mbox{[}1\mbox{]}.to(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a53d810aa908e3d83f3c4b9dd82fc8316}\label{namespacexlmrobertaforsequenceclassification_a53d810aa908e3d83f3c4b9dd82fc8316}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!b\_labels@{b\_labels}}
+\index{b\_labels@{b\_labels}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{b\_labels}{b\_labels}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+b\+\_\+labels = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}{batch}}\mbox{[}2\mbox{]}.to(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}\label{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!batch@{batch}}
+\index{batch@{batch}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{batch}{batch}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+batch = tuple(t.\+to(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{device}}) for t in batch)}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}\label{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily int xlmrobertaforsequenceclassification.\+batch\+\_\+size = 32}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a1ea6c875f313bd0ff03ccf5674cef218}\label{namespacexlmrobertaforsequenceclassification_a1ea6c875f313bd0ff03ccf5674cef218}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!cuda0@{cuda0}}
+\index{cuda0@{cuda0}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{cuda0}{cuda0}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+cuda0 = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a1b2c26beadd3ef84b7bfbb0e00e7d7a3}\label{namespacexlmrobertaforsequenceclassification_a1b2c26beadd3ef84b7bfbb0e00e7d7a3}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!dev\_path@{dev\_path}}
+\index{dev\_path@{dev\_path}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{dev\_path}{dev\_path}}
+{\footnotesize\ttfamily string xlmrobertaforsequenceclassification.\+dev\+\_\+path = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}\label{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!device@{device}}
+\index{device@{device}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+device = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1ea6c875f313bd0ff03ccf5674cef218}{cuda0}}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ab6194dc831b7b465acb02853cb76fae1}\label{namespacexlmrobertaforsequenceclassification_ab6194dc831b7b465acb02853cb76fae1}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!device\_name@{device\_name}}
+\index{device\_name@{device\_name}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{device\_name}{device\_name}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+device\+\_\+name = tf.\+test.\+gpu\+\_\+device\+\_\+name()}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a149635f2bb8d51d45a2fe8e36da07ed5}\label{namespacexlmrobertaforsequenceclassification_a149635f2bb8d51d45a2fe8e36da07ed5}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!df@{df}}
+\index{df@{df}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+df = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae3bab964695eea767016edbcefbe92e1}{df\+\_\+test}}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ae3bab964695eea767016edbcefbe92e1}\label{namespacexlmrobertaforsequenceclassification_ae3bab964695eea767016edbcefbe92e1}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!df\_test@{df\_test}}
+\index{df\_test@{df\_test}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{df\_test}{df\_test}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+df\+\_\+test = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}{preprocess}}(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa6e921e50fa4f96c124af6a63689d378}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a78b1357c74d627f97599f7cb3996b11b}\label{namespacexlmrobertaforsequenceclassification_a78b1357c74d627f97599f7cb3996b11b}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!df\_train@{df\_train}}
+\index{df\_train@{df\_train}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{df\_train}{df\_train}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+df\+\_\+train = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}{preprocess}}(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac6fa46199771f36bf90b85287b5fed7f}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a9c8918072ddce7c54562724a6810f932}\label{namespacexlmrobertaforsequenceclassification_a9c8918072ddce7c54562724a6810f932}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!df\_val@{df\_val}}
+\index{df\_val@{df\_val}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{df\_val}{df\_val}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+df\+\_\+val = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}{preprocess}}(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1b2c26beadd3ef84b7bfbb0e00e7d7a3}{dev\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ae4084262c1431b5a4778128320fd6935}\label{namespacexlmrobertaforsequenceclassification_ae4084262c1431b5a4778128320fd6935}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!elapsed@{elapsed}}
+\index{elapsed@{elapsed}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{elapsed}{elapsed}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+elapsed = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a536ee84d6513b47c86f3ad1b847daf68}{format\+\_\+time}}(time.\+time() -\/ \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adfe5e354a5a17fcae7223c887941726f}{t0}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ab8d7f21ad611d5736a46be3ac0698325}\label{namespacexlmrobertaforsequenceclassification_ab8d7f21ad611d5736a46be3ac0698325}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!encoded\_sent@{encoded\_sent}}
+\index{encoded\_sent@{encoded\_sent}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{encoded\_sent}{encoded\_sent}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+encoded\+\_\+sent}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  tokenizer.encode(}
+\DoxyCodeLine{2                         sent}
+\DoxyCodeLine{3                    )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a7808c4ffcaff29014f6a340413ac3420}\label{namespacexlmrobertaforsequenceclassification_a7808c4ffcaff29014f6a340413ac3420}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!epochs@{epochs}}
+\index{epochs@{epochs}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{epochs}{epochs}}
+{\footnotesize\ttfamily int xlmrobertaforsequenceclassification.\+epochs = 2}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ac17ec3ce17f05b17a756f767cfe7f962}\label{namespacexlmrobertaforsequenceclassification_ac17ec3ce17f05b17a756f767cfe7f962}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!eval\_accuracy@{eval\_accuracy}}
+\index{eval\_accuracy@{eval\_accuracy}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{eval\_accuracy}{eval\_accuracy}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+eval\+\_\+accuracy}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a342c535344b0840af5054a84e8ae3fc1}\label{namespacexlmrobertaforsequenceclassification_a342c535344b0840af5054a84e8ae3fc1}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!eval\_loss@{eval\_loss}}
+\index{eval\_loss@{eval\_loss}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{eval\_loss}{eval\_loss}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+eval\+\_\+loss}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a21cb048c5041cebc19c514f139d87afa}\label{namespacexlmrobertaforsequenceclassification_a21cb048c5041cebc19c514f139d87afa}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!input\_ids@{input\_ids}}
+\index{input\_ids@{input\_ids}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{input\_ids}{input\_ids}}
+{\footnotesize\ttfamily list xlmrobertaforsequenceclassification.\+input\+\_\+ids = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a49cb3c7bc3e19b58fe997be4bc1f1689}\label{namespacexlmrobertaforsequenceclassification_a49cb3c7bc3e19b58fe997be4bc1f1689}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!input\_ids1@{input\_ids1}}
+\index{input\_ids1@{input\_ids1}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{input\_ids1}{input\_ids1}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+input\+\_\+ids1 = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a2fa22a73cf67cb0700428f9bf881bfc1}\label{namespacexlmrobertaforsequenceclassification_a2fa22a73cf67cb0700428f9bf881bfc1}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!label\_ids@{label\_ids}}
+\index{label\_ids@{label\_ids}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{label\_ids}{label\_ids}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+label\+\_\+ids = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_af1e104b92255f0cdad0f892714a53dd0}\label{namespacexlmrobertaforsequenceclassification_af1e104b92255f0cdad0f892714a53dd0}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!labels@{labels}}
+\index{labels@{labels}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+labels = df\+\_\+train.\+language.\+values}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_adfe92717ba91d19d4e930b2d145c2dfa}\label{namespacexlmrobertaforsequenceclassification_adfe92717ba91d19d4e930b2d145c2dfa}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!logits@{logits}}
+\index{logits@{logits}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{logits}{logits}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+logits = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6d353281859da6102fc03b49b01f9993}{outputs}}\mbox{[}0\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a8fa450da1718964a7436b7e79c3777b2}\label{namespacexlmrobertaforsequenceclassification_a8fa450da1718964a7436b7e79c3777b2}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!loss@{loss}}
+\index{loss@{loss}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{loss}{loss}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+loss = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6d353281859da6102fc03b49b01f9993}{outputs}}\mbox{[}0\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_aa53394d15ab2c81252149257e2faec3b}\label{namespacexlmrobertaforsequenceclassification_aa53394d15ab2c81252149257e2faec3b}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!loss\_values@{loss\_values}}
+\index{loss\_values@{loss\_values}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{loss\_values}{loss\_values}}
+{\footnotesize\ttfamily list xlmrobertaforsequenceclassification.\+loss\+\_\+values = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a7b5b639cbe720ce6071bf75a3a6fd417}\label{namespacexlmrobertaforsequenceclassification_a7b5b639cbe720ce6071bf75a3a6fd417}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!map1@{map1}}
+\index{map1@{map1}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{map1}{map1}}
+{\footnotesize\ttfamily dictionary xlmrobertaforsequenceclassification.\+map1 = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a094671d2033a57935e5b9d39ac7f04e8}\label{namespacexlmrobertaforsequenceclassification_a094671d2033a57935e5b9d39ac7f04e8}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!MAX\_LEN@{MAX\_LEN}}
+\index{MAX\_LEN@{MAX\_LEN}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{MAX\_LEN}{MAX\_LEN}}
+{\footnotesize\ttfamily int xlmrobertaforsequenceclassification.\+MAX\+\_\+\+LEN = 64}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a4e85b84d2cfc7bb82e9a6d822e1d8f93}\label{namespacexlmrobertaforsequenceclassification_a4e85b84d2cfc7bb82e9a6d822e1d8f93}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!model@{model}}
+\index{model@{model}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+model = XLMRoberta\+For\+Sequence\+Classification.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4ddbd7fee6267205fd82f2ff4d2b41d2}{model\+\_\+checkpoint}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a4ddbd7fee6267205fd82f2ff4d2b41d2}\label{namespacexlmrobertaforsequenceclassification_a4ddbd7fee6267205fd82f2ff4d2b41d2}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!model\_checkpoint@{model\_checkpoint}}
+\index{model\_checkpoint@{model\_checkpoint}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{model\_checkpoint}{model\_checkpoint}}
+{\footnotesize\ttfamily string xlmrobertaforsequenceclassification.\+model\+\_\+checkpoint = \char`\"{}xlm-\/roberta-\/base\char`\"{}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ae1b9adbfe14f33dcd3d453bd86e43aaa}\label{namespacexlmrobertaforsequenceclassification_ae1b9adbfe14f33dcd3d453bd86e43aaa}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!nb\_eval\_examples@{nb\_eval\_examples}}
+\index{nb\_eval\_examples@{nb\_eval\_examples}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{nb\_eval\_examples}{nb\_eval\_examples}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+nb\+\_\+eval\+\_\+examples}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a67160e1f74517748f384fa57e093eec1}\label{namespacexlmrobertaforsequenceclassification_a67160e1f74517748f384fa57e093eec1}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!nb\_eval\_steps@{nb\_eval\_steps}}
+\index{nb\_eval\_steps@{nb\_eval\_steps}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{nb\_eval\_steps}{nb\_eval\_steps}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+nb\+\_\+eval\+\_\+steps}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_aeb671d26311326f8b5447898e13cbeb8}\label{namespacexlmrobertaforsequenceclassification_aeb671d26311326f8b5447898e13cbeb8}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!optimizer@{optimizer}}
+\index{optimizer@{optimizer}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{optimizer}{optimizer}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+optimizer}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  AdamW(model.parameters(),}
+\DoxyCodeLine{2                   lr = 2e-\/5, }
+\DoxyCodeLine{3                   eps = 1e-\/8 }
+\DoxyCodeLine{4                 )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a6d353281859da6102fc03b49b01f9993}\label{namespacexlmrobertaforsequenceclassification_a6d353281859da6102fc03b49b01f9993}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!outputs@{outputs}}
+\index{outputs@{outputs}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{outputs}{outputs}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+outputs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4e85b84d2cfc7bb82e9a6d822e1d8f93}{model}}(b\_input\_ids.type(torch.LongTensor).to(device), }
+\DoxyCodeLine{2                     token\_type\_ids=\textcolor{keywordtype}{None}, }
+\DoxyCodeLine{3                     attention\_mask=b\_input\_mask.type(torch.LongTensor).to(device), }
+\DoxyCodeLine{4                     labels=b\_labels)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_adb4e1e49f36815cfab399e495fcbc96f}\label{namespacexlmrobertaforsequenceclassification_adb4e1e49f36815cfab399e495fcbc96f}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!prediction\_data@{prediction\_data}}
+\index{prediction\_data@{prediction\_data}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_data}{prediction\_data}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+prediction\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abd202ac05d92beba936ff2462e48e969}{prediction\+\_\+inputs}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aaeacac3f030cf09dabd7d9e24685a834}{prediction\+\_\+masks}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c141ebefea26b97675e17367b85dd6c}{prediction\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a552d7e42c36898dd15cbac3ea3f2d86e}\label{namespacexlmrobertaforsequenceclassification_a552d7e42c36898dd15cbac3ea3f2d86e}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!prediction\_dataloader@{prediction\_dataloader}}
+\index{prediction\_dataloader@{prediction\_dataloader}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_dataloader}{prediction\_dataloader}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+prediction\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adb4e1e49f36815cfab399e495fcbc96f}{prediction\+\_\+data}}, sampler=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9fdcb506bd2bc1f25dedef774d113d72}{prediction\+\_\+sampler}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}}=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_abd202ac05d92beba936ff2462e48e969}\label{namespacexlmrobertaforsequenceclassification_abd202ac05d92beba936ff2462e48e969}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!prediction\_inputs@{prediction\_inputs}}
+\index{prediction\_inputs@{prediction\_inputs}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_inputs}{prediction\_inputs}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+prediction\+\_\+inputs = torch.\+tensor(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a21cb048c5041cebc19c514f139d87afa}{input\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a1c141ebefea26b97675e17367b85dd6c}\label{namespacexlmrobertaforsequenceclassification_a1c141ebefea26b97675e17367b85dd6c}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!prediction\_labels@{prediction\_labels}}
+\index{prediction\_labels@{prediction\_labels}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_labels}{prediction\_labels}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+prediction\+\_\+labels = torch.\+tensor(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af1e104b92255f0cdad0f892714a53dd0}{labels}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_aaeacac3f030cf09dabd7d9e24685a834}\label{namespacexlmrobertaforsequenceclassification_aaeacac3f030cf09dabd7d9e24685a834}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!prediction\_masks@{prediction\_masks}}
+\index{prediction\_masks@{prediction\_masks}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_masks}{prediction\_masks}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+prediction\+\_\+masks = torch.\+tensor(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c64276670f55a1cede995ec8cbf547b}{attention\+\_\+masks}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a9fdcb506bd2bc1f25dedef774d113d72}\label{namespacexlmrobertaforsequenceclassification_a9fdcb506bd2bc1f25dedef774d113d72}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!prediction\_sampler@{prediction\_sampler}}
+\index{prediction\_sampler@{prediction\_sampler}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{prediction\_sampler}{prediction\_sampler}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+prediction\+\_\+sampler = Sequential\+Sampler(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adb4e1e49f36815cfab399e495fcbc96f}{prediction\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_aa1f6fdf76d8cd92ab572492a15764218}\label{namespacexlmrobertaforsequenceclassification_aa1f6fdf76d8cd92ab572492a15764218}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!predictions@{predictions}}
+\index{predictions@{predictions}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{predictions}{predictions}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+predictions}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a4675f9f2348e1c375fd34b89f27f86da}\label{namespacexlmrobertaforsequenceclassification_a4675f9f2348e1c375fd34b89f27f86da}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!scheduler@{scheduler}}
+\index{scheduler@{scheduler}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{scheduler}{scheduler}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+scheduler}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  get\_linear\_schedule\_with\_warmup(optimizer, }
+\DoxyCodeLine{2                                             num\_warmup\_steps = 0, \textcolor{comment}{\# Default value in run\_glue.py}}
+\DoxyCodeLine{3                                             num\_training\_steps = total\_steps)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a8bfcc04975b901ca2aae2f0dfc019e3c}\label{namespacexlmrobertaforsequenceclassification_a8bfcc04975b901ca2aae2f0dfc019e3c}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!seed\_val@{seed\_val}}
+\index{seed\_val@{seed\_val}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{seed\_val}{seed\_val}}
+{\footnotesize\ttfamily int xlmrobertaforsequenceclassification.\+seed\+\_\+val = 42}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a99755f6b0519839ae8483c1622689e1b}\label{namespacexlmrobertaforsequenceclassification_a99755f6b0519839ae8483c1622689e1b}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!sentences@{sentences}}
+\index{sentences@{sentences}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{sentences}{sentences}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+sentences = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a78b1357c74d627f97599f7cb3996b11b}{df\+\_\+train}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ad08a40762375babe8a1115b29e7c93f1}\label{namespacexlmrobertaforsequenceclassification_ad08a40762375babe8a1115b29e7c93f1}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!sentences1@{sentences1}}
+\index{sentences1@{sentences1}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{sentences1}{sentences1}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+sentences1 = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9c8918072ddce7c54562724a6810f932}{df\+\_\+val}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_acb06c9e7ced29f30d60d735467ea2a7d}\label{namespacexlmrobertaforsequenceclassification_acb06c9e7ced29f30d60d735467ea2a7d}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!seq\_mask@{seq\_mask}}
+\index{seq\_mask@{seq\_mask}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{seq\_mask}{seq\_mask}}
+{\footnotesize\ttfamily list xlmrobertaforsequenceclassification.\+seq\+\_\+mask = \mbox{[}float(i$>$0) for i in seq\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_adfe5e354a5a17fcae7223c887941726f}\label{namespacexlmrobertaforsequenceclassification_adfe5e354a5a17fcae7223c887941726f}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!t0@{t0}}
+\index{t0@{t0}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{t0}{t0}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+t0 = time.\+time()}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_aa6e921e50fa4f96c124af6a63689d378}\label{namespacexlmrobertaforsequenceclassification_aa6e921e50fa4f96c124af6a63689d378}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string xlmrobertaforsequenceclassification.\+test\+\_\+path = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a49eaeb0b3c170f92ba38f4f022ce75d4}\label{namespacexlmrobertaforsequenceclassification_a49eaeb0b3c170f92ba38f4f022ce75d4}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!tmp\_eval\_accuracy@{tmp\_eval\_accuracy}}
+\index{tmp\_eval\_accuracy@{tmp\_eval\_accuracy}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{tmp\_eval\_accuracy}{tmp\_eval\_accuracy}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+tmp\+\_\+eval\+\_\+accuracy = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_acac13b1ffd90b9d9f5defcc71ec2332c}{flat\+\_\+accuracy}}(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adfe92717ba91d19d4e930b2d145c2dfa}{logits}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2fa22a73cf67cb0700428f9bf881bfc1}{label\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a2fa3fa815b9f7ef5bdb16348cb0112d2}\label{namespacexlmrobertaforsequenceclassification_a2fa3fa815b9f7ef5bdb16348cb0112d2}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!tokenizer@{tokenizer}}
+\index{tokenizer@{tokenizer}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{tokenizer}{tokenizer}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+tokenizer = XLMRoberta\+Tokenizer.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4ddbd7fee6267205fd82f2ff4d2b41d2}{model\+\_\+checkpoint}},use\+\_\+fast=True)}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_aef13094fb8976835a5556f32de5c25f4}\label{namespacexlmrobertaforsequenceclassification_aef13094fb8976835a5556f32de5c25f4}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!total\_loss@{total\_loss}}
+\index{total\_loss@{total\_loss}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{total\_loss}{total\_loss}}
+{\footnotesize\ttfamily int xlmrobertaforsequenceclassification.\+total\+\_\+loss = 0}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a100891c5d482043c1eaa0832e7eef5a8}\label{namespacexlmrobertaforsequenceclassification_a100891c5d482043c1eaa0832e7eef5a8}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!total\_steps@{total\_steps}}
+\index{total\_steps@{total\_steps}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{total\_steps}{total\_steps}}
+{\footnotesize\ttfamily int xlmrobertaforsequenceclassification.\+total\+\_\+steps = len(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af10a04773e32b6f96aadb86296b8d09a}{train\+\_\+dataloader}}) $\ast$ \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a7808c4ffcaff29014f6a340413ac3420}{epochs}}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ad1adaa5a9b94c4254cee295b94ba59b6}\label{namespacexlmrobertaforsequenceclassification_ad1adaa5a9b94c4254cee295b94ba59b6}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+train\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4c2ac5d8016fef5c2090e4f5fed51e5d}{train\+\_\+inputs}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a98619989899985f950c4c3f46fe7af9c}{train\+\_\+masks}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4f5c2ffcfdc8a91788cb0284e7df39e5}{train\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_af10a04773e32b6f96aadb86296b8d09a}\label{namespacexlmrobertaforsequenceclassification_af10a04773e32b6f96aadb86296b8d09a}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!train\_dataloader@{train\_dataloader}}
+\index{train\_dataloader@{train\_dataloader}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_dataloader}{train\_dataloader}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+train\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad1adaa5a9b94c4254cee295b94ba59b6}{train\+\_\+data}}, sampler=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6e7ed19af91f817604bf31a6178b5884}{train\+\_\+sampler}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}}=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a4c2ac5d8016fef5c2090e4f5fed51e5d}\label{namespacexlmrobertaforsequenceclassification_a4c2ac5d8016fef5c2090e4f5fed51e5d}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!train\_inputs@{train\_inputs}}
+\index{train\_inputs@{train\_inputs}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_inputs}{train\_inputs}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+train\+\_\+inputs = pd.\+Data\+Frame(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a21cb048c5041cebc19c514f139d87afa}{input\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a4f5c2ffcfdc8a91788cb0284e7df39e5}\label{namespacexlmrobertaforsequenceclassification_a4f5c2ffcfdc8a91788cb0284e7df39e5}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!train\_labels@{train\_labels}}
+\index{train\_labels@{train\_labels}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_labels}{train\_labels}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+train\+\_\+labels = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a78b1357c74d627f97599f7cb3996b11b}{df\+\_\+train}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a98619989899985f950c4c3f46fe7af9c}\label{namespacexlmrobertaforsequenceclassification_a98619989899985f950c4c3f46fe7af9c}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!train\_masks@{train\_masks}}
+\index{train\_masks@{train\_masks}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_masks}{train\_masks}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+train\+\_\+masks = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c64276670f55a1cede995ec8cbf547b}{attention\+\_\+masks}}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ac6fa46199771f36bf90b85287b5fed7f}\label{namespacexlmrobertaforsequenceclassification_ac6fa46199771f36bf90b85287b5fed7f}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string xlmrobertaforsequenceclassification.\+train\+\_\+path = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a6e7ed19af91f817604bf31a6178b5884}\label{namespacexlmrobertaforsequenceclassification_a6e7ed19af91f817604bf31a6178b5884}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!train\_sampler@{train\_sampler}}
+\index{train\_sampler@{train\_sampler}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{train\_sampler}{train\_sampler}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+train\+\_\+sampler = Random\+Sampler(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad1adaa5a9b94c4254cee295b94ba59b6}{train\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a0da230b284e3cb157a8bcfc51c414575}\label{namespacexlmrobertaforsequenceclassification_a0da230b284e3cb157a8bcfc51c414575}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!true\_labels@{true\_labels}}
+\index{true\_labels@{true\_labels}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{true\_labels}{true\_labels}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+true\+\_\+labels}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_abdd9fc1cf4edf978abdce832c6797d75}\label{namespacexlmrobertaforsequenceclassification_abdd9fc1cf4edf978abdce832c6797d75}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+validation\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a38e23960bb04d3a6a2b76d49db5b5c60}{validation\+\_\+inputs}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a83734d3b7b20175108d1f2b18f636aa4}{validation\+\_\+masks}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a418b8e06d41a48cf599a088187763b49}{validation\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a976940762680545bdb8637220f66334f}\label{namespacexlmrobertaforsequenceclassification_a976940762680545bdb8637220f66334f}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!validation\_dataloader@{validation\_dataloader}}
+\index{validation\_dataloader@{validation\_dataloader}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_dataloader}{validation\_dataloader}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+validation\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abdd9fc1cf4edf978abdce832c6797d75}{validation\+\_\+data}}, sampler=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ab1115254483f725374632d583abd0612}{validation\+\_\+sampler}}, \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}}=\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a38e23960bb04d3a6a2b76d49db5b5c60}\label{namespacexlmrobertaforsequenceclassification_a38e23960bb04d3a6a2b76d49db5b5c60}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!validation\_inputs@{validation\_inputs}}
+\index{validation\_inputs@{validation\_inputs}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_inputs}{validation\_inputs}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+validation\+\_\+inputs = pd.\+Data\+Frame(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a49cb3c7bc3e19b58fe997be4bc1f1689}{input\+\_\+ids1}})}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a418b8e06d41a48cf599a088187763b49}\label{namespacexlmrobertaforsequenceclassification_a418b8e06d41a48cf599a088187763b49}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!validation\_labels@{validation\_labels}}
+\index{validation\_labels@{validation\_labels}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_labels}{validation\_labels}}
+{\footnotesize\ttfamily def xlmrobertaforsequenceclassification.\+validation\+\_\+labels = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9c8918072ddce7c54562724a6810f932}{df\+\_\+val}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_a83734d3b7b20175108d1f2b18f636aa4}\label{namespacexlmrobertaforsequenceclassification_a83734d3b7b20175108d1f2b18f636aa4}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!validation\_masks@{validation\_masks}}
+\index{validation\_masks@{validation\_masks}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_masks}{validation\_masks}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+validation\+\_\+masks = \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af990769905474783b3d60942605687f0}{attention\+\_\+masks2}}}
+
+\mbox{\Hypertarget{namespacexlmrobertaforsequenceclassification_ab1115254483f725374632d583abd0612}\label{namespacexlmrobertaforsequenceclassification_ab1115254483f725374632d583abd0612}} 
+\index{xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}!validation\_sampler@{validation\_sampler}}
+\index{validation\_sampler@{validation\_sampler}!xlmrobertaforsequenceclassification@{xlmrobertaforsequenceclassification}}
+\doxysubsubsection{\texorpdfstring{validation\_sampler}{validation\_sampler}}
+{\footnotesize\ttfamily xlmrobertaforsequenceclassification.\+validation\+\_\+sampler = Sequential\+Sampler(\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abdd9fc1cf4edf978abdce832c6797d75}{validation\+\_\+data}})}
+

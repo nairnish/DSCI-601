@@ -1,0 +1,28 @@
+\hypertarget{tpot_8py}{}\doxysection{tpot.\+py File Reference}
+\label{tpot_8py}\index{tpot.py@{tpot.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacetpot}{tpot}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacetpot_a12d4fc496ea53a5a2a379e5696e02fc8}{tpot.\+train\+\_\+path}} = \textquotesingle{}data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacetpot_a6cffd28895c134c3cf8e3157ae477b2c}{tpot.\+test\+\_\+path}} = \textquotesingle{}data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacetpot_a196b4b4672ef62f4c9ee3d33be42f217}{tpot.\+data}} = load\+\_\+data()
+\item 
+\mbox{\hyperlink{namespacetpot_aa3ef2dfb18d023c7ae6137957770f24d}{tpot.\+df\+\_\+train}} = data.\+load(train\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Training the model just for portuguese variant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetpot_ad844ff95e05b96beccc00496d97fa3e7}{tpot.\+df\+\_\+test}} = data.\+load(test\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacetpot_a47717af62d6fd3c2036aad80d1f82357}{tpot.\+vectorizer}} = feature\+\_\+reduction()
+\item 
+\mbox{\hyperlink{namespacetpot_a72483a7419036625198b65b9e5cb0a8b}{tpot.\+feature\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespacetpot_acdf5ba5ce7e4e68abad218f56969a856}{tpot.\+feature\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespacetpot_a0f808896bea15fd3667c55bd845155f7}{tpot.\+tpot}} = TPOTClassifier(generations=5, population\+\_\+size=50, verbosity=2, random\+\_\+state=42, n\+\_\+jobs=-\/1, config\+\_\+dict = \textquotesingle{}TPOT sparse\textquotesingle{})
+\end{DoxyCompactItemize}

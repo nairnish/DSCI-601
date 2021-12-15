@@ -1,0 +1,157 @@
+\hypertarget{mydistilbert_8py}{}\doxysection{mydistilbert.\+py File Reference}
+\label{mydistilbert_8py}\index{mydistilbert.py@{mydistilbert.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacemydistilbert}{mydistilbert}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a1a5a63c5fcb2326e09d1b7280a4f1fe0}{mydistilbert.\+flat\+\_\+accuracy}} (preds, labels)
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a8c26a32d551768d85a93efc682efa316}{mydistilbert.\+format\+\_\+time}} (elapsed)
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a0ed728d0762aecef03fdbba9366fde1a}{mydistilbert.\+evaluate}} (y\+\_\+true, predictions)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacemydistilbert_abf2881e5618ba960774677bfc0804b44}{mydistilbert.\+train\+\_\+path}} = \textquotesingle{}data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacemydistilbert_a532d7dc9454c72c270a86296d368144c}{mydistilbert.\+dev\+\_\+path}} = \textquotesingle{}data/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacemydistilbert_a8c2c0e1ff955ee6ebe935fa56676436f}{mydistilbert.\+test\+\_\+path}} = \textquotesingle{}data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}{mydistilbert.\+data}} = load\+\_\+data()
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a9c51b3f5b486d454a5d2acd947962c04}{mydistilbert.\+df\+\_\+train}} = data.\+load(train\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ac7c9c2e062648ecfe31489d74dbc7361}{mydistilbert.\+df\+\_\+test}} = data.\+load(test\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a51ad3bb43e4f0bb0f9bfbcef9303f90d}{mydistilbert.\+df\+\_\+val}} = data.\+load(dev\+\_\+path)
+\item 
+string \mbox{\hyperlink{namespacemydistilbert_a6171a25b1f60b7591dedae2688c76095}{mydistilbert.\+model\+\_\+checkpoint}} = \char`\"{}distilbert-\/base-\/multilingual-\/cased\char`\"{}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a10ce23a5681e4040aa7f3273793e5722}{mydistilbert.\+sentences}} = df\+\_\+train\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a9540ebf926fb3371518e70388ae05dd6}{mydistilbert.\+tokenizer}} = Distil\+Bert\+Tokenizer.\+from\+\_\+pretrained(model\+\_\+checkpoint,use\+\_\+fast=True)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a47d43e94d709087903ebb9de74a1869b}{mydistilbert.\+model}} = Distil\+Bert\+For\+Sequence\+Classification.\+from\+\_\+pretrained(model\+\_\+checkpoint)
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a1efb5f6685341a481e9e22094eaa1bd1}{mydistilbert.\+input\+\_\+ids}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aa88520bec09ccabeb21775c09712b8f7}{mydistilbert.\+encoded\+\_\+sent}}
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_aa1b52e1a0df7e97f76f7e4c3973dd3a1}{mydistilbert.\+MAX\+\_\+\+LEN}} = 64
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a19b2b73d2036757d5d0cdc920ebf5e90}{mydistilbert.\+attention\+\_\+masks}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a725309e90093227cbc4a54226a58d261}{mydistilbert.\+att\+\_\+mask}} = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_ad5b389f95fe2673bf1b5a3c9927c88aa}{mydistilbert.\+train\+\_\+masks}} = attention\+\_\+masks
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aae1353224ea002282b997bc112370506}{mydistilbert.\+sentences1}} = df\+\_\+val\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a664f494a1f28216d64d327f0e27f4ab9}{mydistilbert.\+input\+\_\+ids1}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_afaf9554a9cca679bad80db2b25bfef64}{mydistilbert.\+attention\+\_\+masks2}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_afac971e846322b9f867f537044bdf4fa}{mydistilbert.\+validation\+\_\+masks}} = attention\+\_\+masks2
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ae907710ba3debe7bd177d6e06b5dead3}{mydistilbert.\+train\+\_\+inputs}} = pd.\+Data\+Frame(input\+\_\+ids)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a7b4aa30508fef7eae8d22f9b5cdccc1f}{mydistilbert.\+train\+\_\+labels}} = df\+\_\+train\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aec33e85448cf1c27609bb7878e18fd59}{mydistilbert.\+validation\+\_\+inputs}} = pd.\+Data\+Frame(input\+\_\+ids1)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a0105889413e48240b1903f1fc5db501d}{mydistilbert.\+validation\+\_\+labels}} = df\+\_\+val\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacemydistilbert_ac1ab9ef05de66dc8e5b1d9a316e60dbe}{mydistilbert.\+map1}} = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{mydistilbert.\+batch\+\_\+size}} = 32
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aed2b1a12b2b91854d025d357ff54a5da}{mydistilbert.\+train\+\_\+data}} = Tensor\+Dataset(train\+\_\+inputs, train\+\_\+masks, train\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ac57c0dc527be52c17cc24fde3273f02b}{mydistilbert.\+train\+\_\+sampler}} = Random\+Sampler(train\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a1122536c7f634a4818b3dfe365d68f65}{mydistilbert.\+train\+\_\+dataloader}} = Data\+Loader(train\+\_\+data, sampler=train\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a67bef29e35945ae38f3583147408b608}{mydistilbert.\+validation\+\_\+data}} = Tensor\+Dataset(validation\+\_\+inputs, validation\+\_\+masks, validation\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_addcb5cd1edb91710e45421c4cabc57a3}{mydistilbert.\+validation\+\_\+sampler}} = Sequential\+Sampler(validation\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a882bd5a2bc232581a6f4c24a8ca9ebb3}{mydistilbert.\+validation\+\_\+dataloader}} = Data\+Loader(validation\+\_\+data, sampler=validation\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aaf762652304fc8dee847f839bb80870f}{mydistilbert.\+optimizer}}
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_a101a997a7b5f4f96151f136feb74f013}{mydistilbert.\+epochs}} = 2
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_a3f7285e74a17e66b61bcc2b3369fd98f}{mydistilbert.\+total\+\_\+steps}} = len(train\+\_\+dataloader) $\ast$ epochs
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aafbfd2117f125ab7d6904e379bbeedcb}{mydistilbert.\+scheduler}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{mydistilbert.\+device}} = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a1c5652eb9cecd0bf578059c54ce523f4}{mydistilbert.\+device\+\_\+name}} = tf.\+test.\+gpu\+\_\+device\+\_\+name()
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_a1eabb073fbde646956c1dbb2e3df7d83}{mydistilbert.\+seed\+\_\+val}} = 42
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a4abb8a3af1db7f337e70e9bf2b0f5b6b}{mydistilbert.\+loss\+\_\+values}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_add43ab309a850a56296ed51d3fa6eed5}{mydistilbert.\+t0}} = time.\+time()
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_ad5c80297dcb5f598ec179b0252e029c4}{mydistilbert.\+total\+\_\+loss}} = 0
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a5673d13abd16d08807c7fb9875d41636}{mydistilbert.\+elapsed}} = format\+\_\+time(time.\+time() -\/ t0)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a56a9343ccb0f9e43bb19a134769b0851}{mydistilbert.\+b\+\_\+input\+\_\+ids}} = batch\mbox{[}0\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a6c7542bb2464263f8e13ddcf7ea60fdf}{mydistilbert.\+b\+\_\+input\+\_\+mask}} = batch\mbox{[}1\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a72d540c65454e2a53e231f20373b9458}{mydistilbert.\+b\+\_\+labels}} = batch\mbox{[}2\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ae9e94ba7e8804843d2ec24b3158daebb}{mydistilbert.\+outputs}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a4be7196dbe84edf6d0aedff8486eeb75}{mydistilbert.\+loss}} = outputs\mbox{[}0\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_a8c0a124518414cfc89d6341f8bc26353}{mydistilbert.\+avg\+\_\+train\+\_\+loss}} = total\+\_\+loss / len(train\+\_\+dataloader)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a40b437ed9a2a74b9e81221df14725835}{mydistilbert.\+eval\+\_\+loss}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a194d55cb7da9336396e17bc8d4007a84}{mydistilbert.\+eval\+\_\+accuracy}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_af45406c6c8a21182659e269cf33a569b}{mydistilbert.\+nb\+\_\+eval\+\_\+steps}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ac7bbabd6a781085d4af21e5cd8eab3b1}{mydistilbert.\+nb\+\_\+eval\+\_\+examples}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}{mydistilbert.\+batch}} = tuple(t.\+to(device) for t in batch)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aae70dc1b4080ac0e4ca6557f9c3b423f}{mydistilbert.\+logits}} = outputs\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a22e1ca0dbe8bf8fe37b13140cded3498}{mydistilbert.\+label\+\_\+ids}} = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a39f56c9321182fe71687983164305210}{mydistilbert.\+tmp\+\_\+eval\+\_\+accuracy}} = flat\+\_\+accuracy(logits, label\+\_\+ids)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a546b480f8a10c23194cd9a9a042f2ab8}{mydistilbert.\+df}} = df\+\_\+test
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a1dd121206735f225295009b26880b3bc}{mydistilbert.\+labels}} = df\mbox{[}\char`\"{}language\char`\"{}\mbox{]}.map(map1)
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a0d3662b5c330b5281f969e42646b5069}{mydistilbert.\+seq\+\_\+mask}} = \mbox{[}float(i$>$0) for i in seq\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a1dd003e3405358ed15845af2913d1c74}{mydistilbert.\+prediction\+\_\+inputs}} = torch.\+tensor(input\+\_\+ids)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a3c2803f279a80243a25824106864ea6b}{mydistilbert.\+prediction\+\_\+masks}} = torch.\+tensor(attention\+\_\+masks)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a389c5a7eefd85e70bf7360e2415e2fc6}{mydistilbert.\+prediction\+\_\+labels}} = torch.\+tensor(labels)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a69b75099cd6dc180a2aa5566c01dce73}{mydistilbert.\+prediction\+\_\+data}} = Tensor\+Dataset(prediction\+\_\+inputs, prediction\+\_\+masks, prediction\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a8abed892b1233bb4a53f5bfd2a5fdf01}{mydistilbert.\+prediction\+\_\+sampler}} = Sequential\+Sampler(prediction\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_af725f818fb0e92e0d95d592baa86b817}{mydistilbert.\+prediction\+\_\+dataloader}} = Data\+Loader(prediction\+\_\+data, sampler=prediction\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a39aecd99d98c01064f7fd84f40eb141f}{mydistilbert.\+predictions}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ae34d7c8819587dfc9c327cff84a32bef}{mydistilbert.\+true\+\_\+labels}}
+\end{DoxyCompactItemize}

@@ -1,0 +1,159 @@
+\hypertarget{bertforsequenceclassification_8py}{}\doxysection{bertforsequenceclassification.\+py File Reference}
+\label{bertforsequenceclassification_8py}\index{bertforsequenceclassification.py@{bertforsequenceclassification.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacebertforsequenceclassification}{bertforsequenceclassification}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_a9ac01065efd9ba78befb42dcd033f140}{bertforsequenceclassification.\+flat\+\_\+accuracy}} (preds, labels)
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_a18419cfba0ddeb9767f7e28f4922b926}{bertforsequenceclassification.\+format\+\_\+time}} (elapsed)
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_aa82d678152976cd0e8f835e04d5e0118}{bertforsequenceclassification.\+evaluate}} (y\+\_\+true, predictions)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacebertforsequenceclassification_ac2e91f9bd4ddf71176642143944779df}{bertforsequenceclassification.\+train\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacebertforsequenceclassification_ad069ff9fda134369c3dcbc774169c1ac}{bertforsequenceclassification.\+dev\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacebertforsequenceclassification_ae74a7b19b76da5ab7c9d01bbe33d7033}{bertforsequenceclassification.\+test\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a954130d15a55eb8bbdc5937a8dcf8e4b}{bertforsequenceclassification.\+data}} = load\+\_\+data()
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ae14cc64518380c67d00e937819db2fce}{bertforsequenceclassification.\+df\+\_\+train}} = data.\+load(train\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a46a98ff847ca8e8ef2ebddfa75d686e4}{bertforsequenceclassification.\+df\+\_\+test}} = data.\+load(test\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a25f8900b50a7324b520b5f0e88375d9f}{bertforsequenceclassification.\+df\+\_\+val}} = data.\+load(dev\+\_\+path)
+\item 
+string \mbox{\hyperlink{namespacebertforsequenceclassification_a98380dc25748b00869957a2a6f32b910}{bertforsequenceclassification.\+model\+\_\+checkpoint}} = \char`\"{}bert-\/base-\/multilingual-\/cased\char`\"{}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a1f28028d09df469810800cf15ff495e7}{bertforsequenceclassification.\+sentences}} = df\+\_\+train\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a5b242f5f93df865493fa93d969c8c8d6}{bertforsequenceclassification.\+tokenizer}} = Bert\+Tokenizer.\+from\+\_\+pretrained(model\+\_\+checkpoint,use\+\_\+fast=True)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_aed66d6e8dfdbc160b1d07e60ecde6a36}{bertforsequenceclassification.\+model}} = Bert\+For\+Sequence\+Classification.\+from\+\_\+pretrained(model\+\_\+checkpoint)
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a337673da780bccb17002f5f600b73ba7}{bertforsequenceclassification.\+input\+\_\+ids}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_af4981f54bd95a4461fb27b796b1b3b9e}{bertforsequenceclassification.\+encoded\+\_\+sent}}
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a9631f727328a115ade48df47f81b83aa}{bertforsequenceclassification.\+MAX\+\_\+\+LEN}} = 64
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_aeb72094dfe53fcb28cc5b88ca35d15d5}{bertforsequenceclassification.\+attention\+\_\+masks}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a9180c21dbb59aa05098de95725812ab3}{bertforsequenceclassification.\+att\+\_\+mask}} = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_ac6aaccde65e56a2deb92bbc47d9deb64}{bertforsequenceclassification.\+train\+\_\+masks}} = attention\+\_\+masks
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_aa2fe27981ebc703a868cf7158a5bb5a6}{bertforsequenceclassification.\+sentences1}} = df\+\_\+val\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_ae0a135e752d7f4326a51ac7ec4447649}{bertforsequenceclassification.\+input\+\_\+ids1}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_ae746f0daf82867cede877a361ab7ef45}{bertforsequenceclassification.\+attention\+\_\+masks2}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a8043da072fc8703ae81ba837f8ad625f}{bertforsequenceclassification.\+validation\+\_\+masks}} = attention\+\_\+masks2
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ae55165a7da4cf7c5016c2bf20fad8dc7}{bertforsequenceclassification.\+train\+\_\+inputs}} = pd.\+Data\+Frame(input\+\_\+ids)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a0c91d561cb7926809c5f2b4875068f5d}{bertforsequenceclassification.\+train\+\_\+labels}} = df\+\_\+train\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_aa31e8e8732cc8c4be8c856a5565f5319}{bertforsequenceclassification.\+validation\+\_\+inputs}} = pd.\+Data\+Frame(input\+\_\+ids1)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a682d47b3524238d3a6dbeddd3aec1d3a}{bertforsequenceclassification.\+validation\+\_\+labels}} = df\+\_\+val\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacebertforsequenceclassification_a4d4655186cdc768449932165dd57b11d}{bertforsequenceclassification.\+map1}} = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a0de55d012cdaf9ff78eb4cdef2f33111}{bertforsequenceclassification.\+batch\+\_\+size}} = 32
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a5817d91f1c62dcbd04a54b8338f652af}{bertforsequenceclassification.\+train\+\_\+data}} = Tensor\+Dataset(train\+\_\+inputs, train\+\_\+masks, train\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_add98eb6c90a385909be59604acc14241}{bertforsequenceclassification.\+train\+\_\+sampler}} = Random\+Sampler(train\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a3b8991dd2b3b6612f5fb02fed0706df6}{bertforsequenceclassification.\+train\+\_\+dataloader}} = Data\+Loader(train\+\_\+data, sampler=train\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a771260348af390c7573289389ecdd97c}{bertforsequenceclassification.\+validation\+\_\+data}} = Tensor\+Dataset(validation\+\_\+inputs, validation\+\_\+masks, validation\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_adfdf75f47e7abd58ce584148ade73115}{bertforsequenceclassification.\+validation\+\_\+sampler}} = Sequential\+Sampler(validation\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a9829945cfa5f981181670a61b365d9e3}{bertforsequenceclassification.\+validation\+\_\+dataloader}} = Data\+Loader(validation\+\_\+data, sampler=validation\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a3ed1a26a9fb70da7c0e16a3093889af0}{bertforsequenceclassification.\+optimizer}}
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a64a60e21c05583d01a85e513548464bb}{bertforsequenceclassification.\+epochs}} = 2
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_af2315d9ac397c81e14acc7b8d7bf30c0}{bertforsequenceclassification.\+total\+\_\+steps}} = len(train\+\_\+dataloader) $\ast$ epochs
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a26edf50cd60d91143eb39d0bfe81e915}{bertforsequenceclassification.\+scheduler}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a0ca7fa6c3bc19912f537e368654939df}{bertforsequenceclassification.\+device}} = cuda0
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a89747efc14e5094a69ee7e8f23770303}{bertforsequenceclassification.\+device\+\_\+name}} = tf.\+test.\+gpu\+\_\+device\+\_\+name()
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a7b93981f5da20a41b6c5c2af422b0167}{bertforsequenceclassification.\+seed\+\_\+val}} = 42
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a2109a21911dff54c5edfa45333d82023}{bertforsequenceclassification.\+loss\+\_\+values}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_af84ff9a474c12e27e63c7bd4fa47628c}{bertforsequenceclassification.\+t0}} = time.\+time()
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_a1bcfb60cad772fe267d017808375d0a4}{bertforsequenceclassification.\+total\+\_\+loss}} = 0
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_a7e721fe43f6c3466ac1c40c7f7862959}{bertforsequenceclassification.\+elapsed}} = format\+\_\+time(time.\+time() -\/ t0)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a9b59ad4632b19e2a7f396d1b7315bff6}{bertforsequenceclassification.\+b\+\_\+input\+\_\+ids}} = batch\mbox{[}0\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ae51b324c1cf83eaab19283346848fd76}{bertforsequenceclassification.\+b\+\_\+input\+\_\+mask}} = batch\mbox{[}1\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_af65f76bdef3cb40895049024a94d7f8c}{bertforsequenceclassification.\+b\+\_\+labels}} = batch\mbox{[}2\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a1d37b3496564ca9e62cc5932ced74e80}{bertforsequenceclassification.\+outputs}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a79e2b252f0232af4e231861ca9221715}{bertforsequenceclassification.\+loss}} = outputs\mbox{[}0\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacebertforsequenceclassification_aef4d497943cecefac15e396d439bd611}{bertforsequenceclassification.\+avg\+\_\+train\+\_\+loss}} = total\+\_\+loss / len(train\+\_\+dataloader)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a7a5ee64ee0689ef2ab80df0154e3e74f}{bertforsequenceclassification.\+eval\+\_\+loss}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a29e285abc2cfffea88ba2cff3619ada2}{bertforsequenceclassification.\+eval\+\_\+accuracy}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a3daea4ac68d6d49349da97ccf847a2e6}{bertforsequenceclassification.\+nb\+\_\+eval\+\_\+steps}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a30d1851534a10473de05b32aad084600}{bertforsequenceclassification.\+nb\+\_\+eval\+\_\+examples}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ad70e37bb2b25fc2d6a22d881dc8a9c44}{bertforsequenceclassification.\+batch}} = tuple(t.\+to(device) for t in batch)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a5f8ca901a9501503186f36a72d004a2f}{bertforsequenceclassification.\+logits}} = outputs\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ad47a8e8a83facc5130c982f63230f355}{bertforsequenceclassification.\+label\+\_\+ids}} = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()
+\item 
+def \mbox{\hyperlink{namespacebertforsequenceclassification_abc0e187e1b7af949b79f66a7b9d00b80}{bertforsequenceclassification.\+tmp\+\_\+eval\+\_\+accuracy}} = flat\+\_\+accuracy(logits, label\+\_\+ids)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a97217708e3bc1e8c320daaa41cc8fb13}{bertforsequenceclassification.\+df}} = df\+\_\+test
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a6e4e793e7b5752962cf3603c4c0b2714}{bertforsequenceclassification.\+labels}} = df\mbox{[}\char`\"{}language\char`\"{}\mbox{]}.map(map1)
+\item 
+list \mbox{\hyperlink{namespacebertforsequenceclassification_a4135cf2122151ece0d1f7dc285bfb940}{bertforsequenceclassification.\+seq\+\_\+mask}} = \mbox{[}float(i$>$0) for i in seq\mbox{]}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a0903f9e26170daa2c4f6acc0825bbd7f}{bertforsequenceclassification.\+prediction\+\_\+inputs}} = torch.\+tensor(input\+\_\+ids)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ab8a57c5b05eac0b2ae77f88e002be9e1}{bertforsequenceclassification.\+prediction\+\_\+masks}} = torch.\+tensor(attention\+\_\+masks)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a3380184ec02dcafba124e63df0cba844}{bertforsequenceclassification.\+prediction\+\_\+labels}} = torch.\+tensor(labels)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a82db0bedd9f8c333e27b91eeb0ccd794}{bertforsequenceclassification.\+prediction\+\_\+data}} = Tensor\+Dataset(prediction\+\_\+inputs, prediction\+\_\+masks, prediction\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a74ea8e193195b0c9f069129ccf9387cb}{bertforsequenceclassification.\+prediction\+\_\+sampler}} = Sequential\+Sampler(prediction\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_a4a090a5eb57d640d2b8f2ec2799b6052}{bertforsequenceclassification.\+prediction\+\_\+dataloader}} = Data\+Loader(prediction\+\_\+data, sampler=prediction\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_acd2de787c9c43166117eadcf4b3f5f70}{bertforsequenceclassification.\+predictions}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_ae74fee822eab088faf55892093e63c2a}{bertforsequenceclassification.\+true\+\_\+labels}}
+\item 
+\mbox{\hyperlink{namespacebertforsequenceclassification_afdf2537d298fdc37c36ea3b28928d420}{bertforsequenceclassification.\+cuda0}} = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})
+\end{DoxyCompactItemize}

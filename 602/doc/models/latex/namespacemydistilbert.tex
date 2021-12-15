@@ -1,0 +1,622 @@
+\hypertarget{namespacemydistilbert}{}\doxysection{mydistilbert Namespace Reference}
+\label{namespacemydistilbert}\index{mydistilbert@{mydistilbert}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a1a5a63c5fcb2326e09d1b7280a4f1fe0}{flat\+\_\+accuracy}} (preds, \mbox{\hyperlink{namespacemydistilbert_a1dd121206735f225295009b26880b3bc}{labels}})
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a8c26a32d551768d85a93efc682efa316}{format\+\_\+time}} (\mbox{\hyperlink{namespacemydistilbert_a5673d13abd16d08807c7fb9875d41636}{elapsed}})
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a0ed728d0762aecef03fdbba9366fde1a}{evaluate}} (y\+\_\+true, \mbox{\hyperlink{namespacemydistilbert_a39aecd99d98c01064f7fd84f40eb141f}{predictions}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacemydistilbert_abf2881e5618ba960774677bfc0804b44}{train\+\_\+path}} = \textquotesingle{}\mbox{\hyperlink{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}{data}}/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacemydistilbert_a532d7dc9454c72c270a86296d368144c}{dev\+\_\+path}} = \textquotesingle{}\mbox{\hyperlink{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}{data}}/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacemydistilbert_a8c2c0e1ff955ee6ebe935fa56676436f}{test\+\_\+path}} = \textquotesingle{}\mbox{\hyperlink{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}{data}}/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}{data}} = load\+\_\+data()
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a9c51b3f5b486d454a5d2acd947962c04}{df\+\_\+train}} = data.\+load(\mbox{\hyperlink{namespacemydistilbert_abf2881e5618ba960774677bfc0804b44}{train\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ac7c9c2e062648ecfe31489d74dbc7361}{df\+\_\+test}} = data.\+load(\mbox{\hyperlink{namespacemydistilbert_a8c2c0e1ff955ee6ebe935fa56676436f}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a51ad3bb43e4f0bb0f9bfbcef9303f90d}{df\+\_\+val}} = data.\+load(\mbox{\hyperlink{namespacemydistilbert_a532d7dc9454c72c270a86296d368144c}{dev\+\_\+path}})
+\item 
+string \mbox{\hyperlink{namespacemydistilbert_a6171a25b1f60b7591dedae2688c76095}{model\+\_\+checkpoint}} = \char`\"{}distilbert-\/base-\/multilingual-\/cased\char`\"{}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a10ce23a5681e4040aa7f3273793e5722}{sentences}} = \mbox{\hyperlink{namespacemydistilbert_a9c51b3f5b486d454a5d2acd947962c04}{df\+\_\+train}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a9540ebf926fb3371518e70388ae05dd6}{tokenizer}} = Distil\+Bert\+Tokenizer.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacemydistilbert_a6171a25b1f60b7591dedae2688c76095}{model\+\_\+checkpoint}},use\+\_\+fast=True)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a47d43e94d709087903ebb9de74a1869b}{model}} = Distil\+Bert\+For\+Sequence\+Classification.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacemydistilbert_a6171a25b1f60b7591dedae2688c76095}{model\+\_\+checkpoint}})
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a1efb5f6685341a481e9e22094eaa1bd1}{input\+\_\+ids}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aa88520bec09ccabeb21775c09712b8f7}{encoded\+\_\+sent}}
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_aa1b52e1a0df7e97f76f7e4c3973dd3a1}{MAX\+\_\+\+LEN}} = 64
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a19b2b73d2036757d5d0cdc920ebf5e90}{attention\+\_\+masks}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a725309e90093227cbc4a54226a58d261}{att\+\_\+mask}} = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_ad5b389f95fe2673bf1b5a3c9927c88aa}{train\+\_\+masks}} = \mbox{\hyperlink{namespacemydistilbert_a19b2b73d2036757d5d0cdc920ebf5e90}{attention\+\_\+masks}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aae1353224ea002282b997bc112370506}{sentences1}} = \mbox{\hyperlink{namespacemydistilbert_a51ad3bb43e4f0bb0f9bfbcef9303f90d}{df\+\_\+val}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a664f494a1f28216d64d327f0e27f4ab9}{input\+\_\+ids1}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_afaf9554a9cca679bad80db2b25bfef64}{attention\+\_\+masks2}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_afac971e846322b9f867f537044bdf4fa}{validation\+\_\+masks}} = \mbox{\hyperlink{namespacemydistilbert_afaf9554a9cca679bad80db2b25bfef64}{attention\+\_\+masks2}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ae907710ba3debe7bd177d6e06b5dead3}{train\+\_\+inputs}} = pd.\+Data\+Frame(\mbox{\hyperlink{namespacemydistilbert_a1efb5f6685341a481e9e22094eaa1bd1}{input\+\_\+ids}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a7b4aa30508fef7eae8d22f9b5cdccc1f}{train\+\_\+labels}} = \mbox{\hyperlink{namespacemydistilbert_a9c51b3f5b486d454a5d2acd947962c04}{df\+\_\+train}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aec33e85448cf1c27609bb7878e18fd59}{validation\+\_\+inputs}} = pd.\+Data\+Frame(\mbox{\hyperlink{namespacemydistilbert_a664f494a1f28216d64d327f0e27f4ab9}{input\+\_\+ids1}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a0105889413e48240b1903f1fc5db501d}{validation\+\_\+labels}} = \mbox{\hyperlink{namespacemydistilbert_a51ad3bb43e4f0bb0f9bfbcef9303f90d}{df\+\_\+val}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacemydistilbert_ac1ab9ef05de66dc8e5b1d9a316e60dbe}{map1}} = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}} = 32
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aed2b1a12b2b91854d025d357ff54a5da}{train\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacemydistilbert_ae907710ba3debe7bd177d6e06b5dead3}{train\+\_\+inputs}}, \mbox{\hyperlink{namespacemydistilbert_ad5b389f95fe2673bf1b5a3c9927c88aa}{train\+\_\+masks}}, \mbox{\hyperlink{namespacemydistilbert_a7b4aa30508fef7eae8d22f9b5cdccc1f}{train\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ac57c0dc527be52c17cc24fde3273f02b}{train\+\_\+sampler}} = Random\+Sampler(\mbox{\hyperlink{namespacemydistilbert_aed2b1a12b2b91854d025d357ff54a5da}{train\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a1122536c7f634a4818b3dfe365d68f65}{train\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacemydistilbert_aed2b1a12b2b91854d025d357ff54a5da}{train\+\_\+data}}, sampler=\mbox{\hyperlink{namespacemydistilbert_ac57c0dc527be52c17cc24fde3273f02b}{train\+\_\+sampler}}, \mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}}=\mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a67bef29e35945ae38f3583147408b608}{validation\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacemydistilbert_aec33e85448cf1c27609bb7878e18fd59}{validation\+\_\+inputs}}, \mbox{\hyperlink{namespacemydistilbert_afac971e846322b9f867f537044bdf4fa}{validation\+\_\+masks}}, \mbox{\hyperlink{namespacemydistilbert_a0105889413e48240b1903f1fc5db501d}{validation\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_addcb5cd1edb91710e45421c4cabc57a3}{validation\+\_\+sampler}} = Sequential\+Sampler(\mbox{\hyperlink{namespacemydistilbert_a67bef29e35945ae38f3583147408b608}{validation\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a882bd5a2bc232581a6f4c24a8ca9ebb3}{validation\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacemydistilbert_a67bef29e35945ae38f3583147408b608}{validation\+\_\+data}}, sampler=\mbox{\hyperlink{namespacemydistilbert_addcb5cd1edb91710e45421c4cabc57a3}{validation\+\_\+sampler}}, \mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}}=\mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aaf762652304fc8dee847f839bb80870f}{optimizer}}
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_a101a997a7b5f4f96151f136feb74f013}{epochs}} = 2
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_a3f7285e74a17e66b61bcc2b3369fd98f}{total\+\_\+steps}} = len(\mbox{\hyperlink{namespacemydistilbert_a1122536c7f634a4818b3dfe365d68f65}{train\+\_\+dataloader}}) $\ast$ \mbox{\hyperlink{namespacemydistilbert_a101a997a7b5f4f96151f136feb74f013}{epochs}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aafbfd2117f125ab7d6904e379bbeedcb}{scheduler}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}} = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a1c5652eb9cecd0bf578059c54ce523f4}{device\+\_\+name}} = tf.\+test.\+gpu\+\_\+device\+\_\+name()
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_a1eabb073fbde646956c1dbb2e3df7d83}{seed\+\_\+val}} = 42
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a4abb8a3af1db7f337e70e9bf2b0f5b6b}{loss\+\_\+values}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_add43ab309a850a56296ed51d3fa6eed5}{t0}} = time.\+time()
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_ad5c80297dcb5f598ec179b0252e029c4}{total\+\_\+loss}} = 0
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a5673d13abd16d08807c7fb9875d41636}{elapsed}} = \mbox{\hyperlink{namespacemydistilbert_a8c26a32d551768d85a93efc682efa316}{format\+\_\+time}}(time.\+time() -\/ \mbox{\hyperlink{namespacemydistilbert_add43ab309a850a56296ed51d3fa6eed5}{t0}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a56a9343ccb0f9e43bb19a134769b0851}{b\+\_\+input\+\_\+ids}} = \mbox{\hyperlink{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}{batch}}\mbox{[}0\mbox{]}.to(\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a6c7542bb2464263f8e13ddcf7ea60fdf}{b\+\_\+input\+\_\+mask}} = \mbox{\hyperlink{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}{batch}}\mbox{[}1\mbox{]}.to(\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a72d540c65454e2a53e231f20373b9458}{b\+\_\+labels}} = \mbox{\hyperlink{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}{batch}}\mbox{[}2\mbox{]}.to(\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ae9e94ba7e8804843d2ec24b3158daebb}{outputs}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a4be7196dbe84edf6d0aedff8486eeb75}{loss}} = \mbox{\hyperlink{namespacemydistilbert_ae9e94ba7e8804843d2ec24b3158daebb}{outputs}}\mbox{[}0\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacemydistilbert_a8c0a124518414cfc89d6341f8bc26353}{avg\+\_\+train\+\_\+loss}} = \mbox{\hyperlink{namespacemydistilbert_ad5c80297dcb5f598ec179b0252e029c4}{total\+\_\+loss}} / len(\mbox{\hyperlink{namespacemydistilbert_a1122536c7f634a4818b3dfe365d68f65}{train\+\_\+dataloader}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a40b437ed9a2a74b9e81221df14725835}{eval\+\_\+loss}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a194d55cb7da9336396e17bc8d4007a84}{eval\+\_\+accuracy}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_af45406c6c8a21182659e269cf33a569b}{nb\+\_\+eval\+\_\+steps}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ac7bbabd6a781085d4af21e5cd8eab3b1}{nb\+\_\+eval\+\_\+examples}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}{batch}} = tuple(t.\+to(\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}}) for t in batch)
+\item 
+\mbox{\hyperlink{namespacemydistilbert_aae70dc1b4080ac0e4ca6557f9c3b423f}{logits}} = \mbox{\hyperlink{namespacemydistilbert_ae9e94ba7e8804843d2ec24b3158daebb}{outputs}}\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a22e1ca0dbe8bf8fe37b13140cded3498}{label\+\_\+ids}} = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()
+\item 
+def \mbox{\hyperlink{namespacemydistilbert_a39f56c9321182fe71687983164305210}{tmp\+\_\+eval\+\_\+accuracy}} = \mbox{\hyperlink{namespacemydistilbert_a1a5a63c5fcb2326e09d1b7280a4f1fe0}{flat\+\_\+accuracy}}(\mbox{\hyperlink{namespacemydistilbert_aae70dc1b4080ac0e4ca6557f9c3b423f}{logits}}, \mbox{\hyperlink{namespacemydistilbert_a22e1ca0dbe8bf8fe37b13140cded3498}{label\+\_\+ids}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a546b480f8a10c23194cd9a9a042f2ab8}{df}} = \mbox{\hyperlink{namespacemydistilbert_ac7c9c2e062648ecfe31489d74dbc7361}{df\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a1dd121206735f225295009b26880b3bc}{labels}} = \mbox{\hyperlink{namespacemydistilbert_a546b480f8a10c23194cd9a9a042f2ab8}{df}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}.map(\mbox{\hyperlink{namespacemydistilbert_ac1ab9ef05de66dc8e5b1d9a316e60dbe}{map1}})
+\item 
+list \mbox{\hyperlink{namespacemydistilbert_a0d3662b5c330b5281f969e42646b5069}{seq\+\_\+mask}} = \mbox{[}float(i$>$0) for i in seq\mbox{]}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a1dd003e3405358ed15845af2913d1c74}{prediction\+\_\+inputs}} = torch.\+tensor(\mbox{\hyperlink{namespacemydistilbert_a1efb5f6685341a481e9e22094eaa1bd1}{input\+\_\+ids}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a3c2803f279a80243a25824106864ea6b}{prediction\+\_\+masks}} = torch.\+tensor(\mbox{\hyperlink{namespacemydistilbert_a19b2b73d2036757d5d0cdc920ebf5e90}{attention\+\_\+masks}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a389c5a7eefd85e70bf7360e2415e2fc6}{prediction\+\_\+labels}} = torch.\+tensor(\mbox{\hyperlink{namespacemydistilbert_a1dd121206735f225295009b26880b3bc}{labels}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a69b75099cd6dc180a2aa5566c01dce73}{prediction\+\_\+data}} = Tensor\+Dataset(\mbox{\hyperlink{namespacemydistilbert_a1dd003e3405358ed15845af2913d1c74}{prediction\+\_\+inputs}}, \mbox{\hyperlink{namespacemydistilbert_a3c2803f279a80243a25824106864ea6b}{prediction\+\_\+masks}}, \mbox{\hyperlink{namespacemydistilbert_a389c5a7eefd85e70bf7360e2415e2fc6}{prediction\+\_\+labels}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a8abed892b1233bb4a53f5bfd2a5fdf01}{prediction\+\_\+sampler}} = Sequential\+Sampler(\mbox{\hyperlink{namespacemydistilbert_a69b75099cd6dc180a2aa5566c01dce73}{prediction\+\_\+data}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_af725f818fb0e92e0d95d592baa86b817}{prediction\+\_\+dataloader}} = Data\+Loader(\mbox{\hyperlink{namespacemydistilbert_a69b75099cd6dc180a2aa5566c01dce73}{prediction\+\_\+data}}, sampler=\mbox{\hyperlink{namespacemydistilbert_a8abed892b1233bb4a53f5bfd2a5fdf01}{prediction\+\_\+sampler}}, \mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}}=\mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}})
+\item 
+\mbox{\hyperlink{namespacemydistilbert_a39aecd99d98c01064f7fd84f40eb141f}{predictions}}
+\item 
+\mbox{\hyperlink{namespacemydistilbert_ae34d7c8819587dfc9c327cff84a32bef}{true\+\_\+labels}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemydistilbert_a0ed728d0762aecef03fdbba9366fde1a}\label{namespacemydistilbert_a0ed728d0762aecef03fdbba9366fde1a}} 
+\index{mydistilbert@{mydistilbert}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily def mydistilbert.\+evaluate (\begin{DoxyParamCaption}\item[{}]{y\+\_\+true,  }\item[{}]{predictions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a1a5a63c5fcb2326e09d1b7280a4f1fe0}\label{namespacemydistilbert_a1a5a63c5fcb2326e09d1b7280a4f1fe0}} 
+\index{mydistilbert@{mydistilbert}!flat\_accuracy@{flat\_accuracy}}
+\index{flat\_accuracy@{flat\_accuracy}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{flat\_accuracy()}{flat\_accuracy()}}
+{\footnotesize\ttfamily def mydistilbert.\+flat\+\_\+accuracy (\begin{DoxyParamCaption}\item[{}]{preds,  }\item[{}]{labels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a8c26a32d551768d85a93efc682efa316}\label{namespacemydistilbert_a8c26a32d551768d85a93efc682efa316}} 
+\index{mydistilbert@{mydistilbert}!format\_time@{format\_time}}
+\index{format\_time@{format\_time}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{format\_time()}{format\_time()}}
+{\footnotesize\ttfamily def mydistilbert.\+format\+\_\+time (\begin{DoxyParamCaption}\item[{}]{elapsed }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Takes a time in seconds and returns a string hh:mm:ss
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemydistilbert_a725309e90093227cbc4a54226a58d261}\label{namespacemydistilbert_a725309e90093227cbc4a54226a58d261}} 
+\index{mydistilbert@{mydistilbert}!att\_mask@{att\_mask}}
+\index{att\_mask@{att\_mask}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{att\_mask}{att\_mask}}
+{\footnotesize\ttfamily list mydistilbert.\+att\+\_\+mask = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_a19b2b73d2036757d5d0cdc920ebf5e90}\label{namespacemydistilbert_a19b2b73d2036757d5d0cdc920ebf5e90}} 
+\index{mydistilbert@{mydistilbert}!attention\_masks@{attention\_masks}}
+\index{attention\_masks@{attention\_masks}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{attention\_masks}{attention\_masks}}
+{\footnotesize\ttfamily list mydistilbert.\+attention\+\_\+masks = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_afaf9554a9cca679bad80db2b25bfef64}\label{namespacemydistilbert_afaf9554a9cca679bad80db2b25bfef64}} 
+\index{mydistilbert@{mydistilbert}!attention\_masks2@{attention\_masks2}}
+\index{attention\_masks2@{attention\_masks2}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{attention\_masks2}{attention\_masks2}}
+{\footnotesize\ttfamily list mydistilbert.\+attention\+\_\+masks2 = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_a8c0a124518414cfc89d6341f8bc26353}\label{namespacemydistilbert_a8c0a124518414cfc89d6341f8bc26353}} 
+\index{mydistilbert@{mydistilbert}!avg\_train\_loss@{avg\_train\_loss}}
+\index{avg\_train\_loss@{avg\_train\_loss}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{avg\_train\_loss}{avg\_train\_loss}}
+{\footnotesize\ttfamily int mydistilbert.\+avg\+\_\+train\+\_\+loss = \mbox{\hyperlink{namespacemydistilbert_ad5c80297dcb5f598ec179b0252e029c4}{total\+\_\+loss}} / len(\mbox{\hyperlink{namespacemydistilbert_a1122536c7f634a4818b3dfe365d68f65}{train\+\_\+dataloader}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a56a9343ccb0f9e43bb19a134769b0851}\label{namespacemydistilbert_a56a9343ccb0f9e43bb19a134769b0851}} 
+\index{mydistilbert@{mydistilbert}!b\_input\_ids@{b\_input\_ids}}
+\index{b\_input\_ids@{b\_input\_ids}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{b\_input\_ids}{b\_input\_ids}}
+{\footnotesize\ttfamily mydistilbert.\+b\+\_\+input\+\_\+ids = \mbox{\hyperlink{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}{batch}}\mbox{[}0\mbox{]}.to(\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a6c7542bb2464263f8e13ddcf7ea60fdf}\label{namespacemydistilbert_a6c7542bb2464263f8e13ddcf7ea60fdf}} 
+\index{mydistilbert@{mydistilbert}!b\_input\_mask@{b\_input\_mask}}
+\index{b\_input\_mask@{b\_input\_mask}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{b\_input\_mask}{b\_input\_mask}}
+{\footnotesize\ttfamily mydistilbert.\+b\+\_\+input\+\_\+mask = \mbox{\hyperlink{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}{batch}}\mbox{[}1\mbox{]}.to(\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a72d540c65454e2a53e231f20373b9458}\label{namespacemydistilbert_a72d540c65454e2a53e231f20373b9458}} 
+\index{mydistilbert@{mydistilbert}!b\_labels@{b\_labels}}
+\index{b\_labels@{b\_labels}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{b\_labels}{b\_labels}}
+{\footnotesize\ttfamily mydistilbert.\+b\+\_\+labels = \mbox{\hyperlink{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}{batch}}\mbox{[}2\mbox{]}.to(\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}\label{namespacemydistilbert_a9c062bd1ce1bb854447d866763392ae7}} 
+\index{mydistilbert@{mydistilbert}!batch@{batch}}
+\index{batch@{batch}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{batch}{batch}}
+{\footnotesize\ttfamily mydistilbert.\+batch = tuple(t.\+to(\mbox{\hyperlink{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}{device}}) for t in batch)}
+
+\mbox{\Hypertarget{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}\label{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}} 
+\index{mydistilbert@{mydistilbert}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily int mydistilbert.\+batch\+\_\+size = 32}
+
+\mbox{\Hypertarget{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}\label{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}} 
+\index{mydistilbert@{mydistilbert}!data@{data}}
+\index{data@{data}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily mydistilbert.\+data = load\+\_\+data()}
+
+\mbox{\Hypertarget{namespacemydistilbert_a532d7dc9454c72c270a86296d368144c}\label{namespacemydistilbert_a532d7dc9454c72c270a86296d368144c}} 
+\index{mydistilbert@{mydistilbert}!dev\_path@{dev\_path}}
+\index{dev\_path@{dev\_path}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{dev\_path}{dev\_path}}
+{\footnotesize\ttfamily string mydistilbert.\+dev\+\_\+path = \textquotesingle{}\mbox{\hyperlink{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}{data}}/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}\label{namespacemydistilbert_ac582fa65975057fbc5b4d9f5663fa408}} 
+\index{mydistilbert@{mydistilbert}!device@{device}}
+\index{device@{device}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily mydistilbert.\+device = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a1c5652eb9cecd0bf578059c54ce523f4}\label{namespacemydistilbert_a1c5652eb9cecd0bf578059c54ce523f4}} 
+\index{mydistilbert@{mydistilbert}!device\_name@{device\_name}}
+\index{device\_name@{device\_name}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{device\_name}{device\_name}}
+{\footnotesize\ttfamily mydistilbert.\+device\+\_\+name = tf.\+test.\+gpu\+\_\+device\+\_\+name()}
+
+\mbox{\Hypertarget{namespacemydistilbert_a546b480f8a10c23194cd9a9a042f2ab8}\label{namespacemydistilbert_a546b480f8a10c23194cd9a9a042f2ab8}} 
+\index{mydistilbert@{mydistilbert}!df@{df}}
+\index{df@{df}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily mydistilbert.\+df = \mbox{\hyperlink{namespacemydistilbert_ac7c9c2e062648ecfe31489d74dbc7361}{df\+\_\+test}}}
+
+\mbox{\Hypertarget{namespacemydistilbert_ac7c9c2e062648ecfe31489d74dbc7361}\label{namespacemydistilbert_ac7c9c2e062648ecfe31489d74dbc7361}} 
+\index{mydistilbert@{mydistilbert}!df\_test@{df\_test}}
+\index{df\_test@{df\_test}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{df\_test}{df\_test}}
+{\footnotesize\ttfamily mydistilbert.\+df\+\_\+test = data.\+load(\mbox{\hyperlink{namespacemydistilbert_a8c2c0e1ff955ee6ebe935fa56676436f}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a9c51b3f5b486d454a5d2acd947962c04}\label{namespacemydistilbert_a9c51b3f5b486d454a5d2acd947962c04}} 
+\index{mydistilbert@{mydistilbert}!df\_train@{df\_train}}
+\index{df\_train@{df\_train}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{df\_train}{df\_train}}
+{\footnotesize\ttfamily mydistilbert.\+df\+\_\+train = data.\+load(\mbox{\hyperlink{namespacemydistilbert_abf2881e5618ba960774677bfc0804b44}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a51ad3bb43e4f0bb0f9bfbcef9303f90d}\label{namespacemydistilbert_a51ad3bb43e4f0bb0f9bfbcef9303f90d}} 
+\index{mydistilbert@{mydistilbert}!df\_val@{df\_val}}
+\index{df\_val@{df\_val}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{df\_val}{df\_val}}
+{\footnotesize\ttfamily mydistilbert.\+df\+\_\+val = data.\+load(\mbox{\hyperlink{namespacemydistilbert_a532d7dc9454c72c270a86296d368144c}{dev\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a5673d13abd16d08807c7fb9875d41636}\label{namespacemydistilbert_a5673d13abd16d08807c7fb9875d41636}} 
+\index{mydistilbert@{mydistilbert}!elapsed@{elapsed}}
+\index{elapsed@{elapsed}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{elapsed}{elapsed}}
+{\footnotesize\ttfamily def mydistilbert.\+elapsed = \mbox{\hyperlink{namespacemydistilbert_a8c26a32d551768d85a93efc682efa316}{format\+\_\+time}}(time.\+time() -\/ \mbox{\hyperlink{namespacemydistilbert_add43ab309a850a56296ed51d3fa6eed5}{t0}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_aa88520bec09ccabeb21775c09712b8f7}\label{namespacemydistilbert_aa88520bec09ccabeb21775c09712b8f7}} 
+\index{mydistilbert@{mydistilbert}!encoded\_sent@{encoded\_sent}}
+\index{encoded\_sent@{encoded\_sent}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{encoded\_sent}{encoded\_sent}}
+{\footnotesize\ttfamily mydistilbert.\+encoded\+\_\+sent}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  tokenizer.encode(}
+\DoxyCodeLine{2                         sent}
+\DoxyCodeLine{3                    )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemydistilbert_a101a997a7b5f4f96151f136feb74f013}\label{namespacemydistilbert_a101a997a7b5f4f96151f136feb74f013}} 
+\index{mydistilbert@{mydistilbert}!epochs@{epochs}}
+\index{epochs@{epochs}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{epochs}{epochs}}
+{\footnotesize\ttfamily int mydistilbert.\+epochs = 2}
+
+\mbox{\Hypertarget{namespacemydistilbert_a194d55cb7da9336396e17bc8d4007a84}\label{namespacemydistilbert_a194d55cb7da9336396e17bc8d4007a84}} 
+\index{mydistilbert@{mydistilbert}!eval\_accuracy@{eval\_accuracy}}
+\index{eval\_accuracy@{eval\_accuracy}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{eval\_accuracy}{eval\_accuracy}}
+{\footnotesize\ttfamily mydistilbert.\+eval\+\_\+accuracy}
+
+\mbox{\Hypertarget{namespacemydistilbert_a40b437ed9a2a74b9e81221df14725835}\label{namespacemydistilbert_a40b437ed9a2a74b9e81221df14725835}} 
+\index{mydistilbert@{mydistilbert}!eval\_loss@{eval\_loss}}
+\index{eval\_loss@{eval\_loss}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{eval\_loss}{eval\_loss}}
+{\footnotesize\ttfamily mydistilbert.\+eval\+\_\+loss}
+
+\mbox{\Hypertarget{namespacemydistilbert_a1efb5f6685341a481e9e22094eaa1bd1}\label{namespacemydistilbert_a1efb5f6685341a481e9e22094eaa1bd1}} 
+\index{mydistilbert@{mydistilbert}!input\_ids@{input\_ids}}
+\index{input\_ids@{input\_ids}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{input\_ids}{input\_ids}}
+{\footnotesize\ttfamily list mydistilbert.\+input\+\_\+ids = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_a664f494a1f28216d64d327f0e27f4ab9}\label{namespacemydistilbert_a664f494a1f28216d64d327f0e27f4ab9}} 
+\index{mydistilbert@{mydistilbert}!input\_ids1@{input\_ids1}}
+\index{input\_ids1@{input\_ids1}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{input\_ids1}{input\_ids1}}
+{\footnotesize\ttfamily mydistilbert.\+input\+\_\+ids1 = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_a22e1ca0dbe8bf8fe37b13140cded3498}\label{namespacemydistilbert_a22e1ca0dbe8bf8fe37b13140cded3498}} 
+\index{mydistilbert@{mydistilbert}!label\_ids@{label\_ids}}
+\index{label\_ids@{label\_ids}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{label\_ids}{label\_ids}}
+{\footnotesize\ttfamily mydistilbert.\+label\+\_\+ids = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()}
+
+\mbox{\Hypertarget{namespacemydistilbert_a1dd121206735f225295009b26880b3bc}\label{namespacemydistilbert_a1dd121206735f225295009b26880b3bc}} 
+\index{mydistilbert@{mydistilbert}!labels@{labels}}
+\index{labels@{labels}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily mydistilbert.\+labels = \mbox{\hyperlink{namespacemydistilbert_a546b480f8a10c23194cd9a9a042f2ab8}{df}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}.map(\mbox{\hyperlink{namespacemydistilbert_ac1ab9ef05de66dc8e5b1d9a316e60dbe}{map1}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_aae70dc1b4080ac0e4ca6557f9c3b423f}\label{namespacemydistilbert_aae70dc1b4080ac0e4ca6557f9c3b423f}} 
+\index{mydistilbert@{mydistilbert}!logits@{logits}}
+\index{logits@{logits}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{logits}{logits}}
+{\footnotesize\ttfamily mydistilbert.\+logits = \mbox{\hyperlink{namespacemydistilbert_ae9e94ba7e8804843d2ec24b3158daebb}{outputs}}\mbox{[}0\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_a4be7196dbe84edf6d0aedff8486eeb75}\label{namespacemydistilbert_a4be7196dbe84edf6d0aedff8486eeb75}} 
+\index{mydistilbert@{mydistilbert}!loss@{loss}}
+\index{loss@{loss}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{loss}{loss}}
+{\footnotesize\ttfamily mydistilbert.\+loss = \mbox{\hyperlink{namespacemydistilbert_ae9e94ba7e8804843d2ec24b3158daebb}{outputs}}\mbox{[}0\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_a4abb8a3af1db7f337e70e9bf2b0f5b6b}\label{namespacemydistilbert_a4abb8a3af1db7f337e70e9bf2b0f5b6b}} 
+\index{mydistilbert@{mydistilbert}!loss\_values@{loss\_values}}
+\index{loss\_values@{loss\_values}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{loss\_values}{loss\_values}}
+{\footnotesize\ttfamily list mydistilbert.\+loss\+\_\+values = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_ac1ab9ef05de66dc8e5b1d9a316e60dbe}\label{namespacemydistilbert_ac1ab9ef05de66dc8e5b1d9a316e60dbe}} 
+\index{mydistilbert@{mydistilbert}!map1@{map1}}
+\index{map1@{map1}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{map1}{map1}}
+{\footnotesize\ttfamily dictionary mydistilbert.\+map1 = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}}
+
+\mbox{\Hypertarget{namespacemydistilbert_aa1b52e1a0df7e97f76f7e4c3973dd3a1}\label{namespacemydistilbert_aa1b52e1a0df7e97f76f7e4c3973dd3a1}} 
+\index{mydistilbert@{mydistilbert}!MAX\_LEN@{MAX\_LEN}}
+\index{MAX\_LEN@{MAX\_LEN}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{MAX\_LEN}{MAX\_LEN}}
+{\footnotesize\ttfamily int mydistilbert.\+MAX\+\_\+\+LEN = 64}
+
+\mbox{\Hypertarget{namespacemydistilbert_a47d43e94d709087903ebb9de74a1869b}\label{namespacemydistilbert_a47d43e94d709087903ebb9de74a1869b}} 
+\index{mydistilbert@{mydistilbert}!model@{model}}
+\index{model@{model}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily mydistilbert.\+model = Distil\+Bert\+For\+Sequence\+Classification.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacemydistilbert_a6171a25b1f60b7591dedae2688c76095}{model\+\_\+checkpoint}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a6171a25b1f60b7591dedae2688c76095}\label{namespacemydistilbert_a6171a25b1f60b7591dedae2688c76095}} 
+\index{mydistilbert@{mydistilbert}!model\_checkpoint@{model\_checkpoint}}
+\index{model\_checkpoint@{model\_checkpoint}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{model\_checkpoint}{model\_checkpoint}}
+{\footnotesize\ttfamily string mydistilbert.\+model\+\_\+checkpoint = \char`\"{}distilbert-\/base-\/multilingual-\/cased\char`\"{}}
+
+\mbox{\Hypertarget{namespacemydistilbert_ac7bbabd6a781085d4af21e5cd8eab3b1}\label{namespacemydistilbert_ac7bbabd6a781085d4af21e5cd8eab3b1}} 
+\index{mydistilbert@{mydistilbert}!nb\_eval\_examples@{nb\_eval\_examples}}
+\index{nb\_eval\_examples@{nb\_eval\_examples}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{nb\_eval\_examples}{nb\_eval\_examples}}
+{\footnotesize\ttfamily mydistilbert.\+nb\+\_\+eval\+\_\+examples}
+
+\mbox{\Hypertarget{namespacemydistilbert_af45406c6c8a21182659e269cf33a569b}\label{namespacemydistilbert_af45406c6c8a21182659e269cf33a569b}} 
+\index{mydistilbert@{mydistilbert}!nb\_eval\_steps@{nb\_eval\_steps}}
+\index{nb\_eval\_steps@{nb\_eval\_steps}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{nb\_eval\_steps}{nb\_eval\_steps}}
+{\footnotesize\ttfamily mydistilbert.\+nb\+\_\+eval\+\_\+steps}
+
+\mbox{\Hypertarget{namespacemydistilbert_aaf762652304fc8dee847f839bb80870f}\label{namespacemydistilbert_aaf762652304fc8dee847f839bb80870f}} 
+\index{mydistilbert@{mydistilbert}!optimizer@{optimizer}}
+\index{optimizer@{optimizer}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{optimizer}{optimizer}}
+{\footnotesize\ttfamily mydistilbert.\+optimizer}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  AdamW(model.parameters(),}
+\DoxyCodeLine{2                   lr = 2e-\/5, }
+\DoxyCodeLine{3                   eps = 1e-\/8 }
+\DoxyCodeLine{4                 )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemydistilbert_ae9e94ba7e8804843d2ec24b3158daebb}\label{namespacemydistilbert_ae9e94ba7e8804843d2ec24b3158daebb}} 
+\index{mydistilbert@{mydistilbert}!outputs@{outputs}}
+\index{outputs@{outputs}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{outputs}{outputs}}
+{\footnotesize\ttfamily mydistilbert.\+outputs}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \mbox{\hyperlink{namespacemydistilbert_a47d43e94d709087903ebb9de74a1869b}{model}}(b\_input\_ids.type(torch.LongTensor).to(device), }
+\DoxyCodeLine{2                     \textcolor{comment}{\#token\_type\_ids=None, }}
+\DoxyCodeLine{3                     attention\_mask=b\_input\_mask.type(torch.LongTensor).to(device), }
+\DoxyCodeLine{4                     labels=b\_labels)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemydistilbert_a69b75099cd6dc180a2aa5566c01dce73}\label{namespacemydistilbert_a69b75099cd6dc180a2aa5566c01dce73}} 
+\index{mydistilbert@{mydistilbert}!prediction\_data@{prediction\_data}}
+\index{prediction\_data@{prediction\_data}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{prediction\_data}{prediction\_data}}
+{\footnotesize\ttfamily mydistilbert.\+prediction\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacemydistilbert_a1dd003e3405358ed15845af2913d1c74}{prediction\+\_\+inputs}}, \mbox{\hyperlink{namespacemydistilbert_a3c2803f279a80243a25824106864ea6b}{prediction\+\_\+masks}}, \mbox{\hyperlink{namespacemydistilbert_a389c5a7eefd85e70bf7360e2415e2fc6}{prediction\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_af725f818fb0e92e0d95d592baa86b817}\label{namespacemydistilbert_af725f818fb0e92e0d95d592baa86b817}} 
+\index{mydistilbert@{mydistilbert}!prediction\_dataloader@{prediction\_dataloader}}
+\index{prediction\_dataloader@{prediction\_dataloader}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{prediction\_dataloader}{prediction\_dataloader}}
+{\footnotesize\ttfamily mydistilbert.\+prediction\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacemydistilbert_a69b75099cd6dc180a2aa5566c01dce73}{prediction\+\_\+data}}, sampler=\mbox{\hyperlink{namespacemydistilbert_a8abed892b1233bb4a53f5bfd2a5fdf01}{prediction\+\_\+sampler}}, \mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}}=\mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a1dd003e3405358ed15845af2913d1c74}\label{namespacemydistilbert_a1dd003e3405358ed15845af2913d1c74}} 
+\index{mydistilbert@{mydistilbert}!prediction\_inputs@{prediction\_inputs}}
+\index{prediction\_inputs@{prediction\_inputs}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{prediction\_inputs}{prediction\_inputs}}
+{\footnotesize\ttfamily mydistilbert.\+prediction\+\_\+inputs = torch.\+tensor(\mbox{\hyperlink{namespacemydistilbert_a1efb5f6685341a481e9e22094eaa1bd1}{input\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a389c5a7eefd85e70bf7360e2415e2fc6}\label{namespacemydistilbert_a389c5a7eefd85e70bf7360e2415e2fc6}} 
+\index{mydistilbert@{mydistilbert}!prediction\_labels@{prediction\_labels}}
+\index{prediction\_labels@{prediction\_labels}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{prediction\_labels}{prediction\_labels}}
+{\footnotesize\ttfamily mydistilbert.\+prediction\+\_\+labels = torch.\+tensor(\mbox{\hyperlink{namespacemydistilbert_a1dd121206735f225295009b26880b3bc}{labels}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a3c2803f279a80243a25824106864ea6b}\label{namespacemydistilbert_a3c2803f279a80243a25824106864ea6b}} 
+\index{mydistilbert@{mydistilbert}!prediction\_masks@{prediction\_masks}}
+\index{prediction\_masks@{prediction\_masks}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{prediction\_masks}{prediction\_masks}}
+{\footnotesize\ttfamily mydistilbert.\+prediction\+\_\+masks = torch.\+tensor(\mbox{\hyperlink{namespacemydistilbert_a19b2b73d2036757d5d0cdc920ebf5e90}{attention\+\_\+masks}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a8abed892b1233bb4a53f5bfd2a5fdf01}\label{namespacemydistilbert_a8abed892b1233bb4a53f5bfd2a5fdf01}} 
+\index{mydistilbert@{mydistilbert}!prediction\_sampler@{prediction\_sampler}}
+\index{prediction\_sampler@{prediction\_sampler}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{prediction\_sampler}{prediction\_sampler}}
+{\footnotesize\ttfamily mydistilbert.\+prediction\+\_\+sampler = Sequential\+Sampler(\mbox{\hyperlink{namespacemydistilbert_a69b75099cd6dc180a2aa5566c01dce73}{prediction\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a39aecd99d98c01064f7fd84f40eb141f}\label{namespacemydistilbert_a39aecd99d98c01064f7fd84f40eb141f}} 
+\index{mydistilbert@{mydistilbert}!predictions@{predictions}}
+\index{predictions@{predictions}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{predictions}{predictions}}
+{\footnotesize\ttfamily mydistilbert.\+predictions}
+
+\mbox{\Hypertarget{namespacemydistilbert_aafbfd2117f125ab7d6904e379bbeedcb}\label{namespacemydistilbert_aafbfd2117f125ab7d6904e379bbeedcb}} 
+\index{mydistilbert@{mydistilbert}!scheduler@{scheduler}}
+\index{scheduler@{scheduler}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{scheduler}{scheduler}}
+{\footnotesize\ttfamily mydistilbert.\+scheduler}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  get\_linear\_schedule\_with\_warmup(optimizer, }
+\DoxyCodeLine{2                                             num\_warmup\_steps = 0, \textcolor{comment}{\# Default value in run\_glue.py}}
+\DoxyCodeLine{3                                             num\_training\_steps = total\_steps)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacemydistilbert_a1eabb073fbde646956c1dbb2e3df7d83}\label{namespacemydistilbert_a1eabb073fbde646956c1dbb2e3df7d83}} 
+\index{mydistilbert@{mydistilbert}!seed\_val@{seed\_val}}
+\index{seed\_val@{seed\_val}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{seed\_val}{seed\_val}}
+{\footnotesize\ttfamily int mydistilbert.\+seed\+\_\+val = 42}
+
+\mbox{\Hypertarget{namespacemydistilbert_a10ce23a5681e4040aa7f3273793e5722}\label{namespacemydistilbert_a10ce23a5681e4040aa7f3273793e5722}} 
+\index{mydistilbert@{mydistilbert}!sentences@{sentences}}
+\index{sentences@{sentences}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{sentences}{sentences}}
+{\footnotesize\ttfamily mydistilbert.\+sentences = \mbox{\hyperlink{namespacemydistilbert_a9c51b3f5b486d454a5d2acd947962c04}{df\+\_\+train}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values}
+
+\mbox{\Hypertarget{namespacemydistilbert_aae1353224ea002282b997bc112370506}\label{namespacemydistilbert_aae1353224ea002282b997bc112370506}} 
+\index{mydistilbert@{mydistilbert}!sentences1@{sentences1}}
+\index{sentences1@{sentences1}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{sentences1}{sentences1}}
+{\footnotesize\ttfamily mydistilbert.\+sentences1 = \mbox{\hyperlink{namespacemydistilbert_a51ad3bb43e4f0bb0f9bfbcef9303f90d}{df\+\_\+val}}\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values}
+
+\mbox{\Hypertarget{namespacemydistilbert_a0d3662b5c330b5281f969e42646b5069}\label{namespacemydistilbert_a0d3662b5c330b5281f969e42646b5069}} 
+\index{mydistilbert@{mydistilbert}!seq\_mask@{seq\_mask}}
+\index{seq\_mask@{seq\_mask}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{seq\_mask}{seq\_mask}}
+{\footnotesize\ttfamily list mydistilbert.\+seq\+\_\+mask = \mbox{[}float(i$>$0) for i in seq\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_add43ab309a850a56296ed51d3fa6eed5}\label{namespacemydistilbert_add43ab309a850a56296ed51d3fa6eed5}} 
+\index{mydistilbert@{mydistilbert}!t0@{t0}}
+\index{t0@{t0}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{t0}{t0}}
+{\footnotesize\ttfamily mydistilbert.\+t0 = time.\+time()}
+
+\mbox{\Hypertarget{namespacemydistilbert_a8c2c0e1ff955ee6ebe935fa56676436f}\label{namespacemydistilbert_a8c2c0e1ff955ee6ebe935fa56676436f}} 
+\index{mydistilbert@{mydistilbert}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string mydistilbert.\+test\+\_\+path = \textquotesingle{}\mbox{\hyperlink{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}{data}}/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacemydistilbert_a39f56c9321182fe71687983164305210}\label{namespacemydistilbert_a39f56c9321182fe71687983164305210}} 
+\index{mydistilbert@{mydistilbert}!tmp\_eval\_accuracy@{tmp\_eval\_accuracy}}
+\index{tmp\_eval\_accuracy@{tmp\_eval\_accuracy}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{tmp\_eval\_accuracy}{tmp\_eval\_accuracy}}
+{\footnotesize\ttfamily def mydistilbert.\+tmp\+\_\+eval\+\_\+accuracy = \mbox{\hyperlink{namespacemydistilbert_a1a5a63c5fcb2326e09d1b7280a4f1fe0}{flat\+\_\+accuracy}}(\mbox{\hyperlink{namespacemydistilbert_aae70dc1b4080ac0e4ca6557f9c3b423f}{logits}}, \mbox{\hyperlink{namespacemydistilbert_a22e1ca0dbe8bf8fe37b13140cded3498}{label\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a9540ebf926fb3371518e70388ae05dd6}\label{namespacemydistilbert_a9540ebf926fb3371518e70388ae05dd6}} 
+\index{mydistilbert@{mydistilbert}!tokenizer@{tokenizer}}
+\index{tokenizer@{tokenizer}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{tokenizer}{tokenizer}}
+{\footnotesize\ttfamily mydistilbert.\+tokenizer = Distil\+Bert\+Tokenizer.\+from\+\_\+pretrained(\mbox{\hyperlink{namespacemydistilbert_a6171a25b1f60b7591dedae2688c76095}{model\+\_\+checkpoint}},use\+\_\+fast=True)}
+
+\mbox{\Hypertarget{namespacemydistilbert_ad5c80297dcb5f598ec179b0252e029c4}\label{namespacemydistilbert_ad5c80297dcb5f598ec179b0252e029c4}} 
+\index{mydistilbert@{mydistilbert}!total\_loss@{total\_loss}}
+\index{total\_loss@{total\_loss}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{total\_loss}{total\_loss}}
+{\footnotesize\ttfamily int mydistilbert.\+total\+\_\+loss = 0}
+
+\mbox{\Hypertarget{namespacemydistilbert_a3f7285e74a17e66b61bcc2b3369fd98f}\label{namespacemydistilbert_a3f7285e74a17e66b61bcc2b3369fd98f}} 
+\index{mydistilbert@{mydistilbert}!total\_steps@{total\_steps}}
+\index{total\_steps@{total\_steps}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{total\_steps}{total\_steps}}
+{\footnotesize\ttfamily int mydistilbert.\+total\+\_\+steps = len(\mbox{\hyperlink{namespacemydistilbert_a1122536c7f634a4818b3dfe365d68f65}{train\+\_\+dataloader}}) $\ast$ \mbox{\hyperlink{namespacemydistilbert_a101a997a7b5f4f96151f136feb74f013}{epochs}}}
+
+\mbox{\Hypertarget{namespacemydistilbert_aed2b1a12b2b91854d025d357ff54a5da}\label{namespacemydistilbert_aed2b1a12b2b91854d025d357ff54a5da}} 
+\index{mydistilbert@{mydistilbert}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily mydistilbert.\+train\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacemydistilbert_ae907710ba3debe7bd177d6e06b5dead3}{train\+\_\+inputs}}, \mbox{\hyperlink{namespacemydistilbert_ad5b389f95fe2673bf1b5a3c9927c88aa}{train\+\_\+masks}}, \mbox{\hyperlink{namespacemydistilbert_a7b4aa30508fef7eae8d22f9b5cdccc1f}{train\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a1122536c7f634a4818b3dfe365d68f65}\label{namespacemydistilbert_a1122536c7f634a4818b3dfe365d68f65}} 
+\index{mydistilbert@{mydistilbert}!train\_dataloader@{train\_dataloader}}
+\index{train\_dataloader@{train\_dataloader}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{train\_dataloader}{train\_dataloader}}
+{\footnotesize\ttfamily mydistilbert.\+train\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacemydistilbert_aed2b1a12b2b91854d025d357ff54a5da}{train\+\_\+data}}, sampler=\mbox{\hyperlink{namespacemydistilbert_ac57c0dc527be52c17cc24fde3273f02b}{train\+\_\+sampler}}, \mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}}=\mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_ae907710ba3debe7bd177d6e06b5dead3}\label{namespacemydistilbert_ae907710ba3debe7bd177d6e06b5dead3}} 
+\index{mydistilbert@{mydistilbert}!train\_inputs@{train\_inputs}}
+\index{train\_inputs@{train\_inputs}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{train\_inputs}{train\_inputs}}
+{\footnotesize\ttfamily mydistilbert.\+train\+\_\+inputs = pd.\+Data\+Frame(\mbox{\hyperlink{namespacemydistilbert_a1efb5f6685341a481e9e22094eaa1bd1}{input\+\_\+ids}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a7b4aa30508fef7eae8d22f9b5cdccc1f}\label{namespacemydistilbert_a7b4aa30508fef7eae8d22f9b5cdccc1f}} 
+\index{mydistilbert@{mydistilbert}!train\_labels@{train\_labels}}
+\index{train\_labels@{train\_labels}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{train\_labels}{train\_labels}}
+{\footnotesize\ttfamily mydistilbert.\+train\+\_\+labels = \mbox{\hyperlink{namespacemydistilbert_a9c51b3f5b486d454a5d2acd947962c04}{df\+\_\+train}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_ad5b389f95fe2673bf1b5a3c9927c88aa}\label{namespacemydistilbert_ad5b389f95fe2673bf1b5a3c9927c88aa}} 
+\index{mydistilbert@{mydistilbert}!train\_masks@{train\_masks}}
+\index{train\_masks@{train\_masks}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{train\_masks}{train\_masks}}
+{\footnotesize\ttfamily mydistilbert.\+train\+\_\+masks = \mbox{\hyperlink{namespacemydistilbert_a19b2b73d2036757d5d0cdc920ebf5e90}{attention\+\_\+masks}}}
+
+\mbox{\Hypertarget{namespacemydistilbert_abf2881e5618ba960774677bfc0804b44}\label{namespacemydistilbert_abf2881e5618ba960774677bfc0804b44}} 
+\index{mydistilbert@{mydistilbert}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string mydistilbert.\+train\+\_\+path = \textquotesingle{}\mbox{\hyperlink{namespacemydistilbert_ab1c6382aead32e2d4d87f2666881be73}{data}}/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacemydistilbert_ac57c0dc527be52c17cc24fde3273f02b}\label{namespacemydistilbert_ac57c0dc527be52c17cc24fde3273f02b}} 
+\index{mydistilbert@{mydistilbert}!train\_sampler@{train\_sampler}}
+\index{train\_sampler@{train\_sampler}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{train\_sampler}{train\_sampler}}
+{\footnotesize\ttfamily mydistilbert.\+train\+\_\+sampler = Random\+Sampler(\mbox{\hyperlink{namespacemydistilbert_aed2b1a12b2b91854d025d357ff54a5da}{train\+\_\+data}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_ae34d7c8819587dfc9c327cff84a32bef}\label{namespacemydistilbert_ae34d7c8819587dfc9c327cff84a32bef}} 
+\index{mydistilbert@{mydistilbert}!true\_labels@{true\_labels}}
+\index{true\_labels@{true\_labels}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{true\_labels}{true\_labels}}
+{\footnotesize\ttfamily mydistilbert.\+true\+\_\+labels}
+
+\mbox{\Hypertarget{namespacemydistilbert_a67bef29e35945ae38f3583147408b608}\label{namespacemydistilbert_a67bef29e35945ae38f3583147408b608}} 
+\index{mydistilbert@{mydistilbert}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily mydistilbert.\+validation\+\_\+data = Tensor\+Dataset(\mbox{\hyperlink{namespacemydistilbert_aec33e85448cf1c27609bb7878e18fd59}{validation\+\_\+inputs}}, \mbox{\hyperlink{namespacemydistilbert_afac971e846322b9f867f537044bdf4fa}{validation\+\_\+masks}}, \mbox{\hyperlink{namespacemydistilbert_a0105889413e48240b1903f1fc5db501d}{validation\+\_\+labels}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a882bd5a2bc232581a6f4c24a8ca9ebb3}\label{namespacemydistilbert_a882bd5a2bc232581a6f4c24a8ca9ebb3}} 
+\index{mydistilbert@{mydistilbert}!validation\_dataloader@{validation\_dataloader}}
+\index{validation\_dataloader@{validation\_dataloader}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{validation\_dataloader}{validation\_dataloader}}
+{\footnotesize\ttfamily mydistilbert.\+validation\+\_\+dataloader = Data\+Loader(\mbox{\hyperlink{namespacemydistilbert_a67bef29e35945ae38f3583147408b608}{validation\+\_\+data}}, sampler=\mbox{\hyperlink{namespacemydistilbert_addcb5cd1edb91710e45421c4cabc57a3}{validation\+\_\+sampler}}, \mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}}=\mbox{\hyperlink{namespacemydistilbert_addafee56682241cdce25e5cb1f3f6423}{batch\+\_\+size}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_aec33e85448cf1c27609bb7878e18fd59}\label{namespacemydistilbert_aec33e85448cf1c27609bb7878e18fd59}} 
+\index{mydistilbert@{mydistilbert}!validation\_inputs@{validation\_inputs}}
+\index{validation\_inputs@{validation\_inputs}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{validation\_inputs}{validation\_inputs}}
+{\footnotesize\ttfamily mydistilbert.\+validation\+\_\+inputs = pd.\+Data\+Frame(\mbox{\hyperlink{namespacemydistilbert_a664f494a1f28216d64d327f0e27f4ab9}{input\+\_\+ids1}})}
+
+\mbox{\Hypertarget{namespacemydistilbert_a0105889413e48240b1903f1fc5db501d}\label{namespacemydistilbert_a0105889413e48240b1903f1fc5db501d}} 
+\index{mydistilbert@{mydistilbert}!validation\_labels@{validation\_labels}}
+\index{validation\_labels@{validation\_labels}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{validation\_labels}{validation\_labels}}
+{\footnotesize\ttfamily mydistilbert.\+validation\+\_\+labels = \mbox{\hyperlink{namespacemydistilbert_a51ad3bb43e4f0bb0f9bfbcef9303f90d}{df\+\_\+val}}\mbox{[}\char`\"{}language\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacemydistilbert_afac971e846322b9f867f537044bdf4fa}\label{namespacemydistilbert_afac971e846322b9f867f537044bdf4fa}} 
+\index{mydistilbert@{mydistilbert}!validation\_masks@{validation\_masks}}
+\index{validation\_masks@{validation\_masks}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{validation\_masks}{validation\_masks}}
+{\footnotesize\ttfamily mydistilbert.\+validation\+\_\+masks = \mbox{\hyperlink{namespacemydistilbert_afaf9554a9cca679bad80db2b25bfef64}{attention\+\_\+masks2}}}
+
+\mbox{\Hypertarget{namespacemydistilbert_addcb5cd1edb91710e45421c4cabc57a3}\label{namespacemydistilbert_addcb5cd1edb91710e45421c4cabc57a3}} 
+\index{mydistilbert@{mydistilbert}!validation\_sampler@{validation\_sampler}}
+\index{validation\_sampler@{validation\_sampler}!mydistilbert@{mydistilbert}}
+\doxysubsubsection{\texorpdfstring{validation\_sampler}{validation\_sampler}}
+{\footnotesize\ttfamily mydistilbert.\+validation\+\_\+sampler = Sequential\+Sampler(\mbox{\hyperlink{namespacemydistilbert_a67bef29e35945ae38f3583147408b608}{validation\+\_\+data}})}
+

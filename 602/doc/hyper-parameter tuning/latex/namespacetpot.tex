@@ -1,0 +1,84 @@
+\hypertarget{namespacetpot}{}\doxysection{tpot Namespace Reference}
+\label{namespacetpot}\index{tpot@{tpot}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacetpot_a12d4fc496ea53a5a2a379e5696e02fc8}{train\+\_\+path}} = \textquotesingle{}\mbox{\hyperlink{namespacetpot_a196b4b4672ef62f4c9ee3d33be42f217}{data}}/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacetpot_a6cffd28895c134c3cf8e3157ae477b2c}{test\+\_\+path}} = \textquotesingle{}\mbox{\hyperlink{namespacetpot_a196b4b4672ef62f4c9ee3d33be42f217}{data}}/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacetpot_a196b4b4672ef62f4c9ee3d33be42f217}{data}} = load\+\_\+data()
+\item 
+\mbox{\hyperlink{namespacetpot_aa3ef2dfb18d023c7ae6137957770f24d}{df\+\_\+train}} = data.\+load(\mbox{\hyperlink{namespacetpot_a12d4fc496ea53a5a2a379e5696e02fc8}{train\+\_\+path}})
+\begin{DoxyCompactList}\small\item\em Training the model just for portuguese variant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetpot_ad844ff95e05b96beccc00496d97fa3e7}{df\+\_\+test}} = data.\+load(\mbox{\hyperlink{namespacetpot_a6cffd28895c134c3cf8e3157ae477b2c}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespacetpot_a47717af62d6fd3c2036aad80d1f82357}{vectorizer}} = feature\+\_\+reduction()
+\item 
+\mbox{\hyperlink{namespacetpot_a72483a7419036625198b65b9e5cb0a8b}{feature\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespacetpot_acdf5ba5ce7e4e68abad218f56969a856}{feature\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespacetpot_a0f808896bea15fd3667c55bd845155f7}{tpot}} = TPOTClassifier(generations=5, population\+\_\+size=50, verbosity=2, random\+\_\+state=42, n\+\_\+jobs=-\/1, config\+\_\+dict = \textquotesingle{}TPOT sparse\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetpot_a196b4b4672ef62f4c9ee3d33be42f217}\label{namespacetpot_a196b4b4672ef62f4c9ee3d33be42f217}} 
+\index{tpot@{tpot}!data@{data}}
+\index{data@{data}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily tpot.\+data = load\+\_\+data()}
+
+\mbox{\Hypertarget{namespacetpot_ad844ff95e05b96beccc00496d97fa3e7}\label{namespacetpot_ad844ff95e05b96beccc00496d97fa3e7}} 
+\index{tpot@{tpot}!df\_test@{df\_test}}
+\index{df\_test@{df\_test}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{df\_test}{df\_test}}
+{\footnotesize\ttfamily tpot.\+df\+\_\+test = data.\+load(\mbox{\hyperlink{namespacetpot_a6cffd28895c134c3cf8e3157ae477b2c}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacetpot_aa3ef2dfb18d023c7ae6137957770f24d}\label{namespacetpot_aa3ef2dfb18d023c7ae6137957770f24d}} 
+\index{tpot@{tpot}!df\_train@{df\_train}}
+\index{df\_train@{df\_train}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{df\_train}{df\_train}}
+{\footnotesize\ttfamily tpot.\+df\+\_\+train = data.\+load(\mbox{\hyperlink{namespacetpot_a12d4fc496ea53a5a2a379e5696e02fc8}{train\+\_\+path}})}
+
+
+
+Training the model just for portuguese variant. 
+
+\mbox{\Hypertarget{namespacetpot_acdf5ba5ce7e4e68abad218f56969a856}\label{namespacetpot_acdf5ba5ce7e4e68abad218f56969a856}} 
+\index{tpot@{tpot}!feature\_test@{feature\_test}}
+\index{feature\_test@{feature\_test}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{feature\_test}{feature\_test}}
+{\footnotesize\ttfamily tpot.\+feature\+\_\+test}
+
+\mbox{\Hypertarget{namespacetpot_a72483a7419036625198b65b9e5cb0a8b}\label{namespacetpot_a72483a7419036625198b65b9e5cb0a8b}} 
+\index{tpot@{tpot}!feature\_train@{feature\_train}}
+\index{feature\_train@{feature\_train}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{feature\_train}{feature\_train}}
+{\footnotesize\ttfamily tpot.\+feature\+\_\+train}
+
+\mbox{\Hypertarget{namespacetpot_a6cffd28895c134c3cf8e3157ae477b2c}\label{namespacetpot_a6cffd28895c134c3cf8e3157ae477b2c}} 
+\index{tpot@{tpot}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string tpot.\+test\+\_\+path = \textquotesingle{}\mbox{\hyperlink{namespacetpot_a196b4b4672ef62f4c9ee3d33be42f217}{data}}/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacetpot_a0f808896bea15fd3667c55bd845155f7}\label{namespacetpot_a0f808896bea15fd3667c55bd845155f7}} 
+\index{tpot@{tpot}!tpot@{tpot}}
+\index{tpot@{tpot}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{tpot}{tpot}}
+{\footnotesize\ttfamily tpot.\+tpot = TPOTClassifier(generations=5, population\+\_\+size=50, verbosity=2, random\+\_\+state=42, n\+\_\+jobs=-\/1, config\+\_\+dict = \textquotesingle{}TPOT sparse\textquotesingle{})}
+
+\mbox{\Hypertarget{namespacetpot_a12d4fc496ea53a5a2a379e5696e02fc8}\label{namespacetpot_a12d4fc496ea53a5a2a379e5696e02fc8}} 
+\index{tpot@{tpot}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string tpot.\+train\+\_\+path = \textquotesingle{}\mbox{\hyperlink{namespacetpot_a196b4b4672ef62f4c9ee3d33be42f217}{data}}/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacetpot_a47717af62d6fd3c2036aad80d1f82357}\label{namespacetpot_a47717af62d6fd3c2036aad80d1f82357}} 
+\index{tpot@{tpot}!vectorizer@{vectorizer}}
+\index{vectorizer@{vectorizer}!tpot@{tpot}}
+\doxysubsubsection{\texorpdfstring{vectorizer}{vectorizer}}
+{\footnotesize\ttfamily tpot.\+vectorizer = feature\+\_\+reduction()}
+

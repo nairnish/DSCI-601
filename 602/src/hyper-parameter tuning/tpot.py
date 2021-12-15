@@ -25,9 +25,9 @@ df_test =  df_test[df_test["language"].isin(["pt-BR","pt-PT"])]
 
 
 """
-Vectorize using word unigram tiff vectorizer 
-@param: df  : training dataframe
-@param: df  : training dataframe
+Vectorize using word unigram tf-idf vectorizer 
+@param: df_train  : training dataframe
+@param: df_test  : testing dataframe
 @return: features : sparse matrix vectorized features of train dataset
 @return: features_test : sparse matrix vectorized features of test dataset
 """

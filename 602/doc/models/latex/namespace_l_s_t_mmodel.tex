@@ -1,0 +1,318 @@
+\hypertarget{namespace_l_s_t_mmodel}{}\doxysection{LSTMmodel Namespace Reference}
+\label{namespace_l_s_t_mmodel}\index{LSTMmodel@{LSTMmodel}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_mmodel_ab82a959a1a77746f33a2fada32f257ca}{train\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_mmodel_a8ae44823ec289a3306d19ba9135f737b}{val\+\_\+path}} = \textquotesingle{}../../data/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_l_s_t_mmodel_a9b84ffb98c1ccc1dbae9d03fa3e0a26e}{test\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a690e4e79c5a145b309158cfc02d58a20}{train\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_mmodel_ab82a959a1a77746f33a2fada32f257ca}{train\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a05cd700bd6a88a1de40462a472661ecd}{validation\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_mmodel_a8ae44823ec289a3306d19ba9135f737b}{val\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_acb7b902506db6182a0963a24852d19b0}{test\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_mmodel_a9b84ffb98c1ccc1dbae9d03fa3e0a26e}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_aa7a8d877584873e0eb66463a385c76d9}{df}} = pd.\+concat(\mbox{[}\mbox{\hyperlink{namespace_l_s_t_mmodel_a690e4e79c5a145b309158cfc02d58a20}{train\+\_\+data}}, \mbox{\hyperlink{namespace_l_s_t_mmodel_a05cd700bd6a88a1de40462a472661ecd}{validation\+\_\+data}}\mbox{]}, ignore\+\_\+index=True)
+\item 
+list \mbox{\hyperlink{namespace_l_s_t_mmodel_a9e305dcb53dcf86353985467d415f17e}{req\+\_\+labels}} = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a00769d2faf5870962d26d1a86aec79f9}{rslt\+\_\+df}} = \mbox{\hyperlink{namespace_l_s_t_mmodel_aa7a8d877584873e0eb66463a385c76d9}{df}}\mbox{[}df.\+label.\+isin(\mbox{\hyperlink{namespace_l_s_t_mmodel_a9e305dcb53dcf86353985467d415f17e}{req\+\_\+labels}})\mbox{]}
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_mmodel_ac0e0e3550b27ecc9694cddb9190fa938}{MAX\+\_\+\+NB\+\_\+\+WORDS}} = 50000
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_mmodel_ae6ca872d7350ffe9da305ae6154625c5}{MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}} = 500
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_mmodel_a822b45d1d6ea98f5860363c7433fb5e5}{EMBEDDING\+\_\+\+DIM}} = 500
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a318c3fb36f46e35e57ce722c4880f9fa}{tokenizer}} = Tokenizer(num\+\_\+words=\mbox{\hyperlink{namespace_l_s_t_mmodel_ac0e0e3550b27ecc9694cddb9190fa938}{MAX\+\_\+\+NB\+\_\+\+WORDS}}, filters=\textquotesingle{}!\char`\"{}\#\$\%\&()$\ast$+,-\/./\+:;$<$=$>$?@\mbox{[}\textbackslash{}\mbox{]}$^\wedge$\+\_\+\`{}\{$\vert$\}$\sim$\textquotesingle{}, lower=True)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a9b4842563cea8bd7e63c9878b1266b75}{word\+\_\+index}} = tokenizer.\+word\+\_\+index
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_acba1e448ce946de824e5f5d4b02ab1c8}{X}} = tokenizer.\+texts\+\_\+to\+\_\+sequences(\mbox{\hyperlink{namespace_l_s_t_mmodel_a00769d2faf5870962d26d1a86aec79f9}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}.values)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a544c2e2e9e1941967ea9f945c093507a}{Y}} = pd.\+get\+\_\+dummies(\mbox{\hyperlink{namespace_l_s_t_mmodel_a00769d2faf5870962d26d1a86aec79f9}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}\mbox{\hyperlink{namespace_l_s_t_mmodel_ab768ff3dd5b8606121d61976aa6c54f0}{label}}\textquotesingle{}\mbox{]}).values
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_af8f1c502d8beea30598488891000fb5f}{X\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_ac72cff650cdca5e685bbc81d30836514}{X\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a745c6348a6da342871f87e0f81adfe3d}{Y\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a869a8ad9c9b09b865317ae76371919de}{Y\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_ab2a7605c0f999c3fdcd5c4c9b5cb5e32}{test\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a993f2d78e1767361ebb1c8f1422fa2b8}{random\+\_\+state}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a50dec752460578e71a68c3561c2c9af8}{model}} = Sequential()
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_abc92e846719e5fe10660228e5cbc6296}{loss}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a9237d88a690b39483dddd4120efae99b}{optimizer}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a1d914f6a1357c3ca9dbba9a70f6aa9e4}{metrics}}
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_mmodel_a0860c7461afe2e0dd37712e544780a65}{epochs}} = 10
+\item 
+int \mbox{\hyperlink{namespace_l_s_t_mmodel_a001ad06731c6ecf8c195aac95151bd91}{batch\+\_\+size}} = 64
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_ab67ae5a45b33ac6a836955bb6a2eb9bc}{history}}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a502ab71388f77c99c3d0c0a4c6057480}{accr}} = model.\+evaluate(\mbox{\hyperlink{namespace_l_s_t_mmodel_ac72cff650cdca5e685bbc81d30836514}{X\+\_\+test}}, \mbox{\hyperlink{namespace_l_s_t_mmodel_a869a8ad9c9b09b865317ae76371919de}{Y\+\_\+test}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_ab768ff3dd5b8606121d61976aa6c54f0}{label}}
+\item 
+list \mbox{\hyperlink{namespace_l_s_t_mmodel_a67efe060c98d66a98a9ceaa3951c19fb}{new\+\_\+text}} = \mbox{[}\textquotesingle{}Não foi ao Coliseu porque não gosta, declarou Elma. A namorada do futebolista, Irina Shayk, não esteve com ele na festa porque, conta ainda a irmã, \char`\"{}ela tem trabalho, tal como o meu irmão, que também já foi hoje para o estágio da seleção\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a5d0a4454a37f2d5681358c301efd150e}{new\+\_\+texts}} = np.\+asarray(\mbox{\hyperlink{namespace_l_s_t_mmodel_acb7b902506db6182a0963a24852d19b0}{test\+\_\+data}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a4489dd5a476748c2f9e71dccbd5a192c}{seq}} = tokenizer.\+texts\+\_\+to\+\_\+sequences(new\+\_\+texts.\+values)
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a3edb20d52a4358084cd616c524f05666}{padded}} = pad\+\_\+sequences(\mbox{\hyperlink{namespace_l_s_t_mmodel_a4489dd5a476748c2f9e71dccbd5a192c}{seq}}, maxlen=\mbox{\hyperlink{namespace_l_s_t_mmodel_ae6ca872d7350ffe9da305ae6154625c5}{MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_a222add745613ebd9e8a61e23003697b6}{pred}} = model.\+predict(\mbox{\hyperlink{namespace_l_s_t_mmodel_a3edb20d52a4358084cd616c524f05666}{padded}})
+\item 
+\mbox{\hyperlink{namespace_l_s_t_mmodel_abcfdb4f39533afe28d3ebdf1041b935b}{predictions}} = np.\+argmax(\mbox{\hyperlink{namespace_l_s_t_mmodel_a222add745613ebd9e8a61e23003697b6}{pred}}, axis=1)
+\item 
+list \mbox{\hyperlink{namespace_l_s_t_mmodel_a39fb03c087f2fc13c2f46358d24ef190}{labels}} = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a502ab71388f77c99c3d0c0a4c6057480}\label{namespace_l_s_t_mmodel_a502ab71388f77c99c3d0c0a4c6057480}} 
+\index{LSTMmodel@{LSTMmodel}!accr@{accr}}
+\index{accr@{accr}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{accr}{accr}}
+{\footnotesize\ttfamily LSTMmodel.\+accr = model.\+evaluate(\mbox{\hyperlink{namespace_l_s_t_mmodel_ac72cff650cdca5e685bbc81d30836514}{X\+\_\+test}}, \mbox{\hyperlink{namespace_l_s_t_mmodel_a869a8ad9c9b09b865317ae76371919de}{Y\+\_\+test}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a001ad06731c6ecf8c195aac95151bd91}\label{namespace_l_s_t_mmodel_a001ad06731c6ecf8c195aac95151bd91}} 
+\index{LSTMmodel@{LSTMmodel}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily int LSTMmodel.\+batch\+\_\+size = 64}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_aa7a8d877584873e0eb66463a385c76d9}\label{namespace_l_s_t_mmodel_aa7a8d877584873e0eb66463a385c76d9}} 
+\index{LSTMmodel@{LSTMmodel}!df@{df}}
+\index{df@{df}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily LSTMmodel.\+df = pd.\+concat(\mbox{[}\mbox{\hyperlink{namespace_l_s_t_mmodel_a690e4e79c5a145b309158cfc02d58a20}{train\+\_\+data}}, \mbox{\hyperlink{namespace_l_s_t_mmodel_a05cd700bd6a88a1de40462a472661ecd}{validation\+\_\+data}}\mbox{]}, ignore\+\_\+index=True)}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a822b45d1d6ea98f5860363c7433fb5e5}\label{namespace_l_s_t_mmodel_a822b45d1d6ea98f5860363c7433fb5e5}} 
+\index{LSTMmodel@{LSTMmodel}!EMBEDDING\_DIM@{EMBEDDING\_DIM}}
+\index{EMBEDDING\_DIM@{EMBEDDING\_DIM}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{EMBEDDING\_DIM}{EMBEDDING\_DIM}}
+{\footnotesize\ttfamily int LSTMmodel.\+EMBEDDING\+\_\+\+DIM = 500}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a0860c7461afe2e0dd37712e544780a65}\label{namespace_l_s_t_mmodel_a0860c7461afe2e0dd37712e544780a65}} 
+\index{LSTMmodel@{LSTMmodel}!epochs@{epochs}}
+\index{epochs@{epochs}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{epochs}{epochs}}
+{\footnotesize\ttfamily int LSTMmodel.\+epochs = 10}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_ab67ae5a45b33ac6a836955bb6a2eb9bc}\label{namespace_l_s_t_mmodel_ab67ae5a45b33ac6a836955bb6a2eb9bc}} 
+\index{LSTMmodel@{LSTMmodel}!history@{history}}
+\index{history@{history}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{history}{history}}
+{\footnotesize\ttfamily LSTMmodel.\+history}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  model.fit(X\_train, Y\_train, epochs=epochs, batch\_size=batch\_size, validation\_split=0.1,}
+\DoxyCodeLine{2                         callbacks=[EarlyStopping(monitor=\textcolor{stringliteral}{'val\_loss'}, patience=3, min\_delta=0.0001)])}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_ab768ff3dd5b8606121d61976aa6c54f0}\label{namespace_l_s_t_mmodel_ab768ff3dd5b8606121d61976aa6c54f0}} 
+\index{LSTMmodel@{LSTMmodel}!label@{label}}
+\index{label@{label}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily LSTMmodel.\+label}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a39fb03c087f2fc13c2f46358d24ef190}\label{namespace_l_s_t_mmodel_a39fb03c087f2fc13c2f46358d24ef190}} 
+\index{LSTMmodel@{LSTMmodel}!labels@{labels}}
+\index{labels@{labels}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{labels}{labels}}
+{\footnotesize\ttfamily list LSTMmodel.\+labels = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_abc92e846719e5fe10660228e5cbc6296}\label{namespace_l_s_t_mmodel_abc92e846719e5fe10660228e5cbc6296}} 
+\index{LSTMmodel@{LSTMmodel}!loss@{loss}}
+\index{loss@{loss}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{loss}{loss}}
+{\footnotesize\ttfamily LSTMmodel.\+loss}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_ac0e0e3550b27ecc9694cddb9190fa938}\label{namespace_l_s_t_mmodel_ac0e0e3550b27ecc9694cddb9190fa938}} 
+\index{LSTMmodel@{LSTMmodel}!MAX\_NB\_WORDS@{MAX\_NB\_WORDS}}
+\index{MAX\_NB\_WORDS@{MAX\_NB\_WORDS}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{MAX\_NB\_WORDS}{MAX\_NB\_WORDS}}
+{\footnotesize\ttfamily int LSTMmodel.\+MAX\+\_\+\+NB\+\_\+\+WORDS = 50000}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_ae6ca872d7350ffe9da305ae6154625c5}\label{namespace_l_s_t_mmodel_ae6ca872d7350ffe9da305ae6154625c5}} 
+\index{LSTMmodel@{LSTMmodel}!MAX\_SEQUENCE\_LENGTH@{MAX\_SEQUENCE\_LENGTH}}
+\index{MAX\_SEQUENCE\_LENGTH@{MAX\_SEQUENCE\_LENGTH}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{MAX\_SEQUENCE\_LENGTH}{MAX\_SEQUENCE\_LENGTH}}
+{\footnotesize\ttfamily int LSTMmodel.\+MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH = 500}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a1d914f6a1357c3ca9dbba9a70f6aa9e4}\label{namespace_l_s_t_mmodel_a1d914f6a1357c3ca9dbba9a70f6aa9e4}} 
+\index{LSTMmodel@{LSTMmodel}!metrics@{metrics}}
+\index{metrics@{metrics}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily LSTMmodel.\+metrics}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a50dec752460578e71a68c3561c2c9af8}\label{namespace_l_s_t_mmodel_a50dec752460578e71a68c3561c2c9af8}} 
+\index{LSTMmodel@{LSTMmodel}!model@{model}}
+\index{model@{model}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily LSTMmodel.\+model = Sequential()}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a67efe060c98d66a98a9ceaa3951c19fb}\label{namespace_l_s_t_mmodel_a67efe060c98d66a98a9ceaa3951c19fb}} 
+\index{LSTMmodel@{LSTMmodel}!new\_text@{new\_text}}
+\index{new\_text@{new\_text}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{new\_text}{new\_text}}
+{\footnotesize\ttfamily list LSTMmodel.\+new\+\_\+text = \mbox{[}\textquotesingle{}Não foi ao Coliseu porque não gosta, declarou Elma. A namorada do futebolista, Irina Shayk, não esteve com ele na festa porque, conta ainda a irmã, \char`\"{}ela tem trabalho, tal como o meu irmão, que também já foi hoje para o estágio da seleção\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a5d0a4454a37f2d5681358c301efd150e}\label{namespace_l_s_t_mmodel_a5d0a4454a37f2d5681358c301efd150e}} 
+\index{LSTMmodel@{LSTMmodel}!new\_texts@{new\_texts}}
+\index{new\_texts@{new\_texts}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{new\_texts}{new\_texts}}
+{\footnotesize\ttfamily LSTMmodel.\+new\+\_\+texts = np.\+asarray(\mbox{\hyperlink{namespace_l_s_t_mmodel_acb7b902506db6182a0963a24852d19b0}{test\+\_\+data}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]})}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a9237d88a690b39483dddd4120efae99b}\label{namespace_l_s_t_mmodel_a9237d88a690b39483dddd4120efae99b}} 
+\index{LSTMmodel@{LSTMmodel}!optimizer@{optimizer}}
+\index{optimizer@{optimizer}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{optimizer}{optimizer}}
+{\footnotesize\ttfamily LSTMmodel.\+optimizer}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a3edb20d52a4358084cd616c524f05666}\label{namespace_l_s_t_mmodel_a3edb20d52a4358084cd616c524f05666}} 
+\index{LSTMmodel@{LSTMmodel}!padded@{padded}}
+\index{padded@{padded}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{padded}{padded}}
+{\footnotesize\ttfamily LSTMmodel.\+padded = pad\+\_\+sequences(\mbox{\hyperlink{namespace_l_s_t_mmodel_a4489dd5a476748c2f9e71dccbd5a192c}{seq}}, maxlen=\mbox{\hyperlink{namespace_l_s_t_mmodel_ae6ca872d7350ffe9da305ae6154625c5}{MAX\+\_\+\+SEQUENCE\+\_\+\+LENGTH}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a222add745613ebd9e8a61e23003697b6}\label{namespace_l_s_t_mmodel_a222add745613ebd9e8a61e23003697b6}} 
+\index{LSTMmodel@{LSTMmodel}!pred@{pred}}
+\index{pred@{pred}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{pred}{pred}}
+{\footnotesize\ttfamily LSTMmodel.\+pred = model.\+predict(\mbox{\hyperlink{namespace_l_s_t_mmodel_a3edb20d52a4358084cd616c524f05666}{padded}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_abcfdb4f39533afe28d3ebdf1041b935b}\label{namespace_l_s_t_mmodel_abcfdb4f39533afe28d3ebdf1041b935b}} 
+\index{LSTMmodel@{LSTMmodel}!predictions@{predictions}}
+\index{predictions@{predictions}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{predictions}{predictions}}
+{\footnotesize\ttfamily LSTMmodel.\+predictions = np.\+argmax(\mbox{\hyperlink{namespace_l_s_t_mmodel_a222add745613ebd9e8a61e23003697b6}{pred}}, axis=1)}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a993f2d78e1767361ebb1c8f1422fa2b8}\label{namespace_l_s_t_mmodel_a993f2d78e1767361ebb1c8f1422fa2b8}} 
+\index{LSTMmodel@{LSTMmodel}!random\_state@{random\_state}}
+\index{random\_state@{random\_state}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{random\_state}{random\_state}}
+{\footnotesize\ttfamily LSTMmodel.\+random\+\_\+state}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a9e305dcb53dcf86353985467d415f17e}\label{namespace_l_s_t_mmodel_a9e305dcb53dcf86353985467d415f17e}} 
+\index{LSTMmodel@{LSTMmodel}!req\_labels@{req\_labels}}
+\index{req\_labels@{req\_labels}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{req\_labels}{req\_labels}}
+{\footnotesize\ttfamily list LSTMmodel.\+req\+\_\+labels = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a00769d2faf5870962d26d1a86aec79f9}\label{namespace_l_s_t_mmodel_a00769d2faf5870962d26d1a86aec79f9}} 
+\index{LSTMmodel@{LSTMmodel}!rslt\_df@{rslt\_df}}
+\index{rslt\_df@{rslt\_df}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{rslt\_df}{rslt\_df}}
+{\footnotesize\ttfamily LSTMmodel.\+rslt\+\_\+df = \mbox{\hyperlink{namespace_l_s_t_mmodel_aa7a8d877584873e0eb66463a385c76d9}{df}}\mbox{[}df.\+label.\+isin(\mbox{\hyperlink{namespace_l_s_t_mmodel_a9e305dcb53dcf86353985467d415f17e}{req\+\_\+labels}})\mbox{]}}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a4489dd5a476748c2f9e71dccbd5a192c}\label{namespace_l_s_t_mmodel_a4489dd5a476748c2f9e71dccbd5a192c}} 
+\index{LSTMmodel@{LSTMmodel}!seq@{seq}}
+\index{seq@{seq}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{seq}{seq}}
+{\footnotesize\ttfamily LSTMmodel.\+seq = tokenizer.\+texts\+\_\+to\+\_\+sequences(new\+\_\+texts.\+values)}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_acb7b902506db6182a0963a24852d19b0}\label{namespace_l_s_t_mmodel_acb7b902506db6182a0963a24852d19b0}} 
+\index{LSTMmodel@{LSTMmodel}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{test\_data}{test\_data}}
+{\footnotesize\ttfamily LSTMmodel.\+test\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_mmodel_a9b84ffb98c1ccc1dbae9d03fa3e0a26e}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a9b84ffb98c1ccc1dbae9d03fa3e0a26e}\label{namespace_l_s_t_mmodel_a9b84ffb98c1ccc1dbae9d03fa3e0a26e}} 
+\index{LSTMmodel@{LSTMmodel}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string LSTMmodel.\+test\+\_\+path = \textquotesingle{}../../data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_ab2a7605c0f999c3fdcd5c4c9b5cb5e32}\label{namespace_l_s_t_mmodel_ab2a7605c0f999c3fdcd5c4c9b5cb5e32}} 
+\index{LSTMmodel@{LSTMmodel}!test\_size@{test\_size}}
+\index{test\_size@{test\_size}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{test\_size}{test\_size}}
+{\footnotesize\ttfamily LSTMmodel.\+test\+\_\+size}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a318c3fb36f46e35e57ce722c4880f9fa}\label{namespace_l_s_t_mmodel_a318c3fb36f46e35e57ce722c4880f9fa}} 
+\index{LSTMmodel@{LSTMmodel}!tokenizer@{tokenizer}}
+\index{tokenizer@{tokenizer}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{tokenizer}{tokenizer}}
+{\footnotesize\ttfamily LSTMmodel.\+tokenizer = Tokenizer(num\+\_\+words=\mbox{\hyperlink{namespace_l_s_t_mmodel_ac0e0e3550b27ecc9694cddb9190fa938}{MAX\+\_\+\+NB\+\_\+\+WORDS}}, filters=\textquotesingle{}!\char`\"{}\#\$\%\&()$\ast$+,-\/./\+:;$<$=$>$?@\mbox{[}\textbackslash{}\mbox{]}$^\wedge$\+\_\+\`{}\{$\vert$\}$\sim$\textquotesingle{}, lower=True)}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a690e4e79c5a145b309158cfc02d58a20}\label{namespace_l_s_t_mmodel_a690e4e79c5a145b309158cfc02d58a20}} 
+\index{LSTMmodel@{LSTMmodel}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily LSTMmodel.\+train\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_mmodel_ab82a959a1a77746f33a2fada32f257ca}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_ab82a959a1a77746f33a2fada32f257ca}\label{namespace_l_s_t_mmodel_ab82a959a1a77746f33a2fada32f257ca}} 
+\index{LSTMmodel@{LSTMmodel}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string LSTMmodel.\+train\+\_\+path = \textquotesingle{}../../data/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a8ae44823ec289a3306d19ba9135f737b}\label{namespace_l_s_t_mmodel_a8ae44823ec289a3306d19ba9135f737b}} 
+\index{LSTMmodel@{LSTMmodel}!val\_path@{val\_path}}
+\index{val\_path@{val\_path}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{val\_path}{val\_path}}
+{\footnotesize\ttfamily string LSTMmodel.\+val\+\_\+path = \textquotesingle{}../../data/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a05cd700bd6a88a1de40462a472661ecd}\label{namespace_l_s_t_mmodel_a05cd700bd6a88a1de40462a472661ecd}} 
+\index{LSTMmodel@{LSTMmodel}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily LSTMmodel.\+validation\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_l_s_t_mmodel_a8ae44823ec289a3306d19ba9135f737b}{val\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a9b4842563cea8bd7e63c9878b1266b75}\label{namespace_l_s_t_mmodel_a9b4842563cea8bd7e63c9878b1266b75}} 
+\index{LSTMmodel@{LSTMmodel}!word\_index@{word\_index}}
+\index{word\_index@{word\_index}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{word\_index}{word\_index}}
+{\footnotesize\ttfamily LSTMmodel.\+word\+\_\+index = tokenizer.\+word\+\_\+index}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_acba1e448ce946de824e5f5d4b02ab1c8}\label{namespace_l_s_t_mmodel_acba1e448ce946de824e5f5d4b02ab1c8}} 
+\index{LSTMmodel@{LSTMmodel}!X@{X}}
+\index{X@{X}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily LSTMmodel.\+X = tokenizer.\+texts\+\_\+to\+\_\+sequences(\mbox{\hyperlink{namespace_l_s_t_mmodel_a00769d2faf5870962d26d1a86aec79f9}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}.values)}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_ac72cff650cdca5e685bbc81d30836514}\label{namespace_l_s_t_mmodel_ac72cff650cdca5e685bbc81d30836514}} 
+\index{LSTMmodel@{LSTMmodel}!X\_test@{X\_test}}
+\index{X\_test@{X\_test}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{X\_test}{X\_test}}
+{\footnotesize\ttfamily LSTMmodel.\+X\+\_\+test}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_af8f1c502d8beea30598488891000fb5f}\label{namespace_l_s_t_mmodel_af8f1c502d8beea30598488891000fb5f}} 
+\index{LSTMmodel@{LSTMmodel}!X\_train@{X\_train}}
+\index{X\_train@{X\_train}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{X\_train}{X\_train}}
+{\footnotesize\ttfamily LSTMmodel.\+X\+\_\+train}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a544c2e2e9e1941967ea9f945c093507a}\label{namespace_l_s_t_mmodel_a544c2e2e9e1941967ea9f945c093507a}} 
+\index{LSTMmodel@{LSTMmodel}!Y@{Y}}
+\index{Y@{Y}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily LSTMmodel.\+Y = pd.\+get\+\_\+dummies(\mbox{\hyperlink{namespace_l_s_t_mmodel_a00769d2faf5870962d26d1a86aec79f9}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}\mbox{\hyperlink{namespace_l_s_t_mmodel_ab768ff3dd5b8606121d61976aa6c54f0}{label}}\textquotesingle{}\mbox{]}).values}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a869a8ad9c9b09b865317ae76371919de}\label{namespace_l_s_t_mmodel_a869a8ad9c9b09b865317ae76371919de}} 
+\index{LSTMmodel@{LSTMmodel}!Y\_test@{Y\_test}}
+\index{Y\_test@{Y\_test}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{Y\_test}{Y\_test}}
+{\footnotesize\ttfamily LSTMmodel.\+Y\+\_\+test}
+
+\mbox{\Hypertarget{namespace_l_s_t_mmodel_a745c6348a6da342871f87e0f81adfe3d}\label{namespace_l_s_t_mmodel_a745c6348a6da342871f87e0f81adfe3d}} 
+\index{LSTMmodel@{LSTMmodel}!Y\_train@{Y\_train}}
+\index{Y\_train@{Y\_train}!LSTMmodel@{LSTMmodel}}
+\doxysubsubsection{\texorpdfstring{Y\_train}{Y\_train}}
+{\footnotesize\ttfamily LSTMmodel.\+Y\+\_\+train}
+

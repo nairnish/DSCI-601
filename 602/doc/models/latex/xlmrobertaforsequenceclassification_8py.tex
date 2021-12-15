@@ -1,0 +1,159 @@
+\hypertarget{xlmrobertaforsequenceclassification_8py}{}\doxysection{xlmrobertaforsequenceclassification.\+py File Reference}
+\label{xlmrobertaforsequenceclassification_8py}\index{xlmrobertaforsequenceclassification.py@{xlmrobertaforsequenceclassification.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification}{xlmrobertaforsequenceclassification}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aae6ec8988c61b31f7ea7947802ae3729}{xlmrobertaforsequenceclassification.\+preprocess}} (path)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_acac13b1ffd90b9d9f5defcc71ec2332c}{xlmrobertaforsequenceclassification.\+flat\+\_\+accuracy}} (preds, labels)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a536ee84d6513b47c86f3ad1b847daf68}{xlmrobertaforsequenceclassification.\+format\+\_\+time}} (elapsed)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad47a61d35a7305d875a29bc1c9af8c25}{xlmrobertaforsequenceclassification.\+evaluate}} (y\+\_\+true, predictions)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac6fa46199771f36bf90b85287b5fed7f}{xlmrobertaforsequenceclassification.\+train\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1b2c26beadd3ef84b7bfbb0e00e7d7a3}{xlmrobertaforsequenceclassification.\+dev\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa6e921e50fa4f96c124af6a63689d378}{xlmrobertaforsequenceclassification.\+test\+\_\+path}} = \textquotesingle{}My\+Drive/DSLCCv4.\+0\+\_\+1/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a78b1357c74d627f97599f7cb3996b11b}{xlmrobertaforsequenceclassification.\+df\+\_\+train}} = preprocess(train\+\_\+path)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae3bab964695eea767016edbcefbe92e1}{xlmrobertaforsequenceclassification.\+df\+\_\+test}} = preprocess(test\+\_\+path)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9c8918072ddce7c54562724a6810f932}{xlmrobertaforsequenceclassification.\+df\+\_\+val}} = preprocess(dev\+\_\+path)
+\item 
+string \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4ddbd7fee6267205fd82f2ff4d2b41d2}{xlmrobertaforsequenceclassification.\+model\+\_\+checkpoint}} = \char`\"{}xlm-\/roberta-\/base\char`\"{}
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a99755f6b0519839ae8483c1622689e1b}{xlmrobertaforsequenceclassification.\+sentences}} = df\+\_\+train\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af1e104b92255f0cdad0f892714a53dd0}{xlmrobertaforsequenceclassification.\+labels}} = df\+\_\+train.\+language.\+values
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2fa3fa815b9f7ef5bdb16348cb0112d2}{xlmrobertaforsequenceclassification.\+tokenizer}} = XLMRoberta\+Tokenizer.\+from\+\_\+pretrained(model\+\_\+checkpoint,use\+\_\+fast=True)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4e85b84d2cfc7bb82e9a6d822e1d8f93}{xlmrobertaforsequenceclassification.\+model}} = XLMRoberta\+For\+Sequence\+Classification.\+from\+\_\+pretrained(model\+\_\+checkpoint)
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a21cb048c5041cebc19c514f139d87afa}{xlmrobertaforsequenceclassification.\+input\+\_\+ids}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ab8d7f21ad611d5736a46be3ac0698325}{xlmrobertaforsequenceclassification.\+encoded\+\_\+sent}}
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a094671d2033a57935e5b9d39ac7f04e8}{xlmrobertaforsequenceclassification.\+MAX\+\_\+\+LEN}} = 64
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c64276670f55a1cede995ec8cbf547b}{xlmrobertaforsequenceclassification.\+attention\+\_\+masks}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9ab3462d26cdbd17e2f63c5b21be644e}{xlmrobertaforsequenceclassification.\+att\+\_\+mask}} = \mbox{[}int(token\+\_\+id $>$ 0) for token\+\_\+id in sent\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a98619989899985f950c4c3f46fe7af9c}{xlmrobertaforsequenceclassification.\+train\+\_\+masks}} = attention\+\_\+masks
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad08a40762375babe8a1115b29e7c93f1}{xlmrobertaforsequenceclassification.\+sentences1}} = df\+\_\+val\mbox{[}\char`\"{}text\char`\"{}\mbox{]}.values
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a49cb3c7bc3e19b58fe997be4bc1f1689}{xlmrobertaforsequenceclassification.\+input\+\_\+ids1}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af990769905474783b3d60942605687f0}{xlmrobertaforsequenceclassification.\+attention\+\_\+masks2}} = \mbox{[}$\,$\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a83734d3b7b20175108d1f2b18f636aa4}{xlmrobertaforsequenceclassification.\+validation\+\_\+masks}} = attention\+\_\+masks2
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4c2ac5d8016fef5c2090e4f5fed51e5d}{xlmrobertaforsequenceclassification.\+train\+\_\+inputs}} = pd.\+Data\+Frame(input\+\_\+ids)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4f5c2ffcfdc8a91788cb0284e7df39e5}{xlmrobertaforsequenceclassification.\+train\+\_\+labels}} = df\+\_\+train\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a38e23960bb04d3a6a2b76d49db5b5c60}{xlmrobertaforsequenceclassification.\+validation\+\_\+inputs}} = pd.\+Data\+Frame(input\+\_\+ids1)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a418b8e06d41a48cf599a088187763b49}{xlmrobertaforsequenceclassification.\+validation\+\_\+labels}} = df\+\_\+val\mbox{[}\char`\"{}language\char`\"{}\mbox{]}
+\item 
+dictionary \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a7b5b639cbe720ce6071bf75a3a6fd417}{xlmrobertaforsequenceclassification.\+map1}} = \{\textquotesingle{}pt-\/BR\textquotesingle{}\+:0,\textquotesingle{}pt-\/PT\textquotesingle{}\+:1\}
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2bda78e2e3a33c2b32b8a63d048d76cf}{xlmrobertaforsequenceclassification.\+batch\+\_\+size}} = 32
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad1adaa5a9b94c4254cee295b94ba59b6}{xlmrobertaforsequenceclassification.\+train\+\_\+data}} = Tensor\+Dataset(train\+\_\+inputs, train\+\_\+masks, train\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6e7ed19af91f817604bf31a6178b5884}{xlmrobertaforsequenceclassification.\+train\+\_\+sampler}} = Random\+Sampler(train\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_af10a04773e32b6f96aadb86296b8d09a}{xlmrobertaforsequenceclassification.\+train\+\_\+dataloader}} = Data\+Loader(train\+\_\+data, sampler=train\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abdd9fc1cf4edf978abdce832c6797d75}{xlmrobertaforsequenceclassification.\+validation\+\_\+data}} = Tensor\+Dataset(validation\+\_\+inputs, validation\+\_\+masks, validation\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ab1115254483f725374632d583abd0612}{xlmrobertaforsequenceclassification.\+validation\+\_\+sampler}} = Sequential\+Sampler(validation\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a976940762680545bdb8637220f66334f}{xlmrobertaforsequenceclassification.\+validation\+\_\+dataloader}} = Data\+Loader(validation\+\_\+data, sampler=validation\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aeb671d26311326f8b5447898e13cbeb8}{xlmrobertaforsequenceclassification.\+optimizer}}
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a7808c4ffcaff29014f6a340413ac3420}{xlmrobertaforsequenceclassification.\+epochs}} = 2
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a100891c5d482043c1eaa0832e7eef5a8}{xlmrobertaforsequenceclassification.\+total\+\_\+steps}} = len(train\+\_\+dataloader) $\ast$ epochs
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a4675f9f2348e1c375fd34b89f27f86da}{xlmrobertaforsequenceclassification.\+scheduler}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1ea6c875f313bd0ff03ccf5674cef218}{xlmrobertaforsequenceclassification.\+cuda0}} = torch.\+device(\textquotesingle{}cuda\+:0\textquotesingle{})
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8f55f4ff7dbd95fb3fcf02403a9bb6e8}{xlmrobertaforsequenceclassification.\+device}} = cuda0
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ab6194dc831b7b465acb02853cb76fae1}{xlmrobertaforsequenceclassification.\+device\+\_\+name}} = tf.\+test.\+gpu\+\_\+device\+\_\+name()
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8bfcc04975b901ca2aae2f0dfc019e3c}{xlmrobertaforsequenceclassification.\+seed\+\_\+val}} = 42
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa53394d15ab2c81252149257e2faec3b}{xlmrobertaforsequenceclassification.\+loss\+\_\+values}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adfe5e354a5a17fcae7223c887941726f}{xlmrobertaforsequenceclassification.\+t0}} = time.\+time()
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aef13094fb8976835a5556f32de5c25f4}{xlmrobertaforsequenceclassification.\+total\+\_\+loss}} = 0
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae4084262c1431b5a4778128320fd6935}{xlmrobertaforsequenceclassification.\+elapsed}} = format\+\_\+time(time.\+time() -\/ t0)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1bb3d5b92a5d2472de1a0cbe25d44162}{xlmrobertaforsequenceclassification.\+b\+\_\+input\+\_\+ids}} = batch\mbox{[}0\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ad09d6eb1474b58f6434d85094f7d4724}{xlmrobertaforsequenceclassification.\+b\+\_\+input\+\_\+mask}} = batch\mbox{[}1\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a53d810aa908e3d83f3c4b9dd82fc8316}{xlmrobertaforsequenceclassification.\+b\+\_\+labels}} = batch\mbox{[}2\mbox{]}.to(device)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a6d353281859da6102fc03b49b01f9993}{xlmrobertaforsequenceclassification.\+outputs}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a8fa450da1718964a7436b7e79c3777b2}{xlmrobertaforsequenceclassification.\+loss}} = outputs\mbox{[}0\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abd7cd6f79334f479cd82859d5a8e42c4}{xlmrobertaforsequenceclassification.\+avg\+\_\+train\+\_\+loss}} = total\+\_\+loss / len(train\+\_\+dataloader)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a342c535344b0840af5054a84e8ae3fc1}{xlmrobertaforsequenceclassification.\+eval\+\_\+loss}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac17ec3ce17f05b17a756f767cfe7f962}{xlmrobertaforsequenceclassification.\+eval\+\_\+accuracy}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a67160e1f74517748f384fa57e093eec1}{xlmrobertaforsequenceclassification.\+nb\+\_\+eval\+\_\+steps}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ae1b9adbfe14f33dcd3d453bd86e43aaa}{xlmrobertaforsequenceclassification.\+nb\+\_\+eval\+\_\+examples}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_ac5bffb2564c9c532657d716cef7be869}{xlmrobertaforsequenceclassification.\+batch}} = tuple(t.\+to(device) for t in batch)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adfe92717ba91d19d4e930b2d145c2dfa}{xlmrobertaforsequenceclassification.\+logits}} = outputs\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a2fa22a73cf67cb0700428f9bf881bfc1}{xlmrobertaforsequenceclassification.\+label\+\_\+ids}} = b\+\_\+labels.\+to(\textquotesingle{}cpu\textquotesingle{}).numpy()
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a49eaeb0b3c170f92ba38f4f022ce75d4}{xlmrobertaforsequenceclassification.\+tmp\+\_\+eval\+\_\+accuracy}} = flat\+\_\+accuracy(logits, label\+\_\+ids)
+\item 
+def \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a149635f2bb8d51d45a2fe8e36da07ed5}{xlmrobertaforsequenceclassification.\+df}} = df\+\_\+test
+\item 
+list \mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_acb06c9e7ced29f30d60d735467ea2a7d}{xlmrobertaforsequenceclassification.\+seq\+\_\+mask}} = \mbox{[}float(i$>$0) for i in seq\mbox{]}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_abd202ac05d92beba936ff2462e48e969}{xlmrobertaforsequenceclassification.\+prediction\+\_\+inputs}} = torch.\+tensor(input\+\_\+ids)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aaeacac3f030cf09dabd7d9e24685a834}{xlmrobertaforsequenceclassification.\+prediction\+\_\+masks}} = torch.\+tensor(attention\+\_\+masks)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a1c141ebefea26b97675e17367b85dd6c}{xlmrobertaforsequenceclassification.\+prediction\+\_\+labels}} = torch.\+tensor(labels)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_adb4e1e49f36815cfab399e495fcbc96f}{xlmrobertaforsequenceclassification.\+prediction\+\_\+data}} = Tensor\+Dataset(prediction\+\_\+inputs, prediction\+\_\+masks, prediction\+\_\+labels)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a9fdcb506bd2bc1f25dedef774d113d72}{xlmrobertaforsequenceclassification.\+prediction\+\_\+sampler}} = Sequential\+Sampler(prediction\+\_\+data)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a552d7e42c36898dd15cbac3ea3f2d86e}{xlmrobertaforsequenceclassification.\+prediction\+\_\+dataloader}} = Data\+Loader(prediction\+\_\+data, sampler=prediction\+\_\+sampler, batch\+\_\+size=batch\+\_\+size)
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_aa1f6fdf76d8cd92ab572492a15764218}{xlmrobertaforsequenceclassification.\+predictions}}
+\item 
+\mbox{\hyperlink{namespacexlmrobertaforsequenceclassification_a0da230b284e3cb157a8bcfc51c414575}{xlmrobertaforsequenceclassification.\+true\+\_\+labels}}
+\end{DoxyCompactItemize}

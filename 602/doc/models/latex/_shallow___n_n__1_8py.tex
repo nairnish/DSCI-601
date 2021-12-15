@@ -1,0 +1,65 @@
+\hypertarget{_shallow___n_n__1_8py}{}\doxysection{Shallow\+\_\+\+NN\+\_\+1.\+py File Reference}
+\label{_shallow___n_n__1_8py}\index{Shallow\_NN\_1.py@{Shallow\_NN\_1.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_shallow___n_n__1}{Shallow\+\_\+\+NN\+\_\+1}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_shallow___n_n__1_ad23bf90b58d6a554235ae1611ba4ea0c}{Shallow\+\_\+\+NN\+\_\+1.\+plot\+\_\+history}} (history)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespace_shallow___n_n__1_ad3739228ca62ed464042d9fceea509c4}{Shallow\+\_\+\+NN\+\_\+1.\+train\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_shallow___n_n__1_a18753b287e21f22eb6c93bb0426cf0c1}{Shallow\+\_\+\+NN\+\_\+1.\+val\+\_\+path}} = \textquotesingle{}../../data/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_shallow___n_n__1_a6db011648b2a0d3ed9a6ba7ae4fbc35c}{Shallow\+\_\+\+NN\+\_\+1.\+test\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a4f832cfdb715a58354bc46e304dad1d1}{Shallow\+\_\+\+NN\+\_\+1.\+train\+\_\+data}} = load\+\_\+data(train\+\_\+path)
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_ac9085ffae09546a8483982e0040be07f}{Shallow\+\_\+\+NN\+\_\+1.\+validation\+\_\+data}} = load\+\_\+data(val\+\_\+path)
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a592394901b5c14bada6e7418ac284352}{Shallow\+\_\+\+NN\+\_\+1.\+test\+\_\+data}} = load\+\_\+data(test\+\_\+path)
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a6d194e8d871989a6c21b382f84870027}{Shallow\+\_\+\+NN\+\_\+1.\+df}} = pd.\+concat(\mbox{[}train\+\_\+data, validation\+\_\+data\mbox{]}, ignore\+\_\+index=True)
+\item 
+list \mbox{\hyperlink{namespace_shallow___n_n__1_a8dabf029d980188f89df40f8fe25bf8c}{Shallow\+\_\+\+NN\+\_\+1.\+req\+\_\+labels}} = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_aeb97eec8f1b85865e93c0e47fab49e12}{Shallow\+\_\+\+NN\+\_\+1.\+rslt\+\_\+df}} = df\mbox{[}df.\+label.\+isin(req\+\_\+labels)\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_aa2e30d9e832401cb55e23460ae8fc6c9}{Shallow\+\_\+\+NN\+\_\+1.\+sentences}} = rslt\+\_\+df\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a55b11d25e733c13280dc227834c7aff6}{Shallow\+\_\+\+NN\+\_\+1.\+y}} = pd.\+get\+\_\+dummies(rslt\+\_\+df\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}).values
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_ad8ac219e243819d7fb06893bb9f8f0f4}{Shallow\+\_\+\+NN\+\_\+1.\+sentences\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_af106e7d3d8ec36241e0b79d9a14fd986}{Shallow\+\_\+\+NN\+\_\+1.\+sentences\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_afab6f812188df64a31dfec0041bcb12c}{Shallow\+\_\+\+NN\+\_\+1.\+y\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a3024f8c482dcd0c26c11dade9030f3f1}{Shallow\+\_\+\+NN\+\_\+1.\+y\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_af6df6e74afa800db6b0e3e6b055dfc6c}{Shallow\+\_\+\+NN\+\_\+1.\+test\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a3e9cc535f984fb6d70850bcea905f4b1}{Shallow\+\_\+\+NN\+\_\+1.\+random\+\_\+state}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a8d891e573b678a504567e99958be5691}{Shallow\+\_\+\+NN\+\_\+1.\+X\+\_\+train}} = column\+\_\+transformer(sentences\+\_\+train)
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a2300fc2afb5af1aaeb21b1baecc02665}{Shallow\+\_\+\+NN\+\_\+1.\+X\+\_\+test}} = column\+\_\+transformer(sentences\+\_\+test)
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a28fa3567c9f5c765038f6bd2ac689171}{Shallow\+\_\+\+NN\+\_\+1.\+input\+\_\+dim}} = X\+\_\+train.\+shape\mbox{[}1\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_af0637f2304aa74527535ffcbb3de27ec}{Shallow\+\_\+\+NN\+\_\+1.\+model}} = Sequential()
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_afb7774abf58bc64384572db59b5a81e4}{Shallow\+\_\+\+NN\+\_\+1.\+loss}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a23fa7bec77041be453435bc77c957fb0}{Shallow\+\_\+\+NN\+\_\+1.\+optimizer}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_abe8fcd792ac429f970c885cbf6ed5b57}{Shallow\+\_\+\+NN\+\_\+1.\+metrics}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_ab273ecfb114fe35ec28faeede80a30fa}{Shallow\+\_\+\+NN\+\_\+1.\+history}}
+\end{DoxyCompactItemize}

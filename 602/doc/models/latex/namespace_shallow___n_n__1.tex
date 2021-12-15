@@ -1,0 +1,231 @@
+\hypertarget{namespace_shallow___n_n__1}{}\doxysection{Shallow\+\_\+\+NN\+\_\+1 Namespace Reference}
+\label{namespace_shallow___n_n__1}\index{Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespace_shallow___n_n__1_ad23bf90b58d6a554235ae1611ba4ea0c}{plot\+\_\+history}} (\mbox{\hyperlink{namespace_shallow___n_n__1_ab273ecfb114fe35ec28faeede80a30fa}{history}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespace_shallow___n_n__1_ad3739228ca62ed464042d9fceea509c4}{train\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_shallow___n_n__1_a18753b287e21f22eb6c93bb0426cf0c1}{val\+\_\+path}} = \textquotesingle{}../../data/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespace_shallow___n_n__1_a6db011648b2a0d3ed9a6ba7ae4fbc35c}{test\+\_\+path}} = \textquotesingle{}../../data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a4f832cfdb715a58354bc46e304dad1d1}{train\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_shallow___n_n__1_ad3739228ca62ed464042d9fceea509c4}{train\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_ac9085ffae09546a8483982e0040be07f}{validation\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_shallow___n_n__1_a18753b287e21f22eb6c93bb0426cf0c1}{val\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a592394901b5c14bada6e7418ac284352}{test\+\_\+data}} = load\+\_\+data(\mbox{\hyperlink{namespace_shallow___n_n__1_a6db011648b2a0d3ed9a6ba7ae4fbc35c}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a6d194e8d871989a6c21b382f84870027}{df}} = pd.\+concat(\mbox{[}\mbox{\hyperlink{namespace_shallow___n_n__1_a4f832cfdb715a58354bc46e304dad1d1}{train\+\_\+data}}, \mbox{\hyperlink{namespace_shallow___n_n__1_ac9085ffae09546a8483982e0040be07f}{validation\+\_\+data}}\mbox{]}, ignore\+\_\+index=True)
+\item 
+list \mbox{\hyperlink{namespace_shallow___n_n__1_a8dabf029d980188f89df40f8fe25bf8c}{req\+\_\+labels}} = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_aeb97eec8f1b85865e93c0e47fab49e12}{rslt\+\_\+df}} = \mbox{\hyperlink{namespace_shallow___n_n__1_a6d194e8d871989a6c21b382f84870027}{df}}\mbox{[}df.\+label.\+isin(\mbox{\hyperlink{namespace_shallow___n_n__1_a8dabf029d980188f89df40f8fe25bf8c}{req\+\_\+labels}})\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_aa2e30d9e832401cb55e23460ae8fc6c9}{sentences}} = \mbox{\hyperlink{namespace_shallow___n_n__1_aeb97eec8f1b85865e93c0e47fab49e12}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a55b11d25e733c13280dc227834c7aff6}{y}} = pd.\+get\+\_\+dummies(\mbox{\hyperlink{namespace_shallow___n_n__1_aeb97eec8f1b85865e93c0e47fab49e12}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}).values
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_ad8ac219e243819d7fb06893bb9f8f0f4}{sentences\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_af106e7d3d8ec36241e0b79d9a14fd986}{sentences\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_afab6f812188df64a31dfec0041bcb12c}{y\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a3024f8c482dcd0c26c11dade9030f3f1}{y\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_af6df6e74afa800db6b0e3e6b055dfc6c}{test\+\_\+size}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a3e9cc535f984fb6d70850bcea905f4b1}{random\+\_\+state}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a8d891e573b678a504567e99958be5691}{X\+\_\+train}} = column\+\_\+transformer(\mbox{\hyperlink{namespace_shallow___n_n__1_ad8ac219e243819d7fb06893bb9f8f0f4}{sentences\+\_\+train}})
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a2300fc2afb5af1aaeb21b1baecc02665}{X\+\_\+test}} = column\+\_\+transformer(\mbox{\hyperlink{namespace_shallow___n_n__1_af106e7d3d8ec36241e0b79d9a14fd986}{sentences\+\_\+test}})
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a28fa3567c9f5c765038f6bd2ac689171}{input\+\_\+dim}} = X\+\_\+train.\+shape\mbox{[}1\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_af0637f2304aa74527535ffcbb3de27ec}{model}} = Sequential()
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_afb7774abf58bc64384572db59b5a81e4}{loss}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_a23fa7bec77041be453435bc77c957fb0}{optimizer}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_abe8fcd792ac429f970c885cbf6ed5b57}{metrics}}
+\item 
+\mbox{\hyperlink{namespace_shallow___n_n__1_ab273ecfb114fe35ec28faeede80a30fa}{history}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_shallow___n_n__1_ad23bf90b58d6a554235ae1611ba4ea0c}\label{namespace_shallow___n_n__1_ad23bf90b58d6a554235ae1611ba4ea0c}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!plot\_history@{plot\_history}}
+\index{plot\_history@{plot\_history}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{plot\_history()}{plot\_history()}}
+{\footnotesize\ttfamily def Shallow\+\_\+\+NN\+\_\+1.\+plot\+\_\+history (\begin{DoxyParamCaption}\item[{}]{history }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a6d194e8d871989a6c21b382f84870027}\label{namespace_shallow___n_n__1_a6d194e8d871989a6c21b382f84870027}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!df@{df}}
+\index{df@{df}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{df}{df}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+df = pd.\+concat(\mbox{[}\mbox{\hyperlink{namespace_shallow___n_n__1_a4f832cfdb715a58354bc46e304dad1d1}{train\+\_\+data}}, \mbox{\hyperlink{namespace_shallow___n_n__1_ac9085ffae09546a8483982e0040be07f}{validation\+\_\+data}}\mbox{]}, ignore\+\_\+index=True)}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_ab273ecfb114fe35ec28faeede80a30fa}\label{namespace_shallow___n_n__1_ab273ecfb114fe35ec28faeede80a30fa}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!history@{history}}
+\index{history@{history}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{history}{history}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+history}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  model.fit(X\_train, y\_train,}
+\DoxyCodeLine{2                         epochs=10,}
+\DoxyCodeLine{3                         verbose=\textcolor{keyword}{True},}
+\DoxyCodeLine{4                         validation\_data=(X\_test, y\_test),}
+\DoxyCodeLine{5                         batch\_size=10)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a28fa3567c9f5c765038f6bd2ac689171}\label{namespace_shallow___n_n__1_a28fa3567c9f5c765038f6bd2ac689171}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!input\_dim@{input\_dim}}
+\index{input\_dim@{input\_dim}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{input\_dim}{input\_dim}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+input\+\_\+dim = X\+\_\+train.\+shape\mbox{[}1\mbox{]}}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_afb7774abf58bc64384572db59b5a81e4}\label{namespace_shallow___n_n__1_afb7774abf58bc64384572db59b5a81e4}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!loss@{loss}}
+\index{loss@{loss}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{loss}{loss}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+loss}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_abe8fcd792ac429f970c885cbf6ed5b57}\label{namespace_shallow___n_n__1_abe8fcd792ac429f970c885cbf6ed5b57}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!metrics@{metrics}}
+\index{metrics@{metrics}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{metrics}{metrics}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+metrics}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_af0637f2304aa74527535ffcbb3de27ec}\label{namespace_shallow___n_n__1_af0637f2304aa74527535ffcbb3de27ec}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!model@{model}}
+\index{model@{model}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+model = Sequential()}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a23fa7bec77041be453435bc77c957fb0}\label{namespace_shallow___n_n__1_a23fa7bec77041be453435bc77c957fb0}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!optimizer@{optimizer}}
+\index{optimizer@{optimizer}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{optimizer}{optimizer}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+optimizer}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a3e9cc535f984fb6d70850bcea905f4b1}\label{namespace_shallow___n_n__1_a3e9cc535f984fb6d70850bcea905f4b1}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!random\_state@{random\_state}}
+\index{random\_state@{random\_state}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{random\_state}{random\_state}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+random\+\_\+state}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a8dabf029d980188f89df40f8fe25bf8c}\label{namespace_shallow___n_n__1_a8dabf029d980188f89df40f8fe25bf8c}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!req\_labels@{req\_labels}}
+\index{req\_labels@{req\_labels}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{req\_labels}{req\_labels}}
+{\footnotesize\ttfamily list Shallow\+\_\+\+NN\+\_\+1.\+req\+\_\+labels = \mbox{[}\textquotesingle{}pt-\/BR\textquotesingle{}, \textquotesingle{}pt-\/PT\textquotesingle{}, \textquotesingle{}es-\/AR\textquotesingle{}, \textquotesingle{}es-\/ES\textquotesingle{}, \textquotesingle{}es-\/PE\textquotesingle{}\mbox{]}}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_aeb97eec8f1b85865e93c0e47fab49e12}\label{namespace_shallow___n_n__1_aeb97eec8f1b85865e93c0e47fab49e12}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!rslt\_df@{rslt\_df}}
+\index{rslt\_df@{rslt\_df}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{rslt\_df}{rslt\_df}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+rslt\+\_\+df = \mbox{\hyperlink{namespace_shallow___n_n__1_a6d194e8d871989a6c21b382f84870027}{df}}\mbox{[}df.\+label.\+isin(\mbox{\hyperlink{namespace_shallow___n_n__1_a8dabf029d980188f89df40f8fe25bf8c}{req\+\_\+labels}})\mbox{]}}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_aa2e30d9e832401cb55e23460ae8fc6c9}\label{namespace_shallow___n_n__1_aa2e30d9e832401cb55e23460ae8fc6c9}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!sentences@{sentences}}
+\index{sentences@{sentences}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{sentences}{sentences}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+sentences = \mbox{\hyperlink{namespace_shallow___n_n__1_aeb97eec8f1b85865e93c0e47fab49e12}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}text\textquotesingle{}\mbox{]}.values}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_af106e7d3d8ec36241e0b79d9a14fd986}\label{namespace_shallow___n_n__1_af106e7d3d8ec36241e0b79d9a14fd986}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!sentences\_test@{sentences\_test}}
+\index{sentences\_test@{sentences\_test}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{sentences\_test}{sentences\_test}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+sentences\+\_\+test}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_ad8ac219e243819d7fb06893bb9f8f0f4}\label{namespace_shallow___n_n__1_ad8ac219e243819d7fb06893bb9f8f0f4}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!sentences\_train@{sentences\_train}}
+\index{sentences\_train@{sentences\_train}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{sentences\_train}{sentences\_train}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+sentences\+\_\+train}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a592394901b5c14bada6e7418ac284352}\label{namespace_shallow___n_n__1_a592394901b5c14bada6e7418ac284352}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!test\_data@{test\_data}}
+\index{test\_data@{test\_data}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{test\_data}{test\_data}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+test\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_shallow___n_n__1_a6db011648b2a0d3ed9a6ba7ae4fbc35c}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a6db011648b2a0d3ed9a6ba7ae4fbc35c}\label{namespace_shallow___n_n__1_a6db011648b2a0d3ed9a6ba7ae4fbc35c}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string Shallow\+\_\+\+NN\+\_\+1.\+test\+\_\+path = \textquotesingle{}../../data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_af6df6e74afa800db6b0e3e6b055dfc6c}\label{namespace_shallow___n_n__1_af6df6e74afa800db6b0e3e6b055dfc6c}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!test\_size@{test\_size}}
+\index{test\_size@{test\_size}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{test\_size}{test\_size}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+test\+\_\+size}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a4f832cfdb715a58354bc46e304dad1d1}\label{namespace_shallow___n_n__1_a4f832cfdb715a58354bc46e304dad1d1}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!train\_data@{train\_data}}
+\index{train\_data@{train\_data}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{train\_data}{train\_data}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+train\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_shallow___n_n__1_ad3739228ca62ed464042d9fceea509c4}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_ad3739228ca62ed464042d9fceea509c4}\label{namespace_shallow___n_n__1_ad3739228ca62ed464042d9fceea509c4}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string Shallow\+\_\+\+NN\+\_\+1.\+train\+\_\+path = \textquotesingle{}../../data/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a18753b287e21f22eb6c93bb0426cf0c1}\label{namespace_shallow___n_n__1_a18753b287e21f22eb6c93bb0426cf0c1}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!val\_path@{val\_path}}
+\index{val\_path@{val\_path}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{val\_path}{val\_path}}
+{\footnotesize\ttfamily string Shallow\+\_\+\+NN\+\_\+1.\+val\+\_\+path = \textquotesingle{}../../data/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_ac9085ffae09546a8483982e0040be07f}\label{namespace_shallow___n_n__1_ac9085ffae09546a8483982e0040be07f}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!validation\_data@{validation\_data}}
+\index{validation\_data@{validation\_data}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{validation\_data}{validation\_data}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+validation\+\_\+data = load\+\_\+data(\mbox{\hyperlink{namespace_shallow___n_n__1_a18753b287e21f22eb6c93bb0426cf0c1}{val\+\_\+path}})}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a2300fc2afb5af1aaeb21b1baecc02665}\label{namespace_shallow___n_n__1_a2300fc2afb5af1aaeb21b1baecc02665}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!X\_test@{X\_test}}
+\index{X\_test@{X\_test}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{X\_test}{X\_test}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+X\+\_\+test = column\+\_\+transformer(\mbox{\hyperlink{namespace_shallow___n_n__1_af106e7d3d8ec36241e0b79d9a14fd986}{sentences\+\_\+test}})}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a8d891e573b678a504567e99958be5691}\label{namespace_shallow___n_n__1_a8d891e573b678a504567e99958be5691}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!X\_train@{X\_train}}
+\index{X\_train@{X\_train}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{X\_train}{X\_train}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+X\+\_\+train = column\+\_\+transformer(\mbox{\hyperlink{namespace_shallow___n_n__1_ad8ac219e243819d7fb06893bb9f8f0f4}{sentences\+\_\+train}})}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a55b11d25e733c13280dc227834c7aff6}\label{namespace_shallow___n_n__1_a55b11d25e733c13280dc227834c7aff6}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!y@{y}}
+\index{y@{y}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+y = pd.\+get\+\_\+dummies(\mbox{\hyperlink{namespace_shallow___n_n__1_aeb97eec8f1b85865e93c0e47fab49e12}{rslt\+\_\+df}}\mbox{[}\textquotesingle{}label\textquotesingle{}\mbox{]}).values}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_a3024f8c482dcd0c26c11dade9030f3f1}\label{namespace_shallow___n_n__1_a3024f8c482dcd0c26c11dade9030f3f1}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!y\_test@{y\_test}}
+\index{y\_test@{y\_test}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{y\_test}{y\_test}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+y\+\_\+test}
+
+\mbox{\Hypertarget{namespace_shallow___n_n__1_afab6f812188df64a31dfec0041bcb12c}\label{namespace_shallow___n_n__1_afab6f812188df64a31dfec0041bcb12c}} 
+\index{Shallow\_NN\_1@{Shallow\_NN\_1}!y\_train@{y\_train}}
+\index{y\_train@{y\_train}!Shallow\_NN\_1@{Shallow\_NN\_1}}
+\doxysubsubsection{\texorpdfstring{y\_train}{y\_train}}
+{\footnotesize\ttfamily Shallow\+\_\+\+NN\+\_\+1.\+y\+\_\+train}
+
