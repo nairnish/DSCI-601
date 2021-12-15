@@ -1,0 +1,32 @@
+\hypertarget{main_8py}{}\doxysection{main.\+py File Reference}
+\label{main_8py}\index{main.py@{main.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacemain}{main}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacemain_a06ebe8ae1fc4249cc5bc4b6e2e211f49}{main.\+train\+\_\+path}} = \textquotesingle{}data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacemain_a2090616d81eee929e178c4393ada8441}{main.\+test\+\_\+path}} = \textquotesingle{}data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacemain_adb7c343928b43aa40b887da635b71f38}{main.\+dev\+\_\+path}} = \textquotesingle{}data/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacemain_a452f056f4aac7896eda3ac3aa13cf32d}{main.\+df\+\_\+train}} = load\+\_\+data(train\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacemain_aa1e5ec7b5beaaa24bf2743d404e103dc}{main.\+df\+\_\+test}} = load\+\_\+data(test\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacemain_aadef062caca64c29efbc05a8224345f2}{main.\+df\+\_\+val}} = load\+\_\+data(val\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacemain_abb2f5d1167fb615c3e2bca3c98c820cf}{main.\+int\+\_\+p}} = input(\char`\"{}What kind of preprocessing do you want? 1 for stopword removal, 2 for special character removal, 3 for stopword removal (portuguese), 4 for stopword removal (spanish), 5 for stopword and special character removal.\char`\"{})
+\item 
+\mbox{\hyperlink{namespacemain_ae4df296e2239f8c87c47a4f1e33023ca}{main.\+int\+\_\+fr}} = input(\char`\"{}What kind of features do you want? 1 for word unigrams + bigrams , 2 for word unigrams , 3 for character 4 grams\char`\"{})
+\item 
+\mbox{\hyperlink{namespacemain_a5501585d300c3299858987fc88f6d2ea}{main.\+feature\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespacemain_aa5a914e5b6c1715fd4c09d97aa0238ed}{main.\+feature\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespacemain_a443c44fb5c44288fe82ae1d663ad5f44}{main.\+predictions}} = model\+\_\+\+SVC(feature\+\_\+train,feature\+\_\+test)
+\end{DoxyCompactItemize}

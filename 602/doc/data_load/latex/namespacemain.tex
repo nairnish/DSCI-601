@@ -1,0 +1,96 @@
+\hypertarget{namespacemain}{}\doxysection{main Namespace Reference}
+\label{namespacemain}\index{main@{main}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacemain_a06ebe8ae1fc4249cc5bc4b6e2e211f49}{train\+\_\+path}} = \textquotesingle{}data/DSL-\/TRAIN.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacemain_a2090616d81eee929e178c4393ada8441}{test\+\_\+path}} = \textquotesingle{}data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}
+\item 
+string \mbox{\hyperlink{namespacemain_adb7c343928b43aa40b887da635b71f38}{dev\+\_\+path}} = \textquotesingle{}data/DSL-\/DEV.\+txt\textquotesingle{}
+\item 
+\mbox{\hyperlink{namespacemain_a452f056f4aac7896eda3ac3aa13cf32d}{df\+\_\+train}} = load\+\_\+data(\mbox{\hyperlink{namespacemain_a06ebe8ae1fc4249cc5bc4b6e2e211f49}{train\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespacemain_aa1e5ec7b5beaaa24bf2743d404e103dc}{df\+\_\+test}} = load\+\_\+data(\mbox{\hyperlink{namespacemain_a2090616d81eee929e178c4393ada8441}{test\+\_\+path}})
+\item 
+\mbox{\hyperlink{namespacemain_aadef062caca64c29efbc05a8224345f2}{df\+\_\+val}} = load\+\_\+data(val\+\_\+path)
+\item 
+\mbox{\hyperlink{namespacemain_abb2f5d1167fb615c3e2bca3c98c820cf}{int\+\_\+p}} = input(\char`\"{}What kind of preprocessing do you want? 1 for stopword removal, 2 for special character removal, 3 for stopword removal (portuguese), 4 for stopword removal (spanish), 5 for stopword and special character removal.\char`\"{})
+\item 
+\mbox{\hyperlink{namespacemain_ae4df296e2239f8c87c47a4f1e33023ca}{int\+\_\+fr}} = input(\char`\"{}What kind of features do you want? 1 for word unigrams + bigrams , 2 for word unigrams , 3 for character 4 grams\char`\"{})
+\item 
+\mbox{\hyperlink{namespacemain_a5501585d300c3299858987fc88f6d2ea}{feature\+\_\+train}}
+\item 
+\mbox{\hyperlink{namespacemain_aa5a914e5b6c1715fd4c09d97aa0238ed}{feature\+\_\+test}}
+\item 
+\mbox{\hyperlink{namespacemain_a443c44fb5c44288fe82ae1d663ad5f44}{predictions}} = model\+\_\+\+SVC(\mbox{\hyperlink{namespacemain_a5501585d300c3299858987fc88f6d2ea}{feature\+\_\+train}},\mbox{\hyperlink{namespacemain_aa5a914e5b6c1715fd4c09d97aa0238ed}{feature\+\_\+test}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemain_adb7c343928b43aa40b887da635b71f38}\label{namespacemain_adb7c343928b43aa40b887da635b71f38}} 
+\index{main@{main}!dev\_path@{dev\_path}}
+\index{dev\_path@{dev\_path}!main@{main}}
+\doxysubsubsection{\texorpdfstring{dev\_path}{dev\_path}}
+{\footnotesize\ttfamily string main.\+dev\+\_\+path = \textquotesingle{}data/DSL-\/DEV.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacemain_aa1e5ec7b5beaaa24bf2743d404e103dc}\label{namespacemain_aa1e5ec7b5beaaa24bf2743d404e103dc}} 
+\index{main@{main}!df\_test@{df\_test}}
+\index{df\_test@{df\_test}!main@{main}}
+\doxysubsubsection{\texorpdfstring{df\_test}{df\_test}}
+{\footnotesize\ttfamily main.\+df\+\_\+test = load\+\_\+data(\mbox{\hyperlink{namespacemain_a2090616d81eee929e178c4393ada8441}{test\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacemain_a452f056f4aac7896eda3ac3aa13cf32d}\label{namespacemain_a452f056f4aac7896eda3ac3aa13cf32d}} 
+\index{main@{main}!df\_train@{df\_train}}
+\index{df\_train@{df\_train}!main@{main}}
+\doxysubsubsection{\texorpdfstring{df\_train}{df\_train}}
+{\footnotesize\ttfamily main.\+df\+\_\+train = load\+\_\+data(\mbox{\hyperlink{namespacemain_a06ebe8ae1fc4249cc5bc4b6e2e211f49}{train\+\_\+path}})}
+
+\mbox{\Hypertarget{namespacemain_aadef062caca64c29efbc05a8224345f2}\label{namespacemain_aadef062caca64c29efbc05a8224345f2}} 
+\index{main@{main}!df\_val@{df\_val}}
+\index{df\_val@{df\_val}!main@{main}}
+\doxysubsubsection{\texorpdfstring{df\_val}{df\_val}}
+{\footnotesize\ttfamily main.\+df\+\_\+val = load\+\_\+data(val\+\_\+path)}
+
+\mbox{\Hypertarget{namespacemain_aa5a914e5b6c1715fd4c09d97aa0238ed}\label{namespacemain_aa5a914e5b6c1715fd4c09d97aa0238ed}} 
+\index{main@{main}!feature\_test@{feature\_test}}
+\index{feature\_test@{feature\_test}!main@{main}}
+\doxysubsubsection{\texorpdfstring{feature\_test}{feature\_test}}
+{\footnotesize\ttfamily main.\+feature\+\_\+test}
+
+\mbox{\Hypertarget{namespacemain_a5501585d300c3299858987fc88f6d2ea}\label{namespacemain_a5501585d300c3299858987fc88f6d2ea}} 
+\index{main@{main}!feature\_train@{feature\_train}}
+\index{feature\_train@{feature\_train}!main@{main}}
+\doxysubsubsection{\texorpdfstring{feature\_train}{feature\_train}}
+{\footnotesize\ttfamily main.\+feature\+\_\+train}
+
+\mbox{\Hypertarget{namespacemain_ae4df296e2239f8c87c47a4f1e33023ca}\label{namespacemain_ae4df296e2239f8c87c47a4f1e33023ca}} 
+\index{main@{main}!int\_fr@{int\_fr}}
+\index{int\_fr@{int\_fr}!main@{main}}
+\doxysubsubsection{\texorpdfstring{int\_fr}{int\_fr}}
+{\footnotesize\ttfamily main.\+int\+\_\+fr = input(\char`\"{}What kind of features do you want? 1 for word unigrams + bigrams , 2 for word unigrams , 3 for character 4 grams\char`\"{})}
+
+\mbox{\Hypertarget{namespacemain_abb2f5d1167fb615c3e2bca3c98c820cf}\label{namespacemain_abb2f5d1167fb615c3e2bca3c98c820cf}} 
+\index{main@{main}!int\_p@{int\_p}}
+\index{int\_p@{int\_p}!main@{main}}
+\doxysubsubsection{\texorpdfstring{int\_p}{int\_p}}
+{\footnotesize\ttfamily main.\+int\+\_\+p = input(\char`\"{}What kind of preprocessing do you want? 1 for stopword removal, 2 for special character removal, 3 for stopword removal (portuguese), 4 for stopword removal (spanish), 5 for stopword and special character removal.\char`\"{})}
+
+\mbox{\Hypertarget{namespacemain_a443c44fb5c44288fe82ae1d663ad5f44}\label{namespacemain_a443c44fb5c44288fe82ae1d663ad5f44}} 
+\index{main@{main}!predictions@{predictions}}
+\index{predictions@{predictions}!main@{main}}
+\doxysubsubsection{\texorpdfstring{predictions}{predictions}}
+{\footnotesize\ttfamily main.\+predictions = model\+\_\+\+SVC(\mbox{\hyperlink{namespacemain_a5501585d300c3299858987fc88f6d2ea}{feature\+\_\+train}},\mbox{\hyperlink{namespacemain_aa5a914e5b6c1715fd4c09d97aa0238ed}{feature\+\_\+test}})}
+
+\mbox{\Hypertarget{namespacemain_a2090616d81eee929e178c4393ada8441}\label{namespacemain_a2090616d81eee929e178c4393ada8441}} 
+\index{main@{main}!test\_path@{test\_path}}
+\index{test\_path@{test\_path}!main@{main}}
+\doxysubsubsection{\texorpdfstring{test\_path}{test\_path}}
+{\footnotesize\ttfamily string main.\+test\+\_\+path = \textquotesingle{}data/DSL-\/TEST-\/GOLD.\+txt\textquotesingle{}}
+
+\mbox{\Hypertarget{namespacemain_a06ebe8ae1fc4249cc5bc4b6e2e211f49}\label{namespacemain_a06ebe8ae1fc4249cc5bc4b6e2e211f49}} 
+\index{main@{main}!train\_path@{train\_path}}
+\index{train\_path@{train\_path}!main@{main}}
+\doxysubsubsection{\texorpdfstring{train\_path}{train\_path}}
+{\footnotesize\ttfamily string main.\+train\+\_\+path = \textquotesingle{}data/DSL-\/TRAIN.\+txt\textquotesingle{}}
+
