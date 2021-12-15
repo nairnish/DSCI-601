@@ -17,7 +17,10 @@ Contains all the necessary datasets required for the experiments
 4. XGBoost - The file test_XGBoost.py executes the Xtreme Gradient Boosting model in project_XGBoost.py
 5. KNN - The file test_KNN.py executes the K-nearest neighbours model in project_KNN.py
 6. LogisticRegression - The file test_LR.py executes the Logistic Regression model in project_LR.py
-7. Shallow NeuralNetwork - The file sample_shallow_NN.py is WIP and is an implementation of shallow neural network
+7. Shallow NeuralNetwork - The file shallow_NN_1.py is an implementation of shallow neural network
+
+**Final Code**
+--> Run shallow_nn_1.py. test accuracy achieved - ~96%.
 
 ###### 2. DSLCC4 datastes ######
 Contains the required datasets for the model to train, validate and test
